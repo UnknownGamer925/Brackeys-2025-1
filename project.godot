@@ -14,3 +14,7 @@ config/name="Brackeys_2025_1"
 run/main_scene="res://Scenes/ConvenienceStore/convenience_store.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioPlayer="*res://Prefabs/Audio_Player/Scripts/audio_player.gd"
