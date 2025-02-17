@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=4 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6gp2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2rpp"]
 
 [node name="ConvenienceStore" type="Node3D"]
 
@@ -10,5 +12,15 @@
 transform = Transform3D(21.6048, 0, 0, 0, 0.327609, 0, 0, 0, 15.1648, 0, 0, 0)
 mesh = SubResource("BoxMesh_c6gp2")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_e2rpp")
+
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_3l8qs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.58312, 1.25094, 3.49565)
+transform = Transform3D(-0.947996, 0, -0.318281, 0, 1, 0, 0.318281, 0, -0.947996, -1.66041, 1.22468, -4.59562)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.56464, 0)
+light_energy = 16.0
+light_size = 0.398
