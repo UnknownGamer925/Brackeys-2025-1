@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ej1raa0eym3"]
+
+[ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c6gp2"]
+
+[node name="ConvenienceStore" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(21.6048, 0, 0, 0, 0.327609, 0, 0, 0, 15.1648, 0, 0, 0)
+mesh = SubResource("BoxMesh_c6gp2")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_3l8qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.58312, 1.25094, 3.49565)
