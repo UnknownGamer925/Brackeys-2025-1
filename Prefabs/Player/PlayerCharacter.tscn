@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdhbe21kmh2w6"]
+[gd_scene load_steps=6 format=3 uid="uid://cdhbe21kmh2w6"]
 
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/movement_script.gd" id="1_thbuj"]
+[ext_resource type="Script" path="res://Prefabs/Player/Scripts/camera_script.gd" id="2_ei3r6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yimsp"]
 
@@ -20,7 +21,8 @@ mesh = SubResource("CapsuleMesh_36g68")
 surface_material_override/0 = SubResource("StandardMaterial3D_3xk37")
 
 [node name="Pivot" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.743527, 0)
+script = ExtResource("2_ei3r6")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784759, 0.00425202)
 current = true
