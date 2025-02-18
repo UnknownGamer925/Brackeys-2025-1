@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdhbe21kmh2w6"]
+[gd_scene load_steps=13 format=3 uid="uid://cdhbe21kmh2w6"]
 
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/movement_script.gd" id="1_thbuj"]
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/camera_script.gd" id="2_ei3r6"]
 [ext_resource type="Shader" path="res://Scenes/ConvenienceStore/Scripts/pixel_filter.gdshader" id="3_o6vmr"]
+[ext_resource type="Script" path="res://Prefabs/Player/Scripts/interaction.gd" id="4_g41nh"]
+[ext_resource type="Texture2D" uid="uid://2tmlg1wsw3r" path="res://Prefabs/Player/Assets/cursor_idle.png" id="5_q7rji"]
+[ext_resource type="Script" path="res://Prefabs/Player/Scripts/cursor.gd" id="6_mb7uu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yimsp"]
 
@@ -26,6 +29,10 @@ material = SubResource("ShaderMaterial_2esow")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_au0s6"]
+height = 2.50092
+radius = 0.106698
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_thbuj")
 
@@ -47,3 +54,20 @@ current = true
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_5ihpt")
 skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Pivot/Camera3D"]
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 1.03542e-07, -0.127786, -1.18438)
+script = ExtResource("4_g41nh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/Area3D"]
+shape = SubResource("CylinderShape3D_au0s6")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_q7rji")
+script = ExtResource("6_mb7uu")
+
+[connection signal="body_entered" from="Pivot/Camera3D/Area3D" to="Pivot/Camera3D/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Pivot/Camera3D/Area3D" to="Pivot/Camera3D/Area3D" method="_on_body_exited"]
+[connection signal="item_highlight" from="Pivot/Camera3D/Area3D" to="Cursor" method="_on_item_highlight"]
