@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdhbe21kmh2w6"]
+[gd_scene load_steps=9 format=3 uid="uid://cdhbe21kmh2w6"]
+
+[ext_resource type="Script" path="res://Prefabs/Player/Scripts/movement_script.gd" id="1_thbuj"]
+[ext_resource type="Script" path="res://Prefabs/Player/Scripts/camera_script.gd" id="2_ei3r6"]
+[ext_resource type="Shader" path="res://Scenes/ConvenienceStore/Scripts/pixel_filter.gdshader" id="3_o6vmr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yimsp"]
 
@@ -7,7 +11,23 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xk37"]
 albedo_color = Color(1, 0.301278, 0.467172, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2esow"]
+render_priority = 0
+shader = ExtResource("3_o6vmr")
+shader_parameter/depth_threshold = 0.85
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5ihpt"]
+material = SubResource("ShaderMaterial_2esow")
+flip_faces = true
+size = Vector2(2, 2)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_thbuj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_yimsp")
@@ -16,6 +36,14 @@ shape = SubResource("CapsuleShape3D_yimsp")
 mesh = SubResource("CapsuleMesh_36g68")
 surface_material_override/0 = SubResource("StandardMaterial3D_3xk37")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784759, 0.00425202)
+[node name="Pivot" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.743527, 0)
+script = ExtResource("2_ei3r6")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
 current = true
+
+[node name="PostProcessor" type="MeshInstance3D" parent="Pivot/Camera3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_5ihpt")
+skeleton = NodePath("../..")
