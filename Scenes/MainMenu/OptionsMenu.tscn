@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfk0gndl5ctbx"]
+[gd_scene load_steps=4 format=3 uid="uid://bfk0gndl5ctbx"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/Scripts/OptionsMenu.gd" id="1_qssna"]
 [ext_resource type="PackedScene" uid="uid://c86otpi8u40yy" path="res://Prefabs/Volume_Slider/volume_slider.tscn" id="2_ogwhf"]
+[ext_resource type="Theme" uid="uid://bug47d73a6l83" path="res://Scenes/MainMenu/Assets/Themes/MainMenu.tres" id="3_8mmey"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -13,12 +14,19 @@ grow_vertical = 2
 script = ExtResource("1_qssna")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -16.0
-offset_right = 1935.0
-offset_bottom = 1100.0
-color = Color(0.494118, 0.494118, 0.494118, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137255, 0.129412, 0.141176, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -136,10 +144,11 @@ vertical_alignment = 1
 
 [node name="Back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_8mmey")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
