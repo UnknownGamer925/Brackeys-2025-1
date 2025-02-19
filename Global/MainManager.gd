@@ -1,8 +1,11 @@
 extends Node
 
+#Lock 
+var MovementLocked = false
+
 #3D Things
 var HeldItem: Node3D
-var PlayerPos:Vector3
+var Player:CharacterBody3D
 
 #Objectives Complete
 var TillComplete = false

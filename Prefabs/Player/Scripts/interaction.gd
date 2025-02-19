@@ -3,7 +3,6 @@ extends Area3D
 signal item_highlight(toggle:bool)
 
 var in_view : Node3D
-var held : Node3D
 
 
 func _input(event: InputEvent) -> void:
@@ -15,28 +14,27 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
 	
-	if Input.is_action_just_pressed("left_click"):
-		
+func _input(event):
+	if event.is_action_pressed("left_click"):
 		if in_view != null:
-			if in_view.is_in_group("item"):
-				held = in_view
-				if in_view.has_method("interaction"):
-					in_view.interaction()
-			elif in_view.is_in_group("event") and held != null:
-				in_view.place_item(held)
-				
-
-
-
+			match in_view.get("ID"):
+				0:
+					in_view.object()
+				1:
+					in_view.area()
+				2:
+					in_view.read()
+	
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("item") or body.is_in_group("event"):
+	if body.get("ID") != null:
 		in_view = body
 		item_highlight.emit(true)
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group("item")or body.is_in_group("event"):
+	if body.get("ID") != null:
 		in_view = null
 		item_highlight.emit(false)

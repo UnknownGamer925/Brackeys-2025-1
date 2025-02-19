@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c86otpi8u40yy" path="res://Prefabs/Volume_Slider/volume_slider.tscn" id="2_ogwhf"]
 [ext_resource type="Theme" uid="uid://bug47d73a6l83" path="res://Scenes/MainMenu/Assets/Themes/MainMenu.tres" id="3_8mmey"]
 
-[node name="OptionsMenu" type="Control"]
+[node name="OptionsMenu" type="Control" node_paths=PackedStringArray("tick")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qssna")
+tick = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FullScreen")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -151,5 +152,5 @@ text = "Back"
 
 [connection signal="item_selected" from="MarginContainer/HBoxContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/FullScreen" to="." method="_on_check_box_toggled"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

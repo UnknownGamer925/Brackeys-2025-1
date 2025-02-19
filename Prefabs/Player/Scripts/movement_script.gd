@@ -7,6 +7,7 @@ var camera : Marker3D
 
 func _ready() -> void:
 	camera = $Pivot
+	MainManager.Player = self
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
