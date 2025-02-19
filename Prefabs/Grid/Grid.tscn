@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://iw5sothup3cd"]
+
+[ext_resource type="Script" path="res://Prefabs/Grid/grid.gd" id="1_loyuf"]
+
+[node name="Grid" type="Node2D"]
+script = ExtResource("1_loyuf")
