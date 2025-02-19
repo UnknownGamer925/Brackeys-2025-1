@@ -2,6 +2,10 @@ extends Marker3D
 
 var cam : Camera3D
 
+@onready var flashlight: SpotLight3D = $"../Flashlight"
+var flashlight_rotation_smoothness = 15.0
+var flashlight_position_smoothness = 15.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.warp_mouse(Vector2(position.x, position.y))
@@ -21,10 +25,19 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	update_flashlight(delta)
+	
+	if Input.is_action_just_pressed("Flashlight"):
+		flashlight.visible = not flashlight.visible
 	#var mouse_x : float = cam.project_ray_normal()
 	#var mouse_y : float = get_viewport().get_mouse_position().y
 	
 	#transform.basis = Basis(Vector3.RIGHT, mouse_x)
 	#print(mouse_x)
+	
+func update_flashlight(delta: float) -> void:
+	flashlight.global_transform = Transform3D(
+		flashlight.global_transform.basis.slerp(cam.global_transform.basis, delta * flashlight_rotation_smoothness),
+		flashlight.global_transform.origin.slerp(cam.global_transform.origin, delta * flashlight_position_smoothness)
+		)
 	
