@@ -112,7 +112,6 @@ skeleton = NodePath("../../../..")
 
 [node name="PlayerCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_3l8qs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400133, 1.20444, -3.58363)
-visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, -0.0318643, 0.999492, 0, -0.999492, -0.0318643, 0, 8.88854, 0)

@@ -5,13 +5,13 @@ extends Control
 
 func _on_play_pressed():
 	print("Play Pressed :)")
-	get_tree().change_scene_to_file("res://Scenes/ConvenienceStore/convenience_store.tscn")
+	SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu/OptionsMenu.tscn")
+	SceneSwitcher.switch_scene(SceneSwitcher.SceneType.OPTIONS_MENU)
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu/CreditsMenu.tscn")
+	SceneSwitcher.switch_scene(SceneSwitcher.SceneType.CREDIT_MENU)
 
 func _on_quit_pressed():
 	get_tree().quit()

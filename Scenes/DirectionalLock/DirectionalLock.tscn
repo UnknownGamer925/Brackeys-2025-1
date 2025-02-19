@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsmqul4toh5em"]
+[gd_scene load_steps=6 format=3 uid="uid://bsmqul4toh5em"]
 
 [ext_resource type="Script" path="res://Scenes/DirectionalLock/directional_lock.gd" id="1_uppjd"]
 [ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="2_n2i68"]
 [ext_resource type="Texture2D" uid="uid://g578sojhhp57" path="res://Scenes/SlidingPuzzle/Assets/Circle.png" id="3_53unw"]
+[ext_resource type="PackedScene" uid="uid://bm1lsocmpgpqh" path="res://Prefabs/ReturnButton/ReturnButton.tscn" id="4_56tdx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hts16"]
 radius = 27.3942
@@ -48,6 +49,9 @@ offset_right = 289.0
 offset_bottom = 81.0
 text = "RESET
 "
+
+[node name="ReturnButton" parent="." instance=ExtResource("4_56tdx")]
+position = Vector2(225, 537)
 
 [connection signal="mouse_entered" from="Circle2/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Circle2/Area2D" to="." method="_on_area_2d_mouse_exited"]

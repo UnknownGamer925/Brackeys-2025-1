@@ -58,9 +58,11 @@ func changeColours() -> void:
 func checkCorrect() -> void:
 	if(A and B and C and D):
 		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
+		MainManager.LightsComplete = true
 		Button5.disabled = false
 		
 
 
 func _on_bad_button_pressed() -> void:
 	print("You're in for a bad time >:)")
+	MainManager.BadLights = true

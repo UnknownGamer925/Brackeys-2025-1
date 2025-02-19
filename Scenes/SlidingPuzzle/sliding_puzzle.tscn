@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ooq7vnrfu0fl"]
+[gd_scene load_steps=5 format=3 uid="uid://ooq7vnrfu0fl"]
 
 [ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="1_0pkyc"]
 [ext_resource type="PackedScene" uid="uid://iw5sothup3cd" path="res://Prefabs/Grid/Grid.tscn" id="2_mf1sv"]
+[ext_resource type="PackedScene" uid="uid://bm1lsocmpgpqh" path="res://Prefabs/ReturnButton/ReturnButton.tscn" id="3_a2ir2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enybr"]
 size = Vector2(82, 70)
@@ -27,5 +28,7 @@ position = Vector2(350, 150)
 position = Vector2(31, 25)
 shape = SubResource("RectangleShape2D_enybr")
 
+[node name="ReturnButton" parent="." instance=ExtResource("3_a2ir2")]
+position = Vector2(72, -2)
+
 [connection signal="pressed" from="Button" to="Grid" method="_on_button_pressed"]
-[connection signal="area_entered" from="Area2D" to="Grid" method="_on_area_2d_area_entered"]

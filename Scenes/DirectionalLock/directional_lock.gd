@@ -45,7 +45,8 @@ func checkPos() ->void:
 
 func confirm(delta) -> void:
 	if (Combination == UserInput):
-		print("yay!")
+		MainManager.LockComplete = true
+		SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 	else:
 		UserInput.clear()
 		puzzleStarted = false
