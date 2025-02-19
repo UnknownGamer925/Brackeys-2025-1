@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhdnwf1m310fe"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7dkk6ngq52ma" path="res://EnvironmentPrefabs/Models/BOMBbox.obj" id="1_tordd"]
+[ext_resource type="Texture2D" uid="uid://6cljm7donv61" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Base_color.png" id="2_rkjwt"]
+[ext_resource type="Texture2D" uid="uid://bd41abuqaj4w2" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Height.png" id="3_834t5"]
+[ext_resource type="Texture2D" uid="uid://d1hjvh44bg7ei" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Metallic.png" id="4_d3x6l"]
+[ext_resource type="Texture2D" uid="uid://scwbety715gv" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Normal.png" id="5_t4wfp"]
+[ext_resource type="Texture2D" uid="uid://cvh6mdettdnkk" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Roughness.png" id="6_rckvp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqo4d"]
+albedo_texture = ExtResource("2_rkjwt")
+metallic = 1.0
+metallic_texture = ExtResource("4_d3x6l")
+roughness_texture = ExtResource("6_rckvp")
+normal_enabled = true
+normal_texture = ExtResource("5_t4wfp")
+heightmap_scale = 2.0
+heightmap_flip_tangent = true
+heightmap_texture = ExtResource("3_834t5")
+
+[node name="BomBbox" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89072, 7.54156, 8.12001)
+mesh = ExtResource("1_tordd")
+surface_material_override/0 = SubResource("StandardMaterial3D_tqo4d")
