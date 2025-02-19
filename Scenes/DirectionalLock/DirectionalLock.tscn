@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmqul4toh5em"]
+
+[ext_resource type="Script" path="res://Scenes/DirectionalLock/directional_lock.gd" id="1_uppjd"]
+[ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="2_n2i68"]
+[ext_resource type="Texture2D" uid="uid://g578sojhhp57" path="res://Scenes/SlidingPuzzle/Assets/Circle.png" id="3_53unw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hts16"]
+radius = 27.3942
+
+[node name="DirectionalLock" type="Node2D" node_paths=PackedStringArray("Lock")]
+script = ExtResource("1_uppjd")
+Lock = NodePath("Circle2")
+Combination = Array[int]([2, 3, 4, 1])
+
+[node name="SpareBackground" type="Sprite2D" parent="."]
+position = Vector2(961, 500)
+texture = ExtResource("2_n2i68")
+
+[node name="Circle" type="Sprite2D" parent="."]
+modulate = Color(0.533037, 0.533037, 0.533037, 1)
+position = Vector2(508, 312)
+scale = Vector2(10, 10)
+texture = ExtResource("3_53unw")
+
+[node name="Circle2" type="Sprite2D" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(508, 312)
+scale = Vector2(5, 5)
+texture = ExtResource("3_53unw")
+
+[node name="Area2D" type="Area2D" parent="Circle2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle2/Area2D"]
+shape = SubResource("CircleShape2D_hts16")
+
+[node name="Label" type="Label" parent="Circle2"]
+modulate = Color(0.419813, 0.419813, 0.419813, 1)
+offset_left = -5.0
+offset_top = -28.6
+offset_right = 35.0
+offset_bottom = -5.6
+text = "^"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 235.0
+offset_top = 50.0
+offset_right = 289.0
+offset_bottom = 81.0
+text = "RESET
+"
+
+[connection signal="mouse_entered" from="Circle2/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Circle2/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

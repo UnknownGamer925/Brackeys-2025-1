@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://1uwsgxngdfni"]
+
+[ext_resource type="Script" path="res://Prefabs/WoodenSlideY/wooden_slideY.gd" id="1_yglvu"]
+[ext_resource type="Texture2D" uid="uid://dyfhc5tan7sdp" path="res://Scenes/SlidingPuzzle/Assets/Square.png" id="2_pqgnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ow0p"]
+
+[node name="WoodenSlideY" type="CharacterBody2D"]
+script = ExtResource("1_yglvu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(29.625, 31.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10.625, -12.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_1ow0p")
+
+[node name="TempAsset2" type="Sprite2D" parent="."]
+self_modulate = Color(0.715823, 0.508075, 0.299397, 1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_pqgnv")
+offset = Vector2(25.3333, 25.3333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 19)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_1ow0p")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
