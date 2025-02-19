@@ -1,0 +1,22 @@
+[gd_scene load_steps=8 format=3 uid="uid://wu8f0i1h1mu7"]
+
+[ext_resource type="ArrayMesh" uid="uid://lm62jgy7k2dd" path="res://EnvironmentPrefabs/Models/Box 1.obj" id="1_4tytl"]
+[ext_resource type="Texture2D" uid="uid://bthh6s4kgyivq" path="res://EnvironmentPrefabs/Materials/Box1Mats/DefaultMaterial_Base_color.png" id="2_8wdun"]
+[ext_resource type="Texture2D" uid="uid://d4lpvg76cuv3n" path="res://EnvironmentPrefabs/Materials/Box1Mats/DefaultMaterial_Metallic.png" id="3_102rs"]
+[ext_resource type="Material" uid="uid://ch8w22qyxfws0" path="res://EnvironmentPrefabs/Materials/Box1Mats/Box1_Mat.tres" id="4_g7qgq"]
+[ext_resource type="Texture2D" uid="uid://dnjum1quedhq5" path="res://EnvironmentPrefabs/Materials/Box1Mats/DefaultMaterial_Normal.png" id="5_c5e2m"]
+[ext_resource type="Texture2D" uid="uid://di2qdy3dav4hj" path="res://EnvironmentPrefabs/Materials/Box1Mats/DefaultMaterial_Roughness.png" id="6_br288"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrce0"]
+next_pass = ExtResource("4_g7qgq")
+albedo_texture = ExtResource("2_8wdun")
+metallic = 1.0
+metallic_texture = ExtResource("3_102rs")
+roughness_texture = ExtResource("6_br288")
+normal_enabled = true
+normal_texture = ExtResource("5_c5e2m")
+
+[node name="Box1" type="MeshInstance3D"]
+transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 10.7824, 0.17499, -3.10799)
+mesh = ExtResource("1_4tytl")
+surface_material_override/0 = SubResource("StandardMaterial3D_hrce0")
