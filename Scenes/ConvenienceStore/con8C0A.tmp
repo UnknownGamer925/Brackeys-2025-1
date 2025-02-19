@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/item_script.gd" id="1_xbu3b"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/shelf_script.gd" id="2_73w11"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/poster_link.gd" id="6_kdqxg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,27 +26,7 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_al7e0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jsxhh"]
-size = Vector3(0.907776, 1.4231, 0.70459)
-
 [node name="ConvenienceStore" type="Node3D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Node2D" type="Node2D" parent="CanvasLayer/Control"]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
-position = Vector2(935, 551)
-scale = Vector2(0.757104, 0.720017)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2w04y")
@@ -118,7 +99,7 @@ script = ExtResource("1_dnnad")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Object2"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Object2" groups=["event"]]
 transform = Transform3D(1, 0, 0, -3.72529e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_c6gp2")
 skeleton = NodePath("../../../..")
@@ -145,15 +126,23 @@ script = ExtResource("2_73w11")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/StaticBody3D"]
 shape = SubResource("BoxShape3D_al7e0")
 
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer"]
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer" groups=["event", "item"]]
 transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
 texture = ExtResource("5_77cbp")
+script = ExtResource("6_kdqxg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Sprite3D" groups=["item"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("1_xbu3b")
-texture = ExtResource("5_77cbp")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Sprite3D/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Control"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+position = Vector2(935, 551)
+scale = Vector2(0.757104, 0.720017)

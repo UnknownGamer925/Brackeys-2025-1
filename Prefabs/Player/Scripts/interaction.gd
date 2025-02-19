@@ -6,22 +6,28 @@ var in_view : Node3D
 var held : Node3D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_G:
+		if in_view != null:
+			in_view.release()
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	
 	if Input.is_action_just_pressed("left_click"):
+		
 		if in_view != null:
 			if in_view.is_in_group("item"):
 				held = in_view
-				in_view.interaction()
+				if in_view.has_method("interaction"):
+					in_view.interaction()
 			elif in_view.is_in_group("event") and held != null:
 				in_view.place_item(held)
+				
+
+
 
 
 func _on_body_entered(body: Node3D) -> void:
