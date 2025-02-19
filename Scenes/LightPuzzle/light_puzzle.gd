@@ -1,0 +1,66 @@
+extends Node2D
+@export var Light1:Sprite2D
+@export var Light2:Sprite2D
+@export var Light3:Sprite2D
+@export var Light4:Sprite2D
+@export var Light5:Sprite2D
+@export var Button5:Button
+var A = false
+var B = false
+var C = false
+var D = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	changeColours()
+	checkCorrect()
+
+
+func _on_button_1_pressed() -> void:
+	A = not A
+	B = not B
+
+func _on_button_2_pressed() -> void:
+	A = not A
+	C = not C
+	
+
+func _on_button_3_pressed() -> void:
+	B = not B
+	C = not C
+	
+func _on_button_4_pressed() -> void:
+	C = not C
+	D = not D
+
+func changeColours() -> void:
+	if(A):
+		Light1.modulate = Color(Color(0.409, 0.735, 0.225))
+	else:
+		Light1.modulate = Color(0.813, 0.322, 0)
+	if(B):
+		Light2.modulate = Color(Color(0.409, 0.735, 0.225))
+	else:
+		Light2.modulate = Color(0.813, 0.322, 0)
+	if(C):
+		Light3.modulate = Color(Color(0.409, 0.735, 0.225))
+	else:
+		Light3.modulate = Color(0.813, 0.322, 0)
+	if(D):
+		Light4.modulate = Color(Color(0.409, 0.735, 0.225))
+	else:
+		Light4.modulate = Color(0.813, 0.322, 0)
+
+func checkCorrect() -> void:
+	if(A and B and C and D):
+		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
+		Button5.disabled = false
+		
+
+
+func _on_bad_button_pressed() -> void:
+	print("You're in for a bad time >:)")
