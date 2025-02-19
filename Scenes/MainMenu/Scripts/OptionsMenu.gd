@@ -1,7 +1,12 @@
 extends Control
-
-#func _ready():
+@export var tick:CheckBox
+func _ready():
 	#AudioPlayer.play_music_menu()
+	if(DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN):
+		tick.button_pressed = true
+	else:
+		tick.button_pressed = false
+	
 
 func _on_back_pressed():
 	SceneSwitcher.switch_scene(SceneSwitcher.SceneType.MAIN_MENU)
