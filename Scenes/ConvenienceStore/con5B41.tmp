@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/scene_change.gd" id="1_dnnad"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/item_script.gd" id="1_xbu3b"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/shelf_script.gd" id="2_73w11"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -118,8 +119,7 @@ transform = Transform3D(1, 0, 0, 0, -0.0318643, 0.999492, 0, -0.999492, -0.03186
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["event"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07887, 1.67186, 0.824166)
-script = ExtResource("1_e1alj")
-ID = 1
+script = ExtResource("2_73w11")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_al7e0")
