@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2mudw3yryx16"]
+[gd_scene load_steps=4 format=3 uid="uid://b2mudw3yryx16"]
 
 [ext_resource type="Script" path="res://Scenes/TillPuzzle/till_puzzle.gd" id="1_t6xm8"]
 [ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="2_hu8te"]
+[ext_resource type="PackedScene" uid="uid://bm1lsocmpgpqh" path="res://Prefabs/ReturnButton/ReturnButton.tscn" id="3_5tiiy"]
 
 [node name="TillPuzzle" type="Node2D" node_paths=PackedStringArray("TillDisplay")]
 script = ExtResource("1_t6xm8")
@@ -116,6 +117,9 @@ offset_top = 73.0
 offset_right = 309.0
 offset_bottom = 101.0
 text = "00.00"
+
+[node name="ReturnButton" parent="." instance=ExtResource("3_5tiiy")]
+position = Vector2(59, 52)
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

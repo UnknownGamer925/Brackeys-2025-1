@@ -13,7 +13,8 @@ func _ready():
 
 func _process(delta: float) -> void:
 		if(player.global_position.x >=250):
-			print("YAY!")
+			MainManager.BoxComplete = true
+			SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 
 func setUp() -> void:
 	#Ys
@@ -42,17 +43,9 @@ func place_objects_in_grid(xPos, yPos, box,length ,target):
 	if(target):
 		player = object_instance 
 	
-			
-
-			
 
 
 func _on_button_pressed() -> void:
 	for child in get_children():
 		child.queue_free()
 	setUp()
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if(area.get("ID")==1):
-		print("yay!")
