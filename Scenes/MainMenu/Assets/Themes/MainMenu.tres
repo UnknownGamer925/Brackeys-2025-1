@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bug47d73a6l83"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bug47d73a6l83"]
+
+[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="1_rgxqc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uuba"]
 
@@ -13,9 +15,9 @@
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_hover_color = Color(0.678942, 0.678944, 0.678945, 1)
-Button/colors/font_pressed_color = Color(0.295867, 0.295866, 0.295866, 1)
+Button/colors/font_pressed_color = Color(0.513234, 0.513233, 0.513233, 1)
 Button/font_sizes/font_size = 48
-Button/fonts/font = null
+Button/fonts/font = ExtResource("1_rgxqc")
 Button/styles/disabled = SubResource("StyleBoxEmpty_7uuba")
 Button/styles/focus = SubResource("StyleBoxEmpty_3vliu")
 Button/styles/hover = SubResource("StyleBoxEmpty_gnr8x")
