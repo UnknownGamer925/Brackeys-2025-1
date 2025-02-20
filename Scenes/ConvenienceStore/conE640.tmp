@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=18 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
 [ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
-[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="8_nkngf"]
 
@@ -77,8 +76,6 @@ offset_left = 687.0
 offset_top = 976.0
 offset_right = 1083.0
 offset_bottom = 1056.0
-theme_override_fonts/font = ExtResource("5_cbci7")
-theme_override_font_sizes/font_size = 20
 text = "HELLO"
 
 [node name="DialogueReciever" parent="CanvasLayer/Control/Dialogue" node_paths=PackedStringArray("Display") instance=ExtResource("1_qg2rs")]

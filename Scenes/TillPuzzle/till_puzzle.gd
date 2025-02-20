@@ -33,9 +33,9 @@ func _on_enter_button_pressed() -> void:
 		if(Combination != TillTotal):
 			print("Till Open count money!!")
 			Combination = TillTotal
+		else:
 			MainManager.TillComplete = true
 			SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
-		else:
 			print("Yay!")
 		TillDisplay.text = "00.00"
 	else:

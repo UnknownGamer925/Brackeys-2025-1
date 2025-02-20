@@ -12,7 +12,7 @@ var TillComplete = false
 var ShelvesStacked = false
 var LightsComplete = false
 
-var hasKey = false
+var hasKey = true
 
 var BadLights = false
 var LockComplete = false

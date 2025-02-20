@@ -1,18 +1,26 @@
 extends Node3D
+@export var Display: Label
 @export_file("*json") var dialogue_file: String
 var dialogue_text = {}
 var selected_text = []
+@export var typing_speed: float = 0.5  # Time between characters
+@export var reading_speed: float = 2
+
+var current_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MainManager.connect("display_dialogue",Callable( self, "_on_display_dialogue"))
 	dialogue_text = load_scene_text()
+	Display.visible_characters = 0
 
 # Function that runs when the signal is emitted
 func _on_display_dialogue(dialogue_key):
 	if dialogue_text.has(dialogue_key):
+		$Timer.wait_time = typing_speed
 		selected_text = dialogue_text[dialogue_key].duplicate()
-		print(selected_text[0])
+		Display.text = selected_text[0]
+		$Timer.start()
 	else:
 		print("Dialogue key not found:", dialogue_key)
 	
@@ -28,3 +36,21 @@ func load_scene_text():
 			return {}  # Return an empty dictionary instead of null
 		print("Error: Dialogue file not found:", dialogue_file)
 		return {}  # Return an empty dictionary if file is missing
+
+
+func _on_timer_timeout() -> void:
+	Display.visible = true
+	if current_index < selected_text[0].length():
+		Display.visible_characters += 1
+		current_index += 1
+		$Timer.wait_time = typing_speed
+		$Timer.start()
+	elif current_index == selected_text[0].length():
+		$Timer.wait_time = reading_speed
+		current_index += 1
+		$Timer.start()
+	else:
+		$Timer.stop()
+		Display.visible = false
+		current_index = 0
+		Display.visible_characters = 0
