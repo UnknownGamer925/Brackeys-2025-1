@@ -8,7 +8,9 @@ enum SceneType {
 	PUZZLE_TILL,
 	PUZZLE_LIGHTS,
 	PUZZLE_BOX,
-	PUZZLE_LOCK
+	PUZZLE_LOCK,
+	BAD_END,
+	GOOD_END
 }
 
 const SCENES = {
@@ -19,7 +21,9 @@ const SCENES = {
 	SceneType.PUZZLE_TILL: preload("res://Scenes/TillPuzzle/TillPuzzle.tscn"),
 	SceneType.PUZZLE_LIGHTS: preload("res://Scenes/LightPuzzle/Light Puzzle.tscn"),
 	SceneType.PUZZLE_BOX: preload("res://Scenes/SlidingPuzzle/sliding_puzzle.tscn"),
-	SceneType.PUZZLE_LOCK: preload("res://Scenes/DirectionalLock/DirectionalLock.tscn")
+	SceneType.PUZZLE_LOCK: preload("res://Scenes/DirectionalLock/DirectionalLock.tscn"),
+	SceneType.BAD_END: preload("res://Scenes/Bad_Ending/Bad_Ending.tscn"),
+	SceneType.GOOD_END: preload("res://Scenes/Good_Ending/Good_Ending.tscn")
 }
 
 var current_scene = null
@@ -53,3 +57,5 @@ func _deferred_switch_scene(new_scene):
 func _input(event):
 	if event.is_action_pressed("Esc"):
 		switch_scene(SceneType.MAIN_MENU)
+	if event.is_action_pressed("Return") and current_scene_type != SceneType.STORE:
+		switch_scene(SceneType.STORE)

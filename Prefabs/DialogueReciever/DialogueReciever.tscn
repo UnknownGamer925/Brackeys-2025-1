@@ -5,3 +5,8 @@
 [node name="DialogueReciever" type="Node3D"]
 script = ExtResource("1_ugyuk")
 dialogue_file = "res://Global/json/Dialogue.json"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
