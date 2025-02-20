@@ -1,6 +1,14 @@
 extends Node3D
 
+var SpriteRef : Sprite2D 
+var HUDcontrol : Control 
+
+@export var texture : Texture2D
 @export var ID: int
+
+func _ready() -> void:
+	SpriteRef = $"../../../CanvasLayer/Control/Node2D/Sprite2D"
+	HUDcontrol = $"../../../CanvasLayer/Control"
 
 func object() -> void:
 	if(MainManager.HeldItem == null):
@@ -21,12 +29,16 @@ func area() -> void:
 		MainManager.HeldItem = null
 
 func read() -> void:
-	pass
+	SpriteRef.texture = texture
+	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
+	MainManager.MovementLocked = true
 	
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("right_click"):
 		drop() 
+	if event.is_action_pressed("Return"):
+		release()
 
 func drop() -> void: 
 	if(MainManager.HeldItem != null):
@@ -35,4 +47,7 @@ func drop() -> void:
 		MainManager.HeldItem = null
 	
 func release() -> void:
-	pass 
+	if SpriteRef != null:
+		SpriteRef.texture = null
+		HUDcontrol.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		MainManager.MovementLocked = false

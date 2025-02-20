@@ -20,10 +20,7 @@ func _physics_process(delta: float) -> void:
 	
 	var direction : Vector3 = (camera.basis * Vector3(h_axis, 0, v_axis)).normalized()
 	
-	if direction != Vector3():
-		animator.play("head_bob")
-		
-		
+
 	
 	
 	if direction:
@@ -34,5 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(direction.z, 0, SPEED)
 		
 
-		
-	move_and_slide()
+	if (!MainManager.MovementLocked):
+		if direction != Vector3():
+			animator.play("head_bob")
+		move_and_slide()
