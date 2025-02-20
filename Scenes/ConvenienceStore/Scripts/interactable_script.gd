@@ -27,6 +27,7 @@ func area() -> void:
 		MainManager.HeldItem.visible = true
 		MainManager.HeldItem.global_position = global_position
 		MainManager.HeldItem = null
+		MainManager.inrease_shelf_int()
 
 func read() -> void:
 	SpriteRef.texture = parent.texture

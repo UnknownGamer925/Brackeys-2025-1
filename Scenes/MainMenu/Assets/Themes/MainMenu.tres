@@ -13,6 +13,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i73mb"]
 
 [resource]
+default_font = ExtResource("1_rgxqc")
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_hover_color = Color(0.678942, 0.678944, 0.678945, 1)
 Button/colors/font_pressed_color = Color(0.513234, 0.513233, 0.513233, 1)

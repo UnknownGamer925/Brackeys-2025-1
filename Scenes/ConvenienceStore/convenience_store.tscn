@@ -7,10 +7,20 @@
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/HUD_Script.gd" id="1_xsj26"]
 [ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
 [ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
+[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="4_e2tq5"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="8_nkngf"]
+
+[sub_resource type="Theme" id="Theme_cknyc"]
+
+[sub_resource type="Theme" id="Theme_g2fa2"]
+default_font = ExtResource("4_e2tq5")
+
+[sub_resource type="Theme" id="Theme_si4nw"]
+CheckBox/font_sizes/font_size = 28
+CheckBox/fonts/font = ExtResource("4_e2tq5")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,9 +75,32 @@ position = Vector2(2, 1)
 texture = ExtResource("2_wuks6")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(1515, 855)
 texture = ExtResource("2_hvg0v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 411.0
+offset_bottom = 181.0
+theme = SubResource("Theme_cknyc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_g2fa2")
+theme_override_font_sizes/normal_font_size = 48
+text = "Objectives:"
+fit_content = true
+
+[node name="Objective 1" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_si4nw")
+theme_override_fonts/font = ExtResource("4_e2tq5")
+text = " Stack Shelves"
+expand_icon = true
 
 [node name="Dialogue" type="Label" parent="CanvasLayer/Control"]
 modulate = Color(0, 0, 0, 1)
@@ -163,6 +196,36 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Wall2/StaticBody3D"]
 shape = SubResource("BoxShape3D_e2rpp")
 
+[node name="Wall3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.20528, 0, 0, 0, 1.68897, 0, 0, 0, 1.22349, 6.84423, 0.364988, 0.822025)
+mesh = SubResource("BoxMesh_c6gp2")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Wall3/StaticBody3D"]
+shape = SubResource("BoxShape3D_e2rpp")
+
+[node name="Wall4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.20528, 0, 0, 0, 1.68897, 0, 0, 0, 1.22349, 6.84423, 0.364988, 2.41519)
+mesh = SubResource("BoxMesh_c6gp2")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Wall4/StaticBody3D"]
+shape = SubResource("BoxShape3D_e2rpp")
+
+[node name="Wall5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.20528, 0, 0, 0, 1.68897, 0, 0, 0, 1.22349, 5.04635, 0.364988, 2.41519)
+mesh = SubResource("BoxMesh_c6gp2")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Wall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Wall5/StaticBody3D"]
+shape = SubResource("BoxShape3D_e2rpp")
+
 [node name="Object1" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, 0.822025)
 script = ExtResource("1_e1alj")
@@ -172,6 +235,18 @@ ID = 0
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Object1"]
+transform = Transform3D(1, 0, 0, -3.72529e-09, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_c6gp2")
+skeleton = NodePath("../../../..")
+
+[node name="Object4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, -0.9234)
+script = ExtResource("1_e1alj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object4"]
+shape = SubResource("BoxShape3D_e2rpp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Object4"]
 transform = Transform3D(1, 0, 0, -3.72529e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_c6gp2")
 skeleton = NodePath("../../../..")
@@ -189,10 +264,8 @@ mesh = SubResource("BoxMesh_c6gp2")
 skeleton = NodePath("../../../..")
 
 [node name="Object3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.401688, 0.0916146, 0, -0.0409152, 0.899432, 0, 0, 0, 0.450017, -4.69538, 0.965872, 2.16347)
+transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, 1.2125)
 script = ExtResource("1_e1alj")
-ID = 3
-SceneType = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -205,10 +278,61 @@ skeleton = NodePath("../../../..")
 [node name="PlayerCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_3l8qs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400133, 1.20444, -3.58363)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+[node name="Shelf_Container" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07887, 1.67186, 0.824166)
 script = ExtResource("1_e1alj")
 ID = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container"]
 shape = SubResource("BoxShape3D_al7e0")
+
+[node name="Shelf_Container2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87718, 1.67186, 0.824166)
+script = ExtResource("1_e1alj")
+ID = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container2"]
+shape = SubResource("BoxShape3D_al7e0")
+
+[node name="Shelf_Container3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87718, 1.67186, 2.39587)
+script = ExtResource("1_e1alj")
+ID = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container3"]
+shape = SubResource("BoxShape3D_al7e0")
+
+[node name="Shelf_Container4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05388, 1.67186, 2.39587)
+script = ExtResource("1_e1alj")
+ID = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
+shape = SubResource("BoxShape3D_al7e0")
+
+[node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
+texture = ExtResource("5_77cbp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster1" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
+
+[node name="Poster2" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
+texture = ExtResource("6_nm5b7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster2" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
+
