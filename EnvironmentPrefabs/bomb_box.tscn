@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhdnwf1m310fe"]
+[gd_scene load_steps=13 format=3 uid="uid://dhdnwf1m310fe"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7dkk6ngq52ma" path="res://EnvironmentPrefabs/Models/BOMBbox.obj" id="1_tordd"]
 [ext_resource type="Texture2D" uid="uid://6cljm7donv61" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Base_color.png" id="2_rkjwt"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d1hjvh44bg7ei" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Metallic.png" id="4_d3x6l"]
 [ext_resource type="Texture2D" uid="uid://scwbety715gv" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Normal.png" id="5_t4wfp"]
 [ext_resource type="Texture2D" uid="uid://cvh6mdettdnkk" path="res://EnvironmentPrefabs/Materials/BombMats/DefaultMaterial_Roughness.png" id="6_rckvp"]
+[ext_resource type="ArrayMesh" uid="uid://cppw1xhhw1x6q" path="res://EnvironmentPrefabs/Models/Bombwire.obj" id="7_3b670"]
+[ext_resource type="Texture2D" uid="uid://ddja25g1nhhgr" path="res://EnvironmentPrefabs/Materials/BombMats/Wires/DefaultMaterial_Base_color.png" id="8_02dhj"]
+[ext_resource type="Texture2D" uid="uid://cpdi1px0wldiu" path="res://EnvironmentPrefabs/Materials/BombMats/Wires/DefaultMaterial_Metallic.png" id="9_4k2eu"]
+[ext_resource type="Texture2D" uid="uid://dxtebnt03ks8p" path="res://EnvironmentPrefabs/Materials/BombMats/Wires/DefaultMaterial_Roughness.png" id="10_62w65"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqo4d"]
 albedo_texture = ExtResource("2_rkjwt")
@@ -18,7 +22,18 @@ heightmap_scale = 2.0
 heightmap_flip_tangent = true
 heightmap_texture = ExtResource("3_834t5")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qah5"]
+albedo_texture = ExtResource("8_02dhj")
+metallic = 1.0
+metallic_texture = ExtResource("9_4k2eu")
+roughness_texture = ExtResource("10_62w65")
+
 [node name="BomBbox" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89072, 7.54156, 8.12001)
 mesh = ExtResource("1_tordd")
 surface_material_override/0 = SubResource("StandardMaterial3D_tqo4d")
+
+[node name="Bombwire" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.01498, 0, 0, 0, 1.01498, 0, 0, 0, 1.01498, 0.133331, -0.033298, -0.00590038)
+mesh = ExtResource("7_3b670")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qah5")

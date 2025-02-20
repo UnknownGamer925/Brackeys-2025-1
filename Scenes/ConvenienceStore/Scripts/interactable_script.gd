@@ -7,6 +7,8 @@ extends Node3D
 @export var parent : Sprite3D
 @export var ID: int = -1
 @export var dialogue_key:String = ""
+@export var SceneType : SceneSwitcher.SceneType
+
 
 func object() -> void:
 	if(MainManager.HeldItem == null):
@@ -27,7 +29,7 @@ func area() -> void:
 		MainManager.HeldItem = null
 
 func read() -> void:
-	SpriteRef.texture = parent.texure
+	SpriteRef.texture = parent.texture
 	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
 	MainManager.MovementLocked = true
 	
@@ -49,3 +51,8 @@ func release() -> void:
 		SpriteRef.texture = null
 		HUDcontrol.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		MainManager.MovementLocked = false
+
+func change_scene():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	SceneSwitcher.switch_scene(SceneType)
+	

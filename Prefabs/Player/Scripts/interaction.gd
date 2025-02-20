@@ -19,10 +19,14 @@ func _input(event):
 					in_view.area()
 				2:
 					in_view.read()
-			#DialogueAreaHandle
-			MainManager.emit_signal("update_dialogue")
-			if(in_view.get("dialogue_key") != null):
-				MainManager.emit_signal("display_dialogue", in_view.get("dialogue_key"))
+				3:
+					in_view.change_scene()
+          
+       #DialogueAreaHandle
+			 MainManager.emit_signal("update_dialogue")
+			 if(in_view.get("dialogue_key") != null):
+			  MainManager.emit_signal("display_dialogue", in_view.get("dialogue_key"))
+
 	
 
 func _on_body_entered(body: Node3D) -> void:
