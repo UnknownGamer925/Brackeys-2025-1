@@ -1,14 +1,12 @@
+class_name Interactable
 extends Node3D
 
-var SpriteRef : Sprite2D 
-var HUDcontrol : Control 
+@onready var SpriteRef : Sprite2D = $"../../../CanvasLayer/Control/Node2D/Sprite2D"
+@onready var HUDcontrol : Control = $"../../../CanvasLayer/Control"
 
-@export var texture : Texture2D
+@export var parent : Sprite3D
 @export var ID: int
-
-func _ready() -> void:
-	SpriteRef = $"../../../CanvasLayer/Control/Node2D/Sprite2D"
-	HUDcontrol = $"../../../CanvasLayer/Control"
+@export var SceneType : SceneSwitcher.SceneType
 
 func object() -> void:
 	if(MainManager.HeldItem == null):
@@ -29,7 +27,7 @@ func area() -> void:
 		MainManager.HeldItem = null
 
 func read() -> void:
-	SpriteRef.texture = texture
+	SpriteRef.texture = parent.texture
 	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
 	MainManager.MovementLocked = true
 	
@@ -51,3 +49,8 @@ func release() -> void:
 		SpriteRef.texture = null
 		HUDcontrol.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		MainManager.MovementLocked = false
+
+func change_scene():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	SceneSwitcher.switch_scene(SceneType)
+	

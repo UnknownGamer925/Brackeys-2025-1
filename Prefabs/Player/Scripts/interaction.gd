@@ -19,6 +19,8 @@ func _input(event):
 					in_view.area()
 				2:
 					in_view.read()
+				3:
+					in_view.change_scene()
 	
 
 func _on_body_entered(body: Node3D) -> void:
