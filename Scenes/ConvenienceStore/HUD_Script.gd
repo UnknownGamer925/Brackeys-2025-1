@@ -13,10 +13,8 @@ func _process(delta: float) -> void:
 		
 func update_ui(): 
 	if(MainManager.hasKey):
-		key.self_modulate.a = 1.0  
-		key.modulate.a = 1.0 
+		key.visible = true
 	else:
-		key.self_modulate.a = 0.5
-		key.modulate.a = 0.5
+		key.visible = false
 		
 	boxFull.visible = MainManager.HeldItem != null

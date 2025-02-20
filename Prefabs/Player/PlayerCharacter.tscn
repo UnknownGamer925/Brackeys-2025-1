@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdhbe21kmh2w6"]
+[gd_scene load_steps=17 format=3 uid="uid://cdhbe21kmh2w6"]
 
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/movement_script.gd" id="1_thbuj"]
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/camera_script.gd" id="2_ei3r6"]
+[ext_resource type="Texture2D" uid="uid://cpc200ssfs8pq" path="res://Prefabs/Flashlight/Asset/Flashlight.png" id="2_j60eu"]
 [ext_resource type="Shader" path="res://Scenes/ConvenienceStore/Scripts/pixel_filter.gdshader" id="3_o6vmr"]
 [ext_resource type="Script" path="res://Prefabs/Player/Scripts/interaction.gd" id="4_g41nh"]
 [ext_resource type="Texture2D" uid="uid://2tmlg1wsw3r" path="res://Prefabs/Player/Assets/cursor_idle.png" id="5_q7rji"]
@@ -84,7 +85,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3xk37")
 
 [node name="Flashlight" type="SpotLight3D" parent="."]
 transform = Transform3D(0.999829, 0, 0.0185166, 0, 1, 0, -0.0185166, 0, 0.999829, 2.50242e-07, 0.37549, -0.0371288)
+visible = false
 light_energy = 1.5
+light_projector = ExtResource("2_j60eu")
+shadow_enabled = true
 spot_range = 7.64146
 spot_angle = 29.1764
 

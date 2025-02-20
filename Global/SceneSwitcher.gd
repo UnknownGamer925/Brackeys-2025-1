@@ -31,6 +31,8 @@ var current_scene_type
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+	
 
 func switch_scene(scene_type: int) -> void:
 	if (not SCENES.has(scene_type)):
