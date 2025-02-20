@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://p17f2p6s18bt"
+path="res://.godot/imported/TinCan2.obj-6429c39e13034eb480f4156e8804ecbb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TinCan2.obj-6429c39e13034eb480f4156e8804ecbb.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/TinCan2.obj"
+dest_files=["res://.godot/imported/TinCan2.obj-6429c39e13034eb480f4156e8804ecbb.mesh", "res://.godot/imported/TinCan2.obj-6429c39e13034eb480f4156e8804ecbb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -81,4 +81,45 @@ layout_mode = 2
 theme = ExtResource("2_45xa0")
 text = "Back"
 
+[node name="GraceLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 286.0
+offset_right = 1118.0
+offset_bottom = 327.0
+underline = 2
+uri = "https://phroggydev.itch.io/"
+
+[node name="LouiseLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 881.0
+offset_top = 435.0
+offset_right = 1031.0
+offset_bottom = 476.0
+uri = "https://louiseburt.itch.io/"
+
+[node name="GabyLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 576.0
+offset_right = 1049.0
+offset_bottom = 614.0
+uri = "https://gaby18.itch.io/"
+
+[node name="JoeLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 625.0
+offset_right = 1073.0
+offset_bottom = 666.0
+uri = "https://jdmdev.itch.io/"
+
+[node name="EmLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 676.0
+offset_right = 1098.0
+offset_bottom = 717.0
+uri = "https://nekcilo.itch.io/"
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

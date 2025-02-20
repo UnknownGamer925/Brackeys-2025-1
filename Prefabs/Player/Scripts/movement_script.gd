@@ -6,6 +6,7 @@ var camera : Marker3D
 @onready var animator : AnimationPlayer = $Pivot/Camera3D/Bobbing
 
 func _ready() -> void:
+	MainManager.MovementLocked = false
 	camera = $Pivot
 	MainManager.Player = self
 

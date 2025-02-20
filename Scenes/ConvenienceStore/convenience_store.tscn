@@ -3,11 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
 [ext_resource type="Texture2D" uid="uid://d0wbip7das54e" path="res://Scenes/ConvenienceStore/Assets/Page 1.svg" id="1_mmtop"]
+[ext_resource type="PackedScene" uid="uid://c06tdomveeeu2" path="res://Prefabs/DialogueReciever/DialogueReciever.tscn" id="1_qg2rs"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/HUD_Script.gd" id="1_xsj26"]
 [ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
 [ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="4_e2tq5"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
+[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="8_nkngf"]
 
 [sub_resource type="Theme" id="Theme_cknyc"]
 
@@ -31,14 +35,14 @@ sky = SubResource("Sky_qxbuv")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsxhh"]
+size = Vector3(0.907776, 1.4231, 0.70459)
+
 [sub_resource type="BoxMesh" id="BoxMesh_c6gp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2rpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_al7e0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jsxhh"]
-size = Vector3(0.907776, 1.4231, 0.70459)
 
 [node name="ConvenienceStore" type="Node3D"]
 
@@ -53,7 +57,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/Control"]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Control" node_paths=PackedStringArray("key", "boxFull")]
+script = ExtResource("1_xsj26")
+key = NodePath("InvKey")
+boxFull = NodePath("InvBox/InvBoxFull")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
 position = Vector2(935, 551)
@@ -68,7 +75,8 @@ position = Vector2(2, 1)
 texture = ExtResource("2_wuks6")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
-modulate = Color(1, 1, 1, 0)
+
+modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(1515, 855)
 texture = ExtResource("2_hvg0v")
 
@@ -94,6 +102,22 @@ theme_override_fonts/font = ExtResource("4_e2tq5")
 text = " Stack Shelves"
 expand_icon = true
 
+[node name="Dialogue" type="Label" parent="CanvasLayer/Control"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 687.0
+offset_top = 976.0
+offset_right = 1083.0
+offset_bottom = 1056.0
+theme_override_fonts/font = ExtResource("5_cbci7")
+theme_override_font_sizes/font_size = 20
+text = "HELLO"
+
+[node name="DialogueReciever" parent="CanvasLayer/Control/Dialogue" node_paths=PackedStringArray("Display") instance=ExtResource("1_qg2rs")]
+Display = NodePath("..")
+typing_speed = 0.03
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2w04y")
 
@@ -110,6 +134,32 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 4
+
+[node name="Poster1" type="Sprite3D" parent="SubViewportContainer"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
+texture = ExtResource("5_77cbp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster1" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster1/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
+
+[node name="Poster2" type="Sprite3D" parent="SubViewportContainer"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
+texture = ExtResource("6_nm5b7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster2" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster2/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -179,6 +229,7 @@ shape = SubResource("BoxShape3D_e2rpp")
 [node name="Object1" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, 0.822025)
 script = ExtResource("1_e1alj")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object1"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -202,7 +253,7 @@ skeleton = NodePath("../../../..")
 
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
-script = ExtResource("1_e1alj")
+script = ExtResource("8_nkngf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -284,3 +335,4 @@ ID = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_jsxhh")
+

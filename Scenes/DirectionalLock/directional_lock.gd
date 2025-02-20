@@ -4,6 +4,7 @@ extends Node2D
 var UserInput: Array[int]
 var isMouse
 var mouse_left_down = false
+var mouse_right_down = false
 var puzzleStarted = false
 
 
@@ -14,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(mouse_left_down and puzzleStarted):
+	if((mouse_left_down or mouse_right_down) and puzzleStarted):
 		turnLock(delta)
 	elif(puzzleStarted):
 		checkPos()
@@ -25,7 +26,10 @@ func _process(delta: float) -> void:
 func turnLock(delta) ->void:
 	if(Lock.rotation_degrees >= 360):
 		Lock.rotation = 0
-	Lock.rotate(0.5 * PI * delta) 
+	if mouse_right_down: 
+		Lock.rotate(-0.5 * PI * delta) 
+	else:
+		Lock.rotate(0.5 * PI * delta) 
 
 func checkPos() ->void:
 	if(Lock.rotation_degrees <= 365 && Lock.rotation_degrees >= 360 || 
@@ -62,6 +66,11 @@ func _input(event):
 			puzzleStarted = true
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			mouse_left_down = false
+		if event.button_index == MOUSE_BUTTON_RIGHT and isMouse and event.pressed:
+			mouse_right_down = true
+			puzzleStarted = true
+		elif event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
+			mouse_right_down = false
 
 func _on_area_2d_mouse_exited() -> void:
 	if(!mouse_left_down):
