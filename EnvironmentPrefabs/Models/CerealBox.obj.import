@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brund2ktgiyw5"
+path="res://.godot/imported/CerealBox.obj-d1b60383e0ec0c2b73c4b408646039ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CerealBox.obj-d1b60383e0ec0c2b73c4b408646039ca.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/CerealBox.obj"
+dest_files=["res://.godot/imported/CerealBox.obj-d1b60383e0ec0c2b73c4b408646039ca.mesh", "res://.godot/imported/CerealBox.obj-d1b60383e0ec0c2b73c4b408646039ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
