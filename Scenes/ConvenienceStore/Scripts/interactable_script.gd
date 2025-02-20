@@ -21,10 +21,11 @@ func area() -> void:
 			return
 	#PLACE OBJECT CODE HERE
 	if(MainManager.HeldItem != null):
-		add_child(MainManager.HeldItem)
+		reparent(MainManager.HeldItem)
 		MainManager.HeldItem.visible = true
 		MainManager.HeldItem.global_position = global_position
 		MainManager.HeldItem = null
+		MainManager.inrease_shelf_int()
 
 func read() -> void:
 	SpriteRef.texture = parent.texture
