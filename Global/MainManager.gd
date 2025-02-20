@@ -32,4 +32,4 @@ func _process(delta: float) -> void:
 func inrease_shelf_int():
 	ItemsPlaced += 1
 	if (ItemsPlaced >= 4):
-		pass
+		print("yay!")
