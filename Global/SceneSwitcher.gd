@@ -23,6 +23,7 @@ const SCENES = {
 }
 
 var current_scene = null
+var current_scene_type
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -30,7 +31,9 @@ func _ready() -> void:
 func switch_scene(scene_type: int) -> void:
 	if (not SCENES.has(scene_type)):
 		print("Invalid scene type:", scene_type)
-		return
+		return	
+	current_scene_type = scene_type
+	
 	_deferred_switch_scene(SCENES[scene_type].instantiate())
 	
 	
@@ -40,7 +43,12 @@ func _deferred_switch_scene(new_scene):
 
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene
+	if(current_scene_type != SceneType.STORE):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_scene = new_scene
+	
 	
 func _input(event):
 	if event.is_action_pressed("Esc"):

@@ -13,11 +13,6 @@ func _ready() -> void:
 	cam = $Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton: # if mouse clicks anything in game window, capture cursor
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed("ui_cancel"): # if 'esc' pressed, release cursor
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		
 	if (Input.mouse_mode == Input.MOUSE_MODE_CAPTURED) and (event is InputEventMouseMotion):
 		rotate_y(-event.relative.x * 0.01)
 		cam.rotate_x(-event.relative.y * 0.01)

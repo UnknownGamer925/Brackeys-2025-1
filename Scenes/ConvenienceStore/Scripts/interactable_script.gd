@@ -5,8 +5,10 @@ extends Node3D
 @onready var HUDcontrol : Control = $"../../../CanvasLayer/Control"
 
 @export var parent : Sprite3D
-@export var ID: int
+@export var ID: int = -1
+@export var dialogue_key:String = ""
 @export var SceneType : SceneSwitcher.SceneType
+
 
 func object() -> void:
 	if(MainManager.HeldItem == null):
