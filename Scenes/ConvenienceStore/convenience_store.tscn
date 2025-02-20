@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=15 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
-[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/scene_change.gd" id="1_dnnad"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
-[ext_resource type="Script" path="res://Scenes/ConvenienceStore/item_script.gd" id="1_xbu3b"]
+[ext_resource type="Texture2D" uid="uid://d0wbip7das54e" path="res://Scenes/ConvenienceStore/Assets/Page 1.svg" id="1_mmtop"]
+[ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
+[ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
+[ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -46,6 +48,19 @@ mouse_filter = 2
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
 position = Vector2(935, 551)
 scale = Vector2(0.757104, 0.720017)
+
+[node name="InvBox" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+position = Vector2(1739, 914)
+texture = ExtResource("1_mmtop")
+
+[node name="InvBoxFull" type="Sprite2D" parent="CanvasLayer/Control/Node2D/InvBox"]
+position = Vector2(2, 1)
+texture = ExtResource("2_wuks6")
+
+[node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1515, 855)
+texture = ExtResource("2_hvg0v")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2w04y")
@@ -113,7 +128,7 @@ skeleton = NodePath("../../../..")
 
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
-script = ExtResource("1_dnnad")
+script = ExtResource("1_e1alj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -125,7 +140,9 @@ skeleton = NodePath("../../../..")
 
 [node name="Object3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.401688, 0.0916146, 0, -0.0409152, 0.899432, 0, 0, 0, 0.450017, -4.69538, 0.965872, 2.16347)
-script = ExtResource("1_xbu3b")
+script = ExtResource("1_e1alj")
+ID = 3
+SceneType = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -146,15 +163,28 @@ ID = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
 shape = SubResource("BoxShape3D_al7e0")
 
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer"]
+[node name="Poster1" type="Sprite3D" parent="SubViewportContainer"]
 transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
 texture = ExtResource("5_77cbp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Sprite3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster1" node_paths=PackedStringArray("parent")]
 script = ExtResource("1_e1alj")
-texture = ExtResource("5_77cbp")
+parent = NodePath("..")
 ID = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Sprite3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster1/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
+
+[node name="Poster2" type="Sprite3D" parent="SubViewportContainer"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
+texture = ExtResource("6_nm5b7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster2" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster2/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_jsxhh")
