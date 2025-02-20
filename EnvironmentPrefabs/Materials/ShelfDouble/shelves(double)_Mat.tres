@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://3v7t2ddpep1m"]
+
+[ext_resource type="Texture2D" uid="uid://b1p8brpljpi21" path="res://EnvironmentPrefabs/Materials/ShelfDouble/DefaultMaterial_Base_color.png" id="1_1d40q"]
+[ext_resource type="Texture2D" uid="uid://crnlidwv5qvna" path="res://EnvironmentPrefabs/Materials/ShelfDouble/DefaultMaterial_Metallic.png" id="2_175ou"]
+[ext_resource type="Texture2D" uid="uid://dc8gu630a2yim" path="res://EnvironmentPrefabs/Materials/ShelfDouble/DefaultMaterial_Normal.png" id="3_yw0ci"]
+[ext_resource type="Texture2D" uid="uid://nek8f36txb8l" path="res://EnvironmentPrefabs/Materials/ShelfDouble/DefaultMaterial_Roughness.png" id="4_4ho24"]
+
+[resource]
+albedo_texture = ExtResource("1_1d40q")
+metallic = 1.0
+metallic_texture = ExtResource("2_175ou")
+roughness_texture = ExtResource("4_4ho24")
+normal_enabled = true
+normal_texture = ExtResource("3_yw0ci")
