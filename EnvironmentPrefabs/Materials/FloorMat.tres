@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ceifwdjjvpe7t"]
+
+[ext_resource type="Texture2D" uid="uid://wwmysh6o7oso" path="res://EnvironmentPrefabs/Materials/FloorTextures.png" id="1_o58ur"]
+
+[resource]
+albedo_texture = ExtResource("1_o58ur")
+uv1_scale = Vector3(5, 5, 5)
+uv2_scale = Vector3(5, 5, 5)

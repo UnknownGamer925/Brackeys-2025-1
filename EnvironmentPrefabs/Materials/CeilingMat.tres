@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bvykiqmfnp4ns"]
+
+[ext_resource type="Texture2D" uid="uid://wwmysh6o7oso" path="res://EnvironmentPrefabs/Materials/FloorTextures.png" id="1_vdo3a"]
+
+[resource]
+albedo_color = Color(0.44, 0.367473, 0.2508, 1)
+albedo_texture = ExtResource("1_vdo3a")
