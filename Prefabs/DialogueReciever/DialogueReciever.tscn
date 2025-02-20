@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c06tdomveeeu2"]
+
+[ext_resource type="Script" path="res://Prefabs/DialogueReciever/Scripts/dialogue_reciever.gd" id="1_ugyuk"]
+
+[node name="DialogueReciever" type="Node3D"]
+script = ExtResource("1_ugyuk")
+dialogue_file = "res://Global/json/Dialogue.json"

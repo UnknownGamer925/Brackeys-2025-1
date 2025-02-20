@@ -101,6 +101,7 @@ skeleton = NodePath("../..")
 
 [node name="Area3D" type="Area3D" parent="Pivot/Camera3D"]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 1.03542e-07, -0.127786, -1.18438)
+collision_layer = 3
 script = ExtResource("4_g41nh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/Area3D"]

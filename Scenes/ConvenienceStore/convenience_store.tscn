@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=14 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
-[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/scene_change.gd" id="1_dnnad"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
-[ext_resource type="Script" path="res://Scenes/ConvenienceStore/item_script.gd" id="1_xbu3b"]
+[ext_resource type="PackedScene" uid="uid://c06tdomveeeu2" path="res://Prefabs/DialogueReciever/DialogueReciever.tscn" id="1_qg2rs"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="3_hpcuf"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/KeyScript.gd" id="4_dh46r"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
@@ -29,6 +30,8 @@ glow_enabled = true
 size = Vector3(0.907776, 1.4231, 0.70459)
 
 [node name="ConvenienceStore" type="Node3D"]
+
+[node name="DialogueReciever" parent="." instance=ExtResource("1_qg2rs")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -102,6 +105,7 @@ shape = SubResource("BoxShape3D_e2rpp")
 [node name="Object1" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, 0.822025)
 script = ExtResource("1_e1alj")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object1"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -113,7 +117,7 @@ skeleton = NodePath("../../../..")
 
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
-script = ExtResource("1_dnnad")
+script = ExtResource("3_hpcuf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -125,7 +129,8 @@ skeleton = NodePath("../../../..")
 
 [node name="Object3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.401688, 0.0916146, 0, -0.0409152, 0.899432, 0, 0, 0, 0.450017, -4.69538, 0.965872, 2.16347)
-script = ExtResource("1_xbu3b")
+script = ExtResource("4_dh46r")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -152,7 +157,6 @@ texture = ExtResource("5_77cbp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Sprite3D"]
 script = ExtResource("1_e1alj")
-texture = ExtResource("5_77cbp")
 ID = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Sprite3D/StaticBody3D"]

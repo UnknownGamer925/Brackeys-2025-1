@@ -9,9 +9,20 @@ var Player:CharacterBody3D
 
 #Objectives Complete
 var TillComplete = false
-var ShelvesStacks = false
+var ShelvesStacked = false
 var LightsComplete = false
+
+var hasKey = false
 
 var BadLights = false
 var LockComplete = false
 var BoxComplete = false
+
+signal display_dialogue(dialogue_key)
+signal update_dialogue()
+
+signal bad_ending_enabled()
+
+func _process(delta: float) -> void:
+	if(BadLights):
+		emit_signal("bad_ending_enabled")

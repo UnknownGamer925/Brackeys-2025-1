@@ -1,14 +1,12 @@
+class_name Interactable
 extends Node3D
 
-var SpriteRef : Sprite2D 
-var HUDcontrol : Control 
+@onready var SpriteRef : Sprite2D = $"../../../CanvasLayer/Control/Node2D/Sprite2D"
+@onready var HUDcontrol : Control = $"../../../CanvasLayer/Control"
 
-@export var texture : Texture2D
-@export var ID: int
-
-func _ready() -> void:
-	SpriteRef = $"../../../CanvasLayer/Control/Node2D/Sprite2D"
-	HUDcontrol = $"../../../CanvasLayer/Control"
+@export var parent : Sprite3D
+@export var ID: int = -1
+@export var dialogue_key:String = ""
 
 func object() -> void:
 	if(MainManager.HeldItem == null):
@@ -29,7 +27,7 @@ func area() -> void:
 		MainManager.HeldItem = null
 
 func read() -> void:
-	SpriteRef.texture = texture
+	SpriteRef.texture = parent.texure
 	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
 	MainManager.MovementLocked = true
 	
