@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bd2x1gyucxqp5"
+path="res://.godot/imported/Till.obj-c2c384af1a0cfabd95b0c278229f51ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Till.obj-c2c384af1a0cfabd95b0c278229f51ed.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/Till.obj"
+dest_files=["res://.godot/imported/Till.obj-c2c384af1a0cfabd95b0c278229f51ed.mesh", "res://.godot/imported/Till.obj-c2c384af1a0cfabd95b0c278229f51ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2k5ncaaoh7nj"]
+
+[ext_resource type="ArrayMesh" uid="uid://diadpkxsdsnqg" path="res://EnvironmentPrefabs/Models/GeneralShelves(EndRight).obj" id="1_dpuww"]
+[ext_resource type="Texture2D" uid="uid://bitr880c6b5xg" path="res://EnvironmentPrefabs/Materials/ShelfEndRight/DefaultMaterial_Base_color.png" id="2_nskbo"]
+[ext_resource type="Texture2D" uid="uid://bsu1xgcrj3qj1" path="res://EnvironmentPrefabs/Materials/ShelfEndRight/DefaultMaterial_Metallic.png" id="3_c0v6y"]
+[ext_resource type="Texture2D" uid="uid://dc0bhobb82667" path="res://EnvironmentPrefabs/Materials/ShelfEndRight/DefaultMaterial_Normal.png" id="4_8ahnn"]
+[ext_resource type="Texture2D" uid="uid://b1rj8imgbdbo5" path="res://EnvironmentPrefabs/Materials/ShelfEndRight/DefaultMaterial_Roughness.png" id="5_mntku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djf18"]
+albedo_texture = ExtResource("2_nskbo")
+metallic = 1.0
+metallic_texture = ExtResource("3_c0v6y")
+roughness_texture = ExtResource("5_mntku")
+normal_enabled = true
+normal_texture = ExtResource("4_8ahnn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sn8uy"]
+size = Vector3(3.85866, 9.15631, 2.31244)
+
+[node name="GeneralShelves(endRight)" type="MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("1_dpuww")
+skeleton = NodePath("../../Backroom")
+surface_material_override/0 = SubResource("StandardMaterial3D_djf18")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3233, -0.104889, 1.03311)
+shape = SubResource("BoxShape3D_sn8uy")

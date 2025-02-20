@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0m0m0s7axklk"]
+
+[ext_resource type="ArrayMesh" uid="uid://b85yf5yjnubmn" path="res://EnvironmentPrefabs/Models/CounterShelf.obj" id="1_f6lms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f7c3"]
+size = Vector3(7.98206, 1.46228, 1.74194)
+
+[node name="CounterShelf" type="MeshInstance3D"]
+transform = Transform3D(-0.711323, 0, -6.21858e-08, 0, 0.83627, 0, 6.21858e-08, 0, -0.711323, -5.3084, 0.466472, 21.5338)
+mesh = ExtResource("1_f6lms")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999976, 0, 0, 0, 1, -0.00213671, 0.004089, -0.162474)
+shape = SubResource("BoxShape3D_7f7c3")

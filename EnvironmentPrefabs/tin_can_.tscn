@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuqni2cdu1lx6"]
+
+[ext_resource type="ArrayMesh" uid="uid://p17f2p6s18bt" path="res://EnvironmentPrefabs/Models/TinCan2.obj" id="1_8vdc2"]
+[ext_resource type="Texture2D" uid="uid://c56xlft5nf5vu" path="res://EnvironmentPrefabs/Materials/Tin1/DefaultMaterial_Base_color.png" id="2_fa76c"]
+[ext_resource type="Texture2D" uid="uid://colxpvf1xfq4s" path="res://EnvironmentPrefabs/Materials/Tin1/DefaultMaterial_Metallic.png" id="3_du7wj"]
+[ext_resource type="Texture2D" uid="uid://cfkevnv4lj55k" path="res://EnvironmentPrefabs/Materials/Tin1/DefaultMaterial_Normal.png" id="4_tpj0i"]
+[ext_resource type="Texture2D" uid="uid://dsk8rg80utfy0" path="res://EnvironmentPrefabs/Materials/Tin1/DefaultMaterial_Roughness.png" id="5_f3heb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vu2d2"]
+albedo_texture = ExtResource("2_fa76c")
+metallic = 1.0
+metallic_texture = ExtResource("3_du7wj")
+roughness_texture = ExtResource("5_f3heb")
+normal_enabled = true
+normal_texture = ExtResource("4_tpj0i")
+
+[node name="TinCan1" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.924541, 3.93562, 9.11165)
+mesh = ExtResource("1_8vdc2")
+skeleton = NodePath("../../SubViewportContainer/SubViewport")
+surface_material_override/0 = SubResource("StandardMaterial3D_vu2d2")

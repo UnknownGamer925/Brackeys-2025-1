@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5o8a48ek5064"]
+
+[ext_resource type="ArrayMesh" uid="uid://cuqsoi818pxoa" path="res://EnvironmentPrefabs/Models/GeneralShelves(Double).obj" id="1_bjkty"]
+[ext_resource type="Material" uid="uid://3v7t2ddpep1m" path="res://EnvironmentPrefabs/Materials/ShelfDouble/shelves(double)_Mat.tres" id="2_vct0b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sqqv4"]
+size = Vector3(15.9688, 9.45026, 4.27301)
+
+[node name="GeneralShelves(double)" type="MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.85859, 2.61542, 9.01671)
+mesh = ExtResource("1_bjkty")
+skeleton = NodePath("../../Backroom")
+surface_material_override/0 = ExtResource("2_vct0b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8456, -0.160552, 0.0374432)
+shape = SubResource("BoxShape3D_sqqv4")
