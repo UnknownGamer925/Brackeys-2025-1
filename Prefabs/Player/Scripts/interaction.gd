@@ -21,11 +21,11 @@ func _input(event):
 					in_view.read()
 				3:
 					in_view.change_scene()
-          
-       #DialogueAreaHandle
-			 MainManager.emit_signal("update_dialogue")
-			 if(in_view.get("dialogue_key") != null):
-			  MainManager.emit_signal("display_dialogue", in_view.get("dialogue_key"))
+		  
+	   #DialogueAreaHandle
+			MainManager.emit_signal("update_dialogue")
+			if(in_view.get("dialogue_key") != null):
+				MainManager.emit_signal("display_dialogue", in_view.get("dialogue_key"))
 
 	
 
