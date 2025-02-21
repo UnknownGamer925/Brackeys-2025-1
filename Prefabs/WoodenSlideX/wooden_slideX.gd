@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	if(mouse_left_down):
 		move(delta)
 		
+		
 func setUp(multipler, target) -> void:
 	scale.x = multipler / scale.x
 	if(target == 1):
@@ -44,6 +45,7 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and isMouse and event.pressed:
 			mouse_left_down = true
 			offset = get_global_mouse_position() - global_position
+			play_audio()
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			mouse_left_down = false
 			isMouse = false;
@@ -65,3 +67,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	goRight = true
 	goLeft = true
+
+func play_audio():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOX_DRAG_1)
+
+		

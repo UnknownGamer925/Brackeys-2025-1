@@ -23,19 +23,23 @@ func _process(delta: float) -> void:
 func _on_button_1_pressed() -> void:
 	A = not A
 	B = not B
+	play_audio()
 
 func _on_button_2_pressed() -> void:
 	A = not A
 	C = not C
+	play_audio()
 	
 
 func _on_button_3_pressed() -> void:
 	B = not B
 	C = not C
+	play_audio()
 	
 func _on_button_4_pressed() -> void:
 	C = not C
 	D = not D
+	play_audio()
 
 func changeColours() -> void:
 	if(A):
@@ -61,8 +65,16 @@ func checkCorrect() -> void:
 		MainManager.LightsComplete = true
 		Button5.disabled = false
 		
+		
 
 
 func _on_bad_button_pressed() -> void:
 	print("You're in for a bad time >:)")
+	play_audio()
 	MainManager.BadLights = true
+	MainManager.emit_signal("bad_ending_enabled")
+
+func play_audio():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)
+
+		

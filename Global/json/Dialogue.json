@@ -1,30 +1,31 @@
 {
-    
-    "good_tasks_unfinished":[
-        "I gotta finish my tasks before I lock up or my boss is gonna kill me"
-    ],
+	
+	"good_tasks_unfinished":[
+		"I gotta finish my tasks before I lock up or my boss is gonna kill me"
+	],
 
-    "good_tasks_finished":[
-        "Guess I'm done for the day, got to lock up before I leave"
-    ],
+	"good_tasks_finished":[
+		"Guess I'm done for the day, got to lock up before I leave"
+	],
 
-    "no_key":[
-        "Wait where's my key? - Can't see a damn thing now the lights are out"
-    ],
-    "bad_door":[
-        "Damn. Locked. Guess I should go find the spare key..."
-    ],
+	"no_key":[
+		"Wait where's my key? - Can't see a damn thing now the lights are out"
+	],
+	"bad_door":[
+		"Damn. Locked. Guess I should go find the spare key..."
+	],
 
-    "reaction":[
-        "What was that?"
-    ],
+	"reaction":[
+		"What was that?"
+	],
 
-    "bad_end":[
-        "You weren't suppose to be here..."
-    ],
+	"bad_end":[
+		"What on earth?",
+		"You weren't suppose to be here..."
+	],
 
-    "good_end":[
-        "Yippee!"
-    ]
+	"good_end":[
+		"Yippee!"
+	]
 
 }
