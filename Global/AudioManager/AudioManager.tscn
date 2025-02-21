@@ -135,7 +135,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 17
 sound_effect = ExtResource("18_0pk8k")
-volume = -20.0
+volume = -15.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -279,7 +279,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 33
 sound_effect = ExtResource("35_7up5i")
-volume = -30.0
+volume = -20.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 

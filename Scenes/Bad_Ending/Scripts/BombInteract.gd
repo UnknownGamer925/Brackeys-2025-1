@@ -20,6 +20,7 @@ func _on_timer_timeout() -> void:
 	if(beenHit):
 		start = false
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LAYERED_EXPLOSION)
+		waitTimer.stop()
 	else:
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHOVEL_HIT)
 		beenHit = true
