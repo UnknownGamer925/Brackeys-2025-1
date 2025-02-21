@@ -9,6 +9,7 @@ func _ready():
 	
 
 func _on_back_pressed():
+	play_audio()
 	SceneSwitcher.switch_scene(SceneSwitcher.SceneType.MAIN_MENU)
 
 func _on_resolutions_item_selected(index):
@@ -35,8 +36,19 @@ func _on_resolutions_item_selected(index):
 			print("800 x 600")
 
 func _on_check_box_toggled(toggled_on):
+	play_audio()
 	if toggled_on == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		get_window().move_to_center()
+
+func play_audio():
+	var randomInt = MainManager.rng.randi_range(1,3)
+	match randomInt:
+		1:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_1)
+		2:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_2)
+		3:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_3)

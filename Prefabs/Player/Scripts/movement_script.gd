@@ -21,9 +21,6 @@ func _physics_process(delta: float) -> void:
 	
 	var direction : Vector3 = (camera.basis * Vector3(h_axis, 0, v_axis)).normalized()
 	
-
-	
-	
 	if direction:
 		velocity.x = direction.x * SPEED * delta
 		velocity.z = direction.z * SPEED * delta
@@ -35,4 +32,16 @@ func _physics_process(delta: float) -> void:
 	if (!MainManager.MovementLocked):
 		if direction != Vector3():
 			animator.play("head_bob")
+			call_deferred("play_audio")
 		move_and_slide()
+	
+	
+func play_audio():
+	var randomInt = MainManager.rng.randi_range(1,3)
+	match randomInt:
+		1:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.FOOTSTEP_1)
+		2:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.FOOTSTEP_2)
+		3:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.FOOTSTEP_3)

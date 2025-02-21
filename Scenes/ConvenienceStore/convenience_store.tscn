@@ -109,7 +109,6 @@ offset_right = 1083.0
 offset_bottom = 1056.0
 theme_override_fonts/font = ExtResource("5_cbci7")
 theme_override_font_sizes/font_size = 20
-text = "HELLO"
 
 [node name="DialogueReciever" parent="CanvasLayer/Control/Dialogue" node_paths=PackedStringArray("Display") instance=ExtResource("1_qg2rs")]
 Display = NodePath("..")
@@ -309,29 +308,3 @@ ID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
-
-[node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
-texture = ExtResource("5_77cbp")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster1" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
-
-[node name="Poster2" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
-texture = ExtResource("6_nm5b7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster2" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")

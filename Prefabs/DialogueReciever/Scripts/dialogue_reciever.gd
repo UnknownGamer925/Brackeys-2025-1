@@ -3,9 +3,11 @@ extends Node3D
 @export_file("*json") var dialogue_file: String
 var dialogue_text = {}
 var selected_text = []
+var dialogue_index = 0
 @export var typing_speed: float = 0.5  # Time between characters
-@export var reading_speed: float = 2
+@export var reading_speed: float = 3
 
+var current_key;
 var current_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -16,10 +18,12 @@ func _ready() -> void:
 
 # Function that runs when the signal is emitted
 func _on_display_dialogue(dialogue_key):
-	if dialogue_text.has(dialogue_key):
+	print("DIALOGUE UPDATED")
+	current_key = dialogue_key
+	if dialogue_text.has(current_key):
 		$Timer.wait_time = typing_speed
-		selected_text = dialogue_text[dialogue_key].duplicate()
-		Display.text = selected_text[0]
+		selected_text = dialogue_text[current_key].duplicate()
+		Display.text = selected_text[dialogue_index]
 		$Timer.start()
 	else:
 		print("Dialogue key not found:", dialogue_key)
@@ -40,12 +44,12 @@ func load_scene_text():
 
 func _on_timer_timeout() -> void:
 	Display.visible = true
-	if current_index < selected_text[0].length():
+	if current_index < selected_text[dialogue_index].length():
 		Display.visible_characters += 1
 		current_index += 1
 		$Timer.wait_time = typing_speed
 		$Timer.start()
-	elif current_index == selected_text[0].length():
+	elif current_index == selected_text[dialogue_index].length():
 		$Timer.wait_time = reading_speed
 		current_index += 1
 		$Timer.start()
@@ -54,3 +58,9 @@ func _on_timer_timeout() -> void:
 		Display.visible = false
 		current_index = 0
 		Display.visible_characters = 0
+		if(selected_text.size() - 1 >= dialogue_index + 1):
+			dialogue_index += 1
+			_on_display_dialogue(current_key)
+		else:
+				dialogue_index = 0
+			

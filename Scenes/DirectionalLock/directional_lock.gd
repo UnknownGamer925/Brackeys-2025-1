@@ -24,37 +24,46 @@ func _process(delta: float) -> void:
 
 
 func turnLock(delta) ->void:
-	if(Lock.rotation_degrees >= 360):
-		Lock.rotation = 0
-	if mouse_right_down: 
-		Lock.rotate(-0.5 * PI * delta) 
+	var rotation_speed = 1 * delta  # Adjust speed factor
+	var target_rotation = Lock.rotation_degrees
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		target_rotation -= 90
 	else:
-		Lock.rotate(0.5 * PI * delta) 
+		target_rotation += 90
+
+	# Smooth transition using lerp
+	Lock.rotation_degrees = lerp(Lock.rotation_degrees, target_rotation, rotation_speed)
+	
 
 func checkPos() ->void:
-	if(Lock.rotation_degrees <= 365 && Lock.rotation_degrees >= 360 || 
-	Lock.rotation_degrees <= 10 && Lock.rotation_degrees >= 0):
+	var normalized_rotation = fmod(Lock.rotation_degrees, 360)
+	
+	if(normalized_rotation >= 355 or normalized_rotation <= 15):
 		UserInput.append(1)	
 	
-	if(Lock.rotation_degrees <= 95 && Lock.rotation_degrees >= 85):
+	if(normalized_rotation >= 80 and normalized_rotation <= 100):
 		UserInput.append(2)	
 	
-	if(Lock.rotation_degrees <= 185 && Lock.rotation_degrees >= 175):
+	if(normalized_rotation >= 170 and normalized_rotation <= 190):
 		UserInput.append(3)	
 		
-	if(Lock.rotation_degrees <= 275 && Lock.rotation_degrees >= 265):
+	if(normalized_rotation >= 260 and normalized_rotation <= 280):
 		UserInput.append(4)	
+		
 	puzzleStarted = false
 	print(UserInput)
 
 func confirm(delta) -> void:
 	if (Combination == UserInput):
 		MainManager.LockComplete = true
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.DIR_LOCK_RIGHT)
 		SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 	else:
 		UserInput.clear()
 		puzzleStarted = false
-		Lock.rotate( PI * delta) 
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.DIR_LOCK_WRONG)
+		Lock.rotation_degrees = 360
 
 func _on_area_2d_mouse_entered() -> void:
 	isMouse = true;
@@ -64,13 +73,16 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and isMouse and event.pressed:
 			mouse_left_down = true
 			puzzleStarted = true
+			play_audio()
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			mouse_left_down = false
 		if event.button_index == MOUSE_BUTTON_RIGHT and isMouse and event.pressed:
 			mouse_right_down = true
 			puzzleStarted = true
+			play_audio()
 		elif event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
 			mouse_right_down = false
+		
 
 func _on_area_2d_mouse_exited() -> void:
 	if(!mouse_left_down):
@@ -81,3 +93,11 @@ func _on_button_pressed() -> void:
 	UserInput.clear()
 	puzzleStarted = false
 	Lock.rotation_degrees = 0
+	
+func play_audio():
+	var randomInt = MainManager.rng.randi_range(1,2)
+	match randomInt:
+		1:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_1)
+		2:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)

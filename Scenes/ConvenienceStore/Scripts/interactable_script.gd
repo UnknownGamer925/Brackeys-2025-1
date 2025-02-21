@@ -15,6 +15,7 @@ func object() -> void:
 		MainManager.HeldItem = self
 		visible = false
 		position = Vector3(-5,-5,-5)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PICKUP)
 	
 
 func area() -> void:
@@ -27,11 +28,13 @@ func area() -> void:
 		MainManager.HeldItem.visible = true
 		MainManager.HeldItem.global_position = global_position
 		MainManager.HeldItem = null
-		MainManager.inrease_shelf_int()
+		MainManager.increase_shelf_int()
+		play_audio()
 
 func read() -> void:
 	SpriteRef.texture = parent.texture
 	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PAPER_RUSTLE)
 	MainManager.MovementLocked = true
 	
 	
@@ -43,6 +46,7 @@ func _input(event: InputEvent) -> void:
 
 func drop() -> void: 
 	if(MainManager.HeldItem != null):
+		play_audio()
 		MainManager.HeldItem.visible = true
 		MainManager.HeldItem.global_position = MainManager.Player.global_position
 		MainManager.HeldItem = null
@@ -57,3 +61,14 @@ func change_scene():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	SceneSwitcher.switch_scene(SceneType)
 	
+func play_audio():
+	var randomInt = MainManager.rng.randi_range(1,4)
+	match randomInt:
+		1:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PLACING_ITEM_CAN_1)
+		2:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PLACING_ITEM_CAN_2)
+		3:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PLACING_ITEM_BOX_1)
+		4:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PLACING_ITEM_BOX_2)

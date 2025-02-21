@@ -33,8 +33,11 @@ func _on_enter_button_pressed() -> void:
 		if(Combination != TillTotal):
 			print("Till Open count money!!")
 			Combination = TillTotal
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TILL_OPEN)
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CASH_JINGLE)
 		else:
 			MainManager.TillComplete = true
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TILL_CLOSE)
 			SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 			print("Yay!")
 		TillDisplay.text = "00.00"
