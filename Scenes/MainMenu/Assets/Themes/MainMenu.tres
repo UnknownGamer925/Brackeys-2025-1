@@ -1,6 +1,9 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bug47d73a6l83"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bug47d73a6l83"]
 
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="1_rgxqc"]
+[ext_resource type="Texture2D" uid="uid://cvt65c0jtk6bv" path="res://Scenes/ConvenienceStore/Assets/Checked_Circle_2.png" id="2_xwe4m"]
+[ext_resource type="Texture2D" uid="uid://c2dulafjhpw52" path="res://Scenes/ConvenienceStore/Assets/Unchecked_Circle.png" id="3_7ro1r"]
+[ext_resource type="Texture2D" uid="uid://dnuo67oi3xnuv" path="res://Scenes/MainMenu/Assets/Arrow_2.png" id="4_7285l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uuba"]
 
@@ -11,6 +14,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stprx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i73mb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqqbt"]
 
 [resource]
 default_font = ExtResource("1_rgxqc")
@@ -24,3 +29,10 @@ Button/styles/focus = SubResource("StyleBoxEmpty_3vliu")
 Button/styles/hover = SubResource("StyleBoxEmpty_gnr8x")
 Button/styles/normal = SubResource("StyleBoxEmpty_stprx")
 Button/styles/pressed = SubResource("StyleBoxEmpty_i73mb")
+CheckBox/font_sizes/font_size = 32
+CheckBox/icons/checked = ExtResource("2_xwe4m")
+CheckBox/icons/unchecked = ExtResource("3_7ro1r")
+HSlider/styles/slider = SubResource("StyleBoxTexture_aqqbt")
+OptionButton/font_sizes/font_size = 24
+OptionButton/fonts/font = ExtResource("1_rgxqc")
+OptionButton/icons/arrow = ExtResource("4_7285l")
