@@ -44,11 +44,4 @@ func _on_check_box_toggled(toggled_on):
 		get_window().move_to_center()
 
 func play_audio():
-	var randomInt = MainManager.rng.randi_range(1,3)
-	match randomInt:
-		1:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_1)
-		2:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_2)
-		3:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_3)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_3)

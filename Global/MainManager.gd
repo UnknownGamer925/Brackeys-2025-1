@@ -44,7 +44,9 @@ func _process(delta: float) -> void:
 		StoreAudio(delta)
 		if(MenuMusic != null):
 			MenuMusic.queue_free()
-			MenuMusic = null  
+			MenuMusic = null
+		if(!LightsComplete):
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LIGHT_LOOP)
 	else:
 		if(MenuMusic == null):
 			MenuMusic = AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_MUSIC)
@@ -54,7 +56,7 @@ func _process(delta: float) -> void:
 func increase_shelf_int():
 	ItemsPlaced += 1
 	if (ItemsPlaced >= 4):
-		print("yay!")
+		pass
 
 func play_bg_audio():
 	var randomInt = MainManager.rng.randi_range(1,3)

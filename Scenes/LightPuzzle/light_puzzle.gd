@@ -75,9 +75,6 @@ func _on_bad_button_pressed() -> void:
 	MainManager.emit_signal("bad_ending_enabled")
 
 func play_audio():
-	var randomInt = MainManager.rng.randi_range(1,2)
-	match randomInt:
-		1:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LIGHTSWITCH_CLICK_1)
-		2:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LIGHTSWITCH_CLICK_1)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)
+
+		

@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 
 
 func turnLock(delta) ->void:
+	play_audio()
 	var rotation_speed = 1 * delta  # Adjust speed factor
 	var target_rotation = Lock.rotation_degrees
 
@@ -52,7 +53,6 @@ func checkPos() ->void:
 		UserInput.append(4)	
 		
 	puzzleStarted = false
-	print(UserInput)
 
 func confirm(delta) -> void:
 	if (Combination == UserInput):
@@ -73,13 +73,12 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and isMouse and event.pressed:
 			mouse_left_down = true
 			puzzleStarted = true
-			play_audio()
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			mouse_left_down = false
 		if event.button_index == MOUSE_BUTTON_RIGHT and isMouse and event.pressed:
 			mouse_right_down = true
 			puzzleStarted = true
-			play_audio()
+			
 		elif event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
 			mouse_right_down = false
 		
@@ -96,8 +95,10 @@ func _on_button_pressed() -> void:
 	
 func play_audio():
 	var randomInt = MainManager.rng.randi_range(1,2)
-	match randomInt:
-		1:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_1)
-		2:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)
+	var play = MainManager.rng.randi_range(1,10)
+	if(play%3 == 0):
+		match randomInt:
+			1:
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_1)
+			2:
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)

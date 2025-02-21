@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=22 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
+[ext_resource type="Script" path="res://Scenes/Bad_Ending/Scripts/BombInteract.gd" id="10_0lyde"]
 
 [sub_resource type="Theme" id="Theme_cknyc"]
 
@@ -250,8 +251,9 @@ skeleton = NodePath("../../../..")
 
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
-script = ExtResource("1_e1alj")
-ID = 0
+script = ExtResource("10_0lyde")
+ID = 2
+dialogue_key = "bad_end"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -264,7 +266,7 @@ skeleton = NodePath("../../../..")
 [node name="Object3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, 1.2125)
 script = ExtResource("1_e1alj")
-ID = 0
+ID = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")

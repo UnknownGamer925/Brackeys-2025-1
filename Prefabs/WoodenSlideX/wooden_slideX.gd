@@ -69,9 +69,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	goLeft = true
 
 func play_audio():
-	var randomInt = MainManager.rng.randi_range(1,2)
-	match randomInt:
-		1:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOX_DRAG_1)
-		2:
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOX_DRAG_2)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOX_DRAG_1)
+
+		

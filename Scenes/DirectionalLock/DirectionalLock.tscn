@@ -11,7 +11,7 @@ radius = 27.3942
 [node name="DirectionalLock" type="Node2D" node_paths=PackedStringArray("Lock")]
 script = ExtResource("1_uppjd")
 Lock = NodePath("Circle2")
-Combination = Array[int]([2, 3, 4, 1])
+Combination = Array[int]([2, 3, 1, 4])
 
 [node name="SpareBackground" type="Sprite2D" parent="."]
 position = Vector2(961, 500)

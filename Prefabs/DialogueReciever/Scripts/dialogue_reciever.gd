@@ -18,7 +18,6 @@ func _ready() -> void:
 
 # Function that runs when the signal is emitted
 func _on_display_dialogue(dialogue_key):
-	print("DIALOGUE UPDATED")
 	Display.visible = true
 	current_key = dialogue_key
 	if dialogue_text.has(current_key):

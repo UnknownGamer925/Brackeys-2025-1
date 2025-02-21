@@ -34,7 +34,7 @@ func area() -> void:
 func read() -> void:
 	SpriteRef.texture = parent.texture
 	HUDcontrol.mouse_filter = Control.MOUSE_FILTER_STOP
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PAPER_RUSTLE)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PICKUP)
 	MainManager.MovementLocked = true
 	
 	
