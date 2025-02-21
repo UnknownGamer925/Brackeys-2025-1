@@ -33,8 +33,8 @@ func _on_enter_button_pressed() -> void:
 		if(Combination != TillTotal):
 			print("Till Open count money!!")
 			Combination = TillTotal
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TILL_OPEN)
-			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CASH_JINGLE)
+			#AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TILL_OPEN)
+			call_deferred("create_cash_jingle")
 		else:
 			MainManager.TillComplete = true
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TILL_CLOSE)
@@ -44,6 +44,9 @@ func _on_enter_button_pressed() -> void:
 	else:
 		TillDisplay.text = "4O4"
 	UserInput.clear()
+
+func create_cash_jingle():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CASH_JINGLE)
 
 func _on_clear_button_pressed() -> void:
 	TillDisplay.text = "00.00"

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://gdyue6n1w7v8"]
-
-[ext_resource type="Script" path="res://Prefabs/Audio_Player/Scripts/audio_player.gd" id="1_hpelg"]
-
-[node name="Audio Player" type="AudioStreamPlayer2D"]
-script = ExtResource("1_hpelg")

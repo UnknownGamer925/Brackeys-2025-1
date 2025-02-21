@@ -19,12 +19,16 @@ func _ready() -> void:
 # Function that runs when the signal is emitted
 func _on_display_dialogue(dialogue_key):
 	print("DIALOGUE UPDATED")
+	Display.visible = true
 	current_key = dialogue_key
 	if dialogue_text.has(current_key):
 		$Timer.wait_time = typing_speed
 		selected_text = dialogue_text[current_key].duplicate()
 		Display.text = selected_text[dialogue_index]
+		
 		$Timer.start()
+		if current_index == 0:  
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TALKING_SINGLE)
 	else:
 		print("Dialogue key not found:", dialogue_key)
 	
@@ -43,24 +47,35 @@ func load_scene_text():
 
 
 func _on_timer_timeout() -> void:
-	Display.visible = true
 	if current_index < selected_text[dialogue_index].length():
-		Display.visible_characters += 1
-		current_index += 1
-		$Timer.wait_time = typing_speed
-		$Timer.start()
+		_show_next_character()
+		$Timer.start()  # Start the timer for the next character to appear
 	elif current_index == selected_text[dialogue_index].length():
-		$Timer.wait_time = reading_speed
-		current_index += 1
-		$Timer.start()
+		_wait_for_next_line()
 	else:
-		$Timer.stop()
-		Display.visible = false
-		current_index = 0
-		Display.visible_characters = 0
-		if(selected_text.size() - 1 >= dialogue_index + 1):
-			dialogue_index += 1
-			_on_display_dialogue(current_key)
-		else:
-				dialogue_index = 0
-			
+		_finish_dialogue()
+
+# Show the next character and play the sound effect.
+func _show_next_character() -> void:
+	Display.visible_characters += 1
+	current_index += 1
+
+# Wait before moving to the next line of dialogue.
+func _wait_for_next_line() -> void:
+	$Timer.wait_time = reading_speed
+	current_index += 1
+	$Timer.start()  # Start the timer for next line (after a pause)
+
+# Finish the dialogue or move to the next one.
+func _finish_dialogue() -> void:
+	$Timer.stop()  # Stop the timer
+	Display.visible = false
+	current_index = 0
+	Display.visible_characters = 0
+	
+	# Move to the next dialogue or loop back
+	if selected_text.size() > dialogue_index + 1:
+		dialogue_index += 1
+		_on_display_dialogue(current_key)
+	else:
+		dialogue_index = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dqekt27by7wla"]
+[gd_scene load_steps=70 format=3 uid="uid://dqekt27by7wla"]
 
 [ext_resource type="Script" path="res://Global/AudioManager/Scripts/AudioManager.gd" id="1_1cwlw"]
 [ext_resource type="Script" path="res://Global/AudioManager/Scripts/SoundEffectResource.gd" id="2_b62ky"]
@@ -32,13 +32,16 @@
 [ext_resource type="AudioStream" uid="uid://fxmwbctwkcls" path="res://Global/AudioManager/AudioFiles/Eerie_BG_3.wav" id="29_v5kum"]
 [ext_resource type="AudioStream" uid="uid://dbv8gcj01jqxf" path="res://Global/AudioManager/AudioFiles/Bomb_Beep.wav" id="30_w5h1g"]
 [ext_resource type="AudioStream" uid="uid://cptg3kp83hcei" path="res://Global/AudioManager/AudioFiles/Explosion_Layered.wav" id="31_sdwl2"]
+[ext_resource type="AudioStream" uid="uid://ifek5a82rb41" path="res://Global/AudioManager/AudioFiles/Talking_Single.wav" id="33_10h61"]
+[ext_resource type="AudioStream" uid="uid://oxwrltb8q47p" path="res://Global/AudioManager/AudioFiles/Talking_Looped.wav" id="34_004mm"]
+[ext_resource type="AudioStream" uid="uid://dlm5rpmyynj7d" path="res://Global/AudioManager/AudioFiles/Brackeys Song 1.wav" id="35_7up5i"]
 
 [sub_resource type="Resource" id="Resource_0k77y"]
 script = ExtResource("2_b62ky")
 limit = 1
 type = 0
 sound_effect = ExtResource("3_tgl03")
-volume = -15.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -47,7 +50,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 1
 sound_effect = ExtResource("4_1tc0u")
-volume = -20.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -56,7 +59,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 2
 sound_effect = ExtResource("5_hdg0u")
-volume = -15.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -65,7 +68,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 3
 sound_effect = ExtResource("6_qni1e")
-volume = -40.0
+volume = 0.0
 pitch_scale = 0.0
 pitch_randomness = 0.0
 
@@ -119,7 +122,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 9
 sound_effect = ExtResource("11_tkofb")
-volume = -10.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -137,7 +140,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 11
 sound_effect = ExtResource("13_41e8n")
-volume = -5.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -146,7 +149,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 12
 sound_effect = ExtResource("14_pqnik")
-volume = -5.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -173,7 +176,7 @@ script = ExtResource("2_b62ky")
 limit = 3
 type = 15
 sound_effect = ExtResource("17_55tms")
-volume = -5.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -182,7 +185,7 @@ script = ExtResource("2_b62ky")
 limit = 3
 type = 16
 sound_effect = ExtResource("18_gnjeb")
-volume = -10.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -263,7 +266,7 @@ script = ExtResource("2_b62ky")
 limit = 3
 type = 25
 sound_effect = ExtResource("26_7rpmb")
-volume = -40.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -281,7 +284,7 @@ script = ExtResource("2_b62ky")
 limit = 3
 type = 27
 sound_effect = ExtResource("28_vt3ht")
-volume = -30.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -290,7 +293,7 @@ script = ExtResource("2_b62ky")
 limit = 3
 type = 28
 sound_effect = ExtResource("29_v5kum")
-volume = -30.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -299,7 +302,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 29
 sound_effect = ExtResource("30_w5h1g")
-volume = -30.0
+volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -312,6 +315,33 @@ volume = 0.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
+[sub_resource type="Resource" id="Resource_834xg"]
+script = ExtResource("2_b62ky")
+limit = 1
+type = 31
+sound_effect = ExtResource("33_10h61")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+
+[sub_resource type="Resource" id="Resource_w01gw"]
+script = ExtResource("2_b62ky")
+limit = 1
+type = 32
+sound_effect = ExtResource("34_004mm")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+
+[sub_resource type="Resource" id="Resource_74n4f"]
+script = ExtResource("2_b62ky")
+limit = 1
+type = 33
+sound_effect = ExtResource("35_7up5i")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_1cwlw")
-sound_effects = Array[ExtResource("2_b62ky")]([SubResource("Resource_0k77y"), SubResource("Resource_tsbnb"), SubResource("Resource_dqp7t"), SubResource("Resource_em3c7"), SubResource("Resource_i8xl4"), SubResource("Resource_n3nfd"), SubResource("Resource_vjn2d"), SubResource("Resource_2lmd8"), SubResource("Resource_4kbhi"), SubResource("Resource_wn33v"), SubResource("Resource_isyks"), SubResource("Resource_ikovp"), SubResource("Resource_1hby2"), SubResource("Resource_hujt2"), SubResource("Resource_6am5b"), SubResource("Resource_bf8in"), SubResource("Resource_5buf5"), SubResource("Resource_vddk8"), SubResource("Resource_u4axi"), SubResource("Resource_tlb2l"), SubResource("Resource_vwnqc"), SubResource("Resource_gxomg"), SubResource("Resource_ke10i"), SubResource("Resource_svsvl"), SubResource("Resource_wq5n5"), SubResource("Resource_4ftw0"), SubResource("Resource_u22qd"), SubResource("Resource_u0gvb"), SubResource("Resource_iaax0"), SubResource("Resource_ydhs6"), SubResource("Resource_qbrmg")])
+sound_effects = Array[ExtResource("2_b62ky")]([SubResource("Resource_0k77y"), SubResource("Resource_tsbnb"), SubResource("Resource_dqp7t"), SubResource("Resource_em3c7"), SubResource("Resource_i8xl4"), SubResource("Resource_n3nfd"), SubResource("Resource_vjn2d"), SubResource("Resource_2lmd8"), SubResource("Resource_4kbhi"), SubResource("Resource_wn33v"), SubResource("Resource_isyks"), SubResource("Resource_ikovp"), SubResource("Resource_1hby2"), SubResource("Resource_hujt2"), SubResource("Resource_6am5b"), SubResource("Resource_bf8in"), SubResource("Resource_5buf5"), SubResource("Resource_vddk8"), SubResource("Resource_u4axi"), SubResource("Resource_tlb2l"), SubResource("Resource_vwnqc"), SubResource("Resource_gxomg"), SubResource("Resource_ke10i"), SubResource("Resource_svsvl"), SubResource("Resource_wq5n5"), SubResource("Resource_4ftw0"), SubResource("Resource_u22qd"), SubResource("Resource_u0gvb"), SubResource("Resource_iaax0"), SubResource("Resource_ydhs6"), SubResource("Resource_qbrmg"), SubResource("Resource_834xg"), SubResource("Resource_w01gw"), SubResource("Resource_74n4f")])

@@ -238,7 +238,7 @@ skeleton = NodePath("../../../..")
 [node name="Object4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, -0.9234)
 script = ExtResource("1_e1alj")
-ID = 0
+dialogue_key = "bad_door"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object4"]
 shape = SubResource("BoxShape3D_e2rpp")
