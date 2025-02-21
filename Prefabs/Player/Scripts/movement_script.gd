@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		
 
 	if (!MainManager.MovementLocked):
-		if direction != Vector3():
+		if direction != Vector3() and !animator.is_playing():
 			animator.play("head_bob")
 			call_deferred("play_audio")
 		move_and_slide()

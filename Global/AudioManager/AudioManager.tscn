@@ -41,7 +41,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 0
 sound_effect = ExtResource("3_tgl03")
-volume = 0.0
+volume = -15.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -50,7 +50,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 1
 sound_effect = ExtResource("4_1tc0u")
-volume = 0.0
+volume = -15.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
@@ -59,7 +59,7 @@ script = ExtResource("2_b62ky")
 limit = 1
 type = 2
 sound_effect = ExtResource("5_hdg0u")
-volume = 0.0
+volume = -15.0
 pitch_scale = 1.0
 pitch_randomness = 0.0
 
