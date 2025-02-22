@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckmstkm116p75"]
+
+[ext_resource type="Script" path="res://Scenes/Screenshot_Scene/screenshot_camera_3d.gd" id="1_ycaty"]
+[ext_resource type="Shader" path="res://Scenes/ConvenienceStore/Scripts/pixel_filter.gdshader" id="2_rsylu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2odfu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfoth"]
+render_priority = 0
+shader = ExtResource("2_rsylu")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[node name="Marker3D" type="Marker3D"]
+script = ExtResource("1_ycaty")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+mesh = SubResource("QuadMesh_2odfu")
+surface_material_override/0 = SubResource("ShaderMaterial_dfoth")

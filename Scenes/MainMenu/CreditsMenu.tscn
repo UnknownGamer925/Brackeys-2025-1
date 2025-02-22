@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://quo5somt62ih"]
+[gd_scene load_steps=4 format=3 uid="uid://quo5somt62ih"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/Scripts/CreditsMenu.gd" id="1_sysd5"]
 [ext_resource type="Theme" uid="uid://bug47d73a6l83" path="res://Scenes/MainMenu/Assets/Themes/MainMenu.tres" id="2_45xa0"]
+[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="2_uqpuw"]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -25,7 +26,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.137255, 0.129412, 0.141176, 1)
+color = Color(0.211765, 0.0784314, 0.113725, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -52,18 +53,36 @@ size_flags_vertical = 4
 [node name="Text" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_uqpuw")
 theme_override_font_sizes/font_size = 32
 text = "Producer:
-Grace (PhroggyDev)
+Grace (PhroggyDev) - https://phroggydev.itch.io/
 
 Artist:
-Louise ()
+Louise - https://louiseburt.itch.io/
 
 Programmers:
-Gaby ()
-Joe (JDMDev)
-Em (NekciloDev)
-"
+Joe (JDMDev) -  https://jdmdev.itch.io/
+Gaby (Gaby18) - https://gaby18.itch.io/
+Em (NekciloDev) -  https://nekcilo.itch.io/"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Text"]
+layout_mode = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uqpuw")
+theme_override_font_sizes/font_size = 32
+text = "
+                     https://phroggydev.itch.io/
+
+
+         https://louiseburt.itch.io/
+
+
+                https://jdmdev.itch.io/
+                https://gaby18.itch.io/
+                   https://nekcilo.itch.io/"
 horizontal_alignment = 1
 
 [node name="Seperator2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -83,43 +102,48 @@ text = "Back"
 
 [node name="GraceLinkButton" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 286.0
-offset_right = 1118.0
-offset_bottom = 327.0
+offset_left = 907.0
+offset_top = 282.0
+offset_right = 1225.0
+offset_bottom = 323.0
+scale = Vector2(1.4, 1)
 underline = 2
 uri = "https://phroggydev.itch.io/"
 
 [node name="LouiseLinkButton" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 881.0
-offset_top = 435.0
-offset_right = 1031.0
-offset_bottom = 476.0
+offset_left = 811.0
+offset_top = 433.0
+offset_right = 961.0
+offset_bottom = 474.0
+scale = Vector2(2.92, 1)
 uri = "https://louiseburt.itch.io/"
-
-[node name="GabyLinkButton" type="LinkButton" parent="."]
-layout_mode = 0
-offset_left = 865.0
-offset_top = 576.0
-offset_right = 1049.0
-offset_bottom = 614.0
-uri = "https://gaby18.itch.io/"
 
 [node name="JoeLinkButton" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 838.0
-offset_top = 625.0
-offset_right = 1073.0
-offset_bottom = 666.0
+offset_left = 897.0
+offset_top = 585.0
+offset_right = 1132.0
+offset_bottom = 626.0
+scale = Vector2(1.64, 1)
 uri = "https://jdmdev.itch.io/"
+
+[node name="GabyLinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 638.0
+offset_right = 1083.0
+offset_bottom = 676.0
+scale = Vector2(2.08, 1)
+uri = "https://gaby18.itch.io/"
 
 [node name="EmLinkButton" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 827.0
-offset_top = 676.0
-offset_right = 1098.0
-offset_bottom = 717.0
+offset_left = 912.0
+offset_top = 690.0
+offset_right = 1183.0
+offset_bottom = 731.0
+scale = Vector2(1.44, 1)
 uri = "https://nekcilo.itch.io/"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
