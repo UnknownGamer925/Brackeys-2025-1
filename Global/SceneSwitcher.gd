@@ -31,7 +31,7 @@ var current_scene_type
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-	
+	current_scene_type = get_scene_enum_from_path(current_scene.scene_file_path)
 	
 
 func switch_scene(scene_type: int) -> void:
@@ -51,13 +51,10 @@ func _deferred_switch_scene(new_scene):
 	get_tree().current_scene = new_scene
 	if(current_scene_type != SceneType.STORE):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	elif(current_scene_type != SceneType.MAIN_MENU || 
-	current_scene_type != SceneType.OPTIONS_MENU || 
-	current_scene_type != SceneType.CREDIT_MENU):
-		AudioManager.resetSound()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		signalEmitter()
+	AudioManager.resetSound()
 	current_scene = new_scene
 	
 	
@@ -85,3 +82,9 @@ func signalEmitter():
 		MainManager.emit_signal("has_key")
 	if(MainManager.hasTorch):
 		MainManager.emit_signal("has_torch")
+
+func get_scene_enum_from_path(scene_path: String) -> int:
+	for scene_enum in SCENES.keys():
+		if SCENES[scene_enum].resource_path == scene_path:
+			return scene_enum
+	return -1 
