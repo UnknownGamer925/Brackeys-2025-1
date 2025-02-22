@@ -1,11 +1,14 @@
-[gd_scene load_steps=67 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=71 format=3 uid="uid://dekcbwoh2ir0d"]
 
 [ext_resource type="Material" uid="uid://bf1lcal3mn6jc" path="res://EnvironmentPrefabs/Materials/WallsTemp_Mat.tres" id="2_1m811"]
+[ext_resource type="Texture2D" uid="uid://i6r6kti5mpvj" path="res://EnvironmentPrefabs/Materials/PetrolPumps/DefaultMaterial_Base_color.png" id="3_0i4ye"]
 [ext_resource type="PackedScene" uid="uid://bj8aeqllxsrgf" path="res://EnvironmentPrefabs/storage_shelves.tscn" id="3_316cr"]
 [ext_resource type="Material" uid="uid://ceifwdjjvpe7t" path="res://EnvironmentPrefabs/Materials/FloorMat.tres" id="3_cmo2f"]
 [ext_resource type="Material" uid="uid://bvykiqmfnp4ns" path="res://EnvironmentPrefabs/Materials/CeilingMat.tres" id="3_gg8li"]
 [ext_resource type="PackedScene" uid="uid://bhu4qgm4qoqsy" path="res://EnvironmentPrefabs/strip_lights_v_2.tscn" id="4_3vqmk"]
+[ext_resource type="Texture2D" uid="uid://dguxc1a6qoapa" path="res://EnvironmentPrefabs/Materials/PetrolPumps/DefaultMaterial_Metallic.png" id="4_kkuwt"]
 [ext_resource type="PackedScene" uid="uid://wu8f0i1h1mu7" path="res://EnvironmentPrefabs/Box1Prefab.tscn" id="4_sahlb"]
+[ext_resource type="Texture2D" uid="uid://cp2maxarxrg7w" path="res://EnvironmentPrefabs/Materials/PetrolPumps/DefaultMaterial_Normal.png" id="5_04uau"]
 [ext_resource type="Material" uid="uid://cytxwhtfccj6w" path="res://EnvironmentPrefabs/Materials/GlassMat.tres" id="5_q7rpf"]
 [ext_resource type="PackedScene" uid="uid://dhdnwf1m310fe" path="res://EnvironmentPrefabs/bomb_box.tscn" id="5_s26cw"]
 [ext_resource type="PackedScene" uid="uid://c5o8a48ek5064" path="res://EnvironmentPrefabs/general_shelves(double).tscn" id="6_t3akk"]
@@ -73,6 +76,13 @@ sky = SubResource("Sky_uonx1")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74ngs"]
+albedo_texture = ExtResource("3_0i4ye")
+metallic = 1.0
+metallic_texture = ExtResource("4_kkuwt")
+normal_enabled = true
+normal_texture = ExtResource("5_04uau")
+
 [sub_resource type="BoxMesh" id="BoxMesh_c6gp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2rpp"]
@@ -118,11 +128,11 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.919455)
 
 [node name="StripLightsV4" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" instance=ExtResource("4_3vqmk")]
-transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -22.9147, 7.14469, 14.916)
+transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -22.9147, 7.14469, 14.6312)
 skeleton = NodePath("../../..")
 
 [node name="StripLightsV5" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" instance=ExtResource("4_3vqmk")]
-transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -18.2174, 7.14469, 14.916)
+transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -18.2174, 7.14469, 14.6312)
 skeleton = NodePath("../../..")
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" groups=["StoreLights"]]
@@ -183,6 +193,7 @@ omni_range = 10.603
 transform = Transform3D(-0.0195854, 0, -0.368664, 0, 0.316506, 0, 0.368664, 0, -0.0195854, -19.3228, 1.79774, 12.1042)
 mesh = ExtResource("24_omwhk")
 skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_74ngs")
 
 [node name="StripLightsV8" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" instance=ExtResource("4_3vqmk")]
 transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -20.6277, 7.14469, 9.35906)
@@ -194,6 +205,12 @@ skeleton = NodePath("../../../..")
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" groups=["StoreLights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3129, 6.61189, 9.39753)
+light_color = Color(1, 1, 0.827451, 1)
+light_energy = 0.3
+omni_range = 10.603
+
+[node name="OmniLight3D27" type="OmniLight3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/OutsideObjects" groups=["StoreLights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3059, 8.06483, 7.04985)
 light_color = Color(1, 1, 0.827451, 1)
 light_energy = 0.3
 omni_range = 10.603
@@ -251,6 +268,17 @@ skeleton = NodePath("../../../../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks/MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_e2rpp")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks"]
+transform = Transform3D(0.00192005, -0.0347645, 16.9479, -0.550052, -8.70635e-07, 0.0591598, -3.32719e-06, -19.9179, -0.0295808, -0.405, 5.224, 15.228)
+material_override = ExtResource("2_1m811")
+mesh = SubResource("BoxMesh_c6gp2")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks/MeshInstance3D5/StaticBody3D"]
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks"]
@@ -5180,7 +5208,7 @@ mesh = ExtResource("22_hvurs")
 skeleton = NodePath("../..")
 
 [node name="OutsideDoor" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("23_pkc4q")]
-transform = Transform3D(0.219752, 0, 0.455144, 0, 0.252728, 0, -0.48229, 0, 0.207383, -8.21174, 1.49606, 17.4459)
+transform = Transform3D(0.529896, 0, -0.00968067, 0, 0.252728, 0, 0.0102582, 0, 0.50007, -8.21174, 1.49606, 17.4459)
 material_override = ExtResource("2_1m811")
 skeleton = NodePath("../../../../..")
 
@@ -5256,7 +5284,7 @@ skeleton = NodePath("../../../../..")
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("53_k3gdf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.96408, 0.861314, 15.4544)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33975, 0.861314, 4.42648)
 
 [node name="Lights" type="Node3D" parent="."]
 
