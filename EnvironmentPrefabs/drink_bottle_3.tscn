@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://be6v03jj2u7gt"]
+
+[ext_resource type="ArrayMesh" uid="uid://bccnsu7qfpbrm" path="res://EnvironmentPrefabs/Models/DrinkBottle.obj" id="1_4duel"]
+[ext_resource type="Texture2D" uid="uid://cmct6x1pbi73b" path="res://EnvironmentPrefabs/Materials/Drink3/DefaultMaterial_Base_color.png" id="2_5253t"]
+[ext_resource type="Texture2D" uid="uid://deo0t05x0013w" path="res://EnvironmentPrefabs/Materials/Drink3/DefaultMaterial_Metallic.png" id="3_mdpkk"]
+[ext_resource type="Texture2D" uid="uid://c88f7alf3aksq" path="res://EnvironmentPrefabs/Materials/Drink3/DefaultMaterial_Normal.png" id="4_to7p5"]
+[ext_resource type="Texture2D" uid="uid://cjx6w7tsmgcj7" path="res://EnvironmentPrefabs/Materials/Drink3/DefaultMaterial_Roughness.png" id="5_duj1r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m86lr"]
+albedo_texture = ExtResource("2_5253t")
+metallic = 1.0
+metallic_texture = ExtResource("3_mdpkk")
+roughness_texture = ExtResource("5_duj1r")
+normal_enabled = true
+normal_texture = ExtResource("4_to7p5")
+
+[node name="DrinkBottle3" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_4duel")
+surface_material_override/0 = SubResource("StandardMaterial3D_m86lr")

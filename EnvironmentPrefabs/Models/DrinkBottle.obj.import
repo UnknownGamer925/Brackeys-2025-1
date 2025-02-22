@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bccnsu7qfpbrm"
+path="res://.godot/imported/DrinkBottle.obj-8a6e4ca16f6a557de14d5a41a7061c33.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DrinkBottle.obj-8a6e4ca16f6a557de14d5a41a7061c33.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/DrinkBottle.obj"
+dest_files=["res://.godot/imported/DrinkBottle.obj-8a6e4ca16f6a557de14d5a41a7061c33.mesh", "res://.godot/imported/DrinkBottle.obj-8a6e4ca16f6a557de14d5a41a7061c33.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

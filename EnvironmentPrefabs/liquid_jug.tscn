@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://ktqtww3at7av"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3fq4hvy4snxd" path="res://EnvironmentPrefabs/Models/LiquidJUG.obj" id="1_7lgvy"]
+[ext_resource type="Texture2D" uid="uid://brchwdqwm7l67" path="res://EnvironmentPrefabs/Materials/LiquidJug/DefaultMaterial_Base_color.png" id="2_53up4"]
+[ext_resource type="Texture2D" uid="uid://5lmm00lfeaxw" path="res://EnvironmentPrefabs/Materials/LiquidJug/DefaultMaterial_Metallic.png" id="3_gihmb"]
+[ext_resource type="Texture2D" uid="uid://dk3qn223jtjyb" path="res://EnvironmentPrefabs/Materials/LiquidJug/DefaultMaterial_Normal.png" id="4_ty5r1"]
+[ext_resource type="Texture2D" uid="uid://cnmg8qnxoap6l" path="res://EnvironmentPrefabs/Materials/LiquidJug/DefaultMaterial_Roughness.png" id="5_3d5bs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1bha"]
+albedo_texture = ExtResource("2_53up4")
+metallic = 1.0
+metallic_texture = ExtResource("3_gihmb")
+roughness_texture = ExtResource("5_3d5bs")
+normal_enabled = true
+normal_texture = ExtResource("4_ty5r1")
+
+[node name="LiquidJug" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_7lgvy")
+surface_material_override/0 = SubResource("StandardMaterial3D_a1bha")

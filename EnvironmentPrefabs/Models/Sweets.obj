@@ -1,6 +1,5 @@
 # Blender 4.3.2
 # www.blender.org
-mtllib Sweets.mtl
 o Cube
 v -0.202792 -4.068630 3.482931
 v -0.036453 3.849713 3.384149

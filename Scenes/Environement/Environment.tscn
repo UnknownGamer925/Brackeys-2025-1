@@ -1,6 +1,5 @@
-[gd_scene load_steps=45 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=63 format=3 uid="uid://dekcbwoh2ir0d"]
 
-[ext_resource type="PackedScene" uid="uid://ckmstkm116p75" path="res://Scenes/Screenshot_Scene/Screenshot_Pivot.tscn" id="1_mq35w"]
 [ext_resource type="Material" uid="uid://bf1lcal3mn6jc" path="res://EnvironmentPrefabs/Materials/WallsTemp_Mat.tres" id="2_1m811"]
 [ext_resource type="PackedScene" uid="uid://bj8aeqllxsrgf" path="res://EnvironmentPrefabs/storage_shelves.tscn" id="3_316cr"]
 [ext_resource type="Material" uid="uid://ceifwdjjvpe7t" path="res://EnvironmentPrefabs/Materials/FloorMat.tres" id="3_cmo2f"]
@@ -37,6 +36,24 @@
 [ext_resource type="PackedScene" uid="uid://bb5h2niylwrjc" path="res://EnvironmentPrefabs/flashlight.tscn" id="35_how5a"]
 [ext_resource type="PackedScene" uid="uid://de8wmp1ahrvhk" path="res://EnvironmentPrefabs/directional_lock.tscn" id="36_ghwwm"]
 [ext_resource type="PackedScene" uid="uid://cwu5lgts2wxqv" path="res://EnvironmentPrefabs/long_box.tscn" id="37_8s3tp"]
+[ext_resource type="PackedScene" uid="uid://d7laryaap2q5" path="res://EnvironmentPrefabs/drink_bottle_1.tscn" id="43_1iq0t"]
+[ext_resource type="PackedScene" uid="uid://dw66his70ybac" path="res://EnvironmentPrefabs/drink_bottle_2.tscn" id="44_ifutv"]
+[ext_resource type="PackedScene" uid="uid://be6v03jj2u7gt" path="res://EnvironmentPrefabs/drink_bottle_3.tscn" id="45_c1kl0"]
+[ext_resource type="PackedScene" uid="uid://ktqtww3at7av" path="res://EnvironmentPrefabs/liquid_jug.tscn" id="45_t87cb"]
+[ext_resource type="PackedScene" uid="uid://d3qsmavd6i58x" path="res://EnvironmentPrefabs/drink_bottle_4.tscn" id="46_0r0ng"]
+[ext_resource type="PackedScene" uid="uid://dw6haghgfs3na" path="res://EnvironmentPrefabs/apple.tscn" id="46_qjhas"]
+[ext_resource type="Material" uid="uid://yso53p34yglx" path="res://EnvironmentPrefabs/Materials/box.tres" id="47_1tidv"]
+[ext_resource type="PackedScene" uid="uid://0nvm1kf0sdgh" path="res://EnvironmentPrefabs/sandwhiches.tscn" id="47_4co2p"]
+[ext_resource type="PackedScene" uid="uid://ckwqghottdcfw" path="res://EnvironmentPrefabs/banana.tscn" id="47_5o8ie"]
+[ext_resource type="PackedScene" uid="uid://dcbuog6fq0trd" path="res://EnvironmentPrefabs/tillOpen.tscn" id="47_youoc"]
+[ext_resource type="PackedScene" uid="uid://bj3reuf5wielu" path="res://EnvironmentPrefabs/cleaning_spray.tscn" id="48_htcrk"]
+[ext_resource type="PackedScene" uid="uid://b8ishx01alf5b" path="res://EnvironmentPrefabs/drink_can.tscn" id="48_rch2g"]
+[ext_resource type="PackedScene" uid="uid://xtjf17gebhob" path="res://EnvironmentPrefabs/sweets_2.tscn" id="50_qoa30"]
+[ext_resource type="PackedScene" uid="uid://b88h075gyji1q" path="res://EnvironmentPrefabs/drink_can_3.tscn" id="51_wp2va"]
+[ext_resource type="PackedScene" uid="uid://b1an6lolovsec" path="res://EnvironmentPrefabs/sweets.tscn" id="51_ys1th"]
+[ext_resource type="PackedScene" uid="uid://bgc860q7dhtvb" path="res://EnvironmentPrefabs/sandwhiches_2.tscn" id="52_eyxa5"]
+[ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="53_k3gdf"]
+[ext_resource type="PackedScene" uid="uid://dntaebd52dky4" path="res://EnvironmentPrefabs/backroom_door.tscn" id="54_1h0rx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c14fd"]
 sky_top_color = Color(0.157277, 0.0751868, 0.0466962, 1)
@@ -63,6 +80,8 @@ roughness_texture = ExtResource("33_h7u35")
 normal_enabled = true
 normal_texture = ExtResource("32_owqab")
 
+[sub_resource type="BoxMesh" id="BoxMesh_flc13"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xusx8"]
 size = Vector3(10.9224, 14.4819, 14.9716)
 
@@ -85,10 +104,6 @@ stretch_shrink = 4
 handle_input_locally = false
 size = Vector2i(480, 270)
 render_target_update_mode = 4
-
-
-[node name="Marker3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_mq35w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5489, 2.27361, 25.3024)
 
 [node name="EnvironementObjects" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
@@ -383,7 +398,15 @@ transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 10.78
 skeleton = NodePath("../../../../..")
 
 [node name="Box2" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
-transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 10.7138, 0.814622, 1.22051)
+transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 10.7138, 0.814622, 0.576721)
+skeleton = NodePath("../../../../..")
+
+[node name="Box10" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0394715, 0.000235372, 0.00574707, -0.000323017, 0.0398828, 0.000585115, -0.00574281, -0.000625539, 0.0394679, 10.7138, 0.814622, 1.72916)
+skeleton = NodePath("../../../../..")
+
+[node name="Box8" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0291359, 0, -0.027243, 0, 0.0398884, 0, 0.027243, 0, 0.0291359, 11.3037, 0.252143, 0.938057)
 skeleton = NodePath("../../../../..")
 
 [node name="StorageShelves3" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("3_316cr")]
@@ -414,10 +437,30 @@ skeleton = NodePath("../../../../..")
 transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 4.11906, 2.14947, -2.11799)
 skeleton = NodePath("../../../../..")
 
+[node name="Box4" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0398538, 0, 0.00166061, 0, 0.0398884, 0, -0.00166061, 0, 0.0398538, 4.12358, 1.46136, 0.399582)
+skeleton = NodePath("../../../../..")
+
+[node name="Box5" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0398884, 10.7138, 2.13188, -0.953157)
+skeleton = NodePath("../../../../..")
+
+[node name="Box9" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0398884, 0, 0, 0, 0.0398884, 0, 0, 0, 0.0609626, 10.7168, 2.12632, 1.31129)
+skeleton = NodePath("../../../../..")
+
+[node name="Box6" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.0349712, 0, 0.0191859, 0, 0.0398884, 0, -0.0191859, 0, 0.0349712, 7.263, 1.46136, 0.633157)
+skeleton = NodePath("../../../../..")
+
+[node name="Box7" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("4_sahlb")]
+transform = Transform3D(0.030748, 0, 0.0234091, 0, 0.0398884, 0, -0.0168689, 0, 0.0426692, 7.0628, 1.46136, -3.02971)
+skeleton = NodePath("../../../../..")
+
 [node name="MainShop" type="Node3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
 
 [node name="CounterShelf" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("12_t5qdj")]
-transform = Transform3D(-0.711323, 0, -6.21858e-08, 0, 0.83627, 0, 6.21858e-08, 0, -0.711323, -5.14601, 0.466472, 21.5338)
+transform = Transform3D(-0.711323, 0, -6.21858e-08, 0, 0.83627, 0, 6.21858e-08, 0, -0.711323, -5.14601, 0.452435, 21.5338)
 
 [node name="GeneralShelves(double)" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.26337, 1.21657, 10.9612)
@@ -434,6 +477,106 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.72679, 1.21915, 10.9
 [node name="GeneralShelves(double)3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.72679, 1.21915, 15.3983)
 
+[node name="Sweets3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 23.3329, 0.405435, -0.716274)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 23.3329, 0.405435, -0.422909)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 23.3329, 0.405435, -0.966717)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 23.3329, 0.405435, -1.18808)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 24.7769, 0.405435, -0.716274)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-0.000330144, 0.00153214, 0.166659, 0.0431483, 0.160978, -0.00139444, -0.160984, 0.0431436, -0.000715532, 24.7769, 0.405435, -0.422909)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 26.1581, 0.360918, -0.414024)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 26.1581, 0.360918, -0.704514)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 26.1581, 0.360918, -1.01566)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 27.6923, 0.360918, -0.414024)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 27.6923, 0.360918, -0.704514)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 27.6923, 0.360918, -1.01566)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00127969, -0.00138166, 0.166656, 0.0312796, 0.163697, 0.0015973, -0.1637, 0.0312898, -0.000997585, 27.6923, 0.360918, -1.27859)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 27.5652, 2.66237, -1.17167)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 26.1429, 2.66237, -1.17167)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 24.8644, 2.66237, -1.17167)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 23.442, 2.66237, -1.17167)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 27.5652, 2.52293, -0.515667)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 26.1429, 2.52293, -0.515667)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 24.8644, 2.52293, -0.515667)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166667, 1.63805e-09, -1.44781e-08, 1.85037e-16, 0.16561, 0.0187371, 1.45705e-08, 0.0187371, -0.16561, 23.442, 2.52293, -0.515667)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166641, -0.00249332, -0.00156727, 0.00250419, -0.166644, -0.00115027, -0.00154985, -0.00117362, 0.166655, 18.9534, -1.52667, -0.583035)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166641, -0.00249332, -0.00156727, 0.00250419, -0.166644, -0.00115027, -0.00154985, -0.00117362, 0.166655, 18.9534, -1.52667, -1.13107)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166641, -0.00249332, -0.00156727, 0.00250419, -0.166644, -0.00115027, -0.00154985, -0.00117362, 0.166655, 17.54, -1.52667, -0.583035)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox20" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/GeneralShelves(double)3" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.166641, -0.00249332, -0.00156727, 0.00250419, -0.166644, -0.00115027, -0.00154985, -0.00117362, 0.166655, 17.54, -1.52667, -1.13107)
+skeleton = NodePath("../../../../../..")
+
 [node name="GeneralShelves(double)4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.35188, 1.21915, 15.3983)
 
@@ -449,9 +592,6 @@ transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 
 [node name="GeneralShelves(endRight)3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("8_uwmc6")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 2.08704, 1.31812, 17.5039)
 
-[node name="GeneralShelvesSingle" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("28_7uttx")]
-transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 7.25243, 1.3106, 21.3685)
-
 [node name="GeneralShelvesSingle2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("28_7uttx")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 7.25243, 1.3106, 16.7055)
 
@@ -466,10 +606,6 @@ skeleton = NodePath("../../../../../../..")
 
 [node name="TinVariation17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
 transform = Transform3D(-3.49066e-09, -2.08973e-10, -0.08, -0.00478075, 0.079857, -1.38778e-17, 0.079857, 0.00478075, -3.49691e-09, 2.81118, 1.27219, 10.3143)
-skeleton = NodePath("../../../../../../..")
-
-[node name="TinVariation18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
-transform = Transform3D(0.0675844, 0, -0.042806, -0.00255806, 0.079857, -0.0040388, 0.0427295, 0.00478075, 0.0674636, 2.40778, 1.26519, 10.4313)
 skeleton = NodePath("../../../../../../..")
 
 [node name="TinVariation19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
@@ -659,6 +795,41 @@ transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.2236
 material_override = ExtResource("16_5iy3t")
 skeleton = NodePath("../../..")
 
+[node name="PacketBoxJ1" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.43353, 0.61357, 15.2075)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.43353, 0.61357, 15.1371)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.43353, 0.61357, 15.0814)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.43353, 0.61357, 15.0261)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.99765, 0.61357, 15.2075)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.99765, 0.61357, 15.1371)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBoxJ7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.000868867, -0.000537495, -0.229564, 0.203999, 0.105284, 0.000525599, 0.105282, -0.203999, 0.000876115, 2.99765, 0.61357, 15.0814)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
 [node name="PacketBox5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
 transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -5.87228, 0.381084, 21.1012)
 material_override = ExtResource("17_evluk")
@@ -683,70 +854,6 @@ skeleton = NodePath("../../../..")
 transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -3.40966, 0.381084, 21.1012)
 material_override = ExtResource("16_5iy3t")
 skeleton = NodePath("../../..")
-
-[node name="CerealBox" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 3.54277, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 3.11607, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 2.73252, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 2.30582, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 3.54277, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 3.11607, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 2.73252, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 2.30582, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.89896, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.47226, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.08871, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.662008, 2.01786, 15.0468)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.89896, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.47226, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.08871, 1.97603, 15.2436)
-skeleton = NodePath("../../../../../..")
-
-[node name="CerealBox16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.643305, 2.05543, 15.1937)
-skeleton = NodePath("../../../../../..")
 
 [node name="CerealBox17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
 transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.146404, 1.36562, 15.065)
@@ -1004,6 +1111,74 @@ skeleton = NodePath("../../../../..")
 transform = Transform3D(0.0520686, 0, 0, 0, 0.0520686, 0, 0, 0, 0.0520686, 1.25156, 1.30483, 15.158)
 skeleton = NodePath("../../../../..")
 
+[node name="Biscuits24" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 2.0745, 0.740007, 14.9856)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits25" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 2.07669, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits27" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 2.08035, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits26" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.95589, 0.740007, 14.9856)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits28" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.95807, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits29" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.96174, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits30" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.82774, 0.740007, 14.9856)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits31" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.82992, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits32" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.83359, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits33" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.69915, 0.740007, 14.9856)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits34" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.70133, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits35" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.705, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits36" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.56285, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits37" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.56652, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits38" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.43425, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits40" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(-0.00318325, 0, -0.0519712, -0.0519711, -8.08802e-05, 0.00318325, -8.0729e-05, 0.0520685, 4.94467e-06, 1.30905, 0.738854, 15.2137)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits39" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0186588, 3.35456e-05, -0.0486105, -0.0486105, -7.35956e-05, -0.0186589, -8.0729e-05, 0.0520685, 4.94467e-06, 1.28442, 0.74219, 15.092)
+skeleton = NodePath("../../../../..")
+
 [node name="Biscuits13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
 transform = Transform3D(0.0520686, 0, 0, 0, 0.0520205, -0.00223579, 0, 0.00223579, 0.0520205, 1.79628, 1.12684, 15.2819)
 skeleton = NodePath("../../../../..")
@@ -1030,6 +1205,54 @@ skeleton = NodePath("../../../../..")
 
 [node name="Biscuits18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
 transform = Transform3D(0.0520686, 0, 0, 0, 0.0520205, -0.00223579, 0, 0.00223579, 0.0520205, 1.79628, 1.28848, 15.1829)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits23" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.000768787, -0.0520629, 2.18279e-11, 0.0520149, 0.000768077, -0.00223579, 0.00223555, 3.30112e-05, 0.0520205, 2.71448, 0.346952, 6.53008)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits242" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.000768787, -0.0520629, 2.18279e-11, 0.0520149, 0.000768077, -0.00223579, 0.00223555, 3.30112e-05, 0.0520205, 2.71448, 0.336428, 6.77494)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits252" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.000768787, -0.0520629, 2.18279e-11, 0.0520149, 0.000768077, -0.00223579, 0.00223555, 3.30112e-05, 0.0520205, 2.71438, 0.34368, 6.6594)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits262" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.00144021, -0.0520486, 1.45519e-11, 0.0520007, 0.00143888, -0.00223579, 0.00223494, 6.18417e-05, 0.0520205, 2.84542, 0.338428, 6.52971)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits272" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.00144021, -0.0520486, 1.45519e-11, 0.0520007, 0.00143888, -0.00223579, 0.00223494, 6.18417e-05, 0.0520205, 2.84531, 0.330211, 6.77411)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits282" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.00144021, -0.0520486, 1.45519e-11, 0.0520007, 0.00143888, -0.00223579, 0.00223494, 6.18417e-05, 0.0520205, 2.84531, 0.335157, 6.65904)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits292" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520601, 0.000943243, 0, -0.000942374, 0.052012, -0.00223579, -4.05023e-05, 0.00223542, 0.0520205, 0.30946, 0.169178, 6.53311)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits302" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520601, 0.000943243, 0, -0.000942374, 0.052012, -0.00223579, -4.05023e-05, 0.00223542, 0.0520205, 0.30946, 0.158654, 6.77797)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits312" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520601, 0.000943243, 0, -0.000942374, 0.052012, -0.00223579, -4.05023e-05, 0.00223542, 0.0520205, 0.309354, 0.165906, 6.66244)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits322" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520436, 0.00161461, -2.25555e-10, -0.00161313, 0.0519955, -0.00223579, -6.93308e-05, 0.00223472, 0.0520205, 0.828646, 0.146366, 6.53213)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits332" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520436, 0.00161461, -2.25555e-10, -0.00161313, 0.0519955, -0.00223579, -6.93308e-05, 0.00223472, 0.0520205, 0.834771, 0.137955, 6.77652)
+skeleton = NodePath("../../../../..")
+
+[node name="Biscuits342" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
+transform = Transform3D(0.0520436, 0.00161461, -2.25555e-10, -0.00161313, 0.0519955, -0.00223579, -6.93308e-05, 0.00223472, 0.0520205, 0.829293, 0.14307, 6.66145)
 skeleton = NodePath("../../../../..")
 
 [node name="Biscuits19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("27_5kxaq")]
@@ -1128,6 +1351,1581 @@ transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683,
 material_override = ExtResource("19_hj6bd")
 skeleton = NodePath("../../../../../..")
 
+[node name="DrinkBottle" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.63609, 1.0798, 6.68945)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.35084, 1.07842, 6.66163)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.03289, 1.07308, 6.68141)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.09317, 1.08215, 6.6803)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.05485, 1.07308, 6.54166)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.19777, 1.07308, 6.6765)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.19777, 1.07308, 6.53675)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.48574, 1.07842, 6.66163)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.48574, 1.07842, 6.48961)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.77274, 1.0798, 6.68945)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.63609, 1.0798, 6.54889)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.77528, 1.0798, 6.53127)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.96846, 1.08215, 6.6803)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999, 0.00141192, 0, -0.00141192, 0.09999, -6.09317, 1.08005, 6.52999)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.648938, 1.06111, 6.73904)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.934187, 1.05973, 6.71122)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle43" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.25214, 1.05439, 6.731)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle47" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.191857, 1.06346, 6.72989)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle48" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.23018, 1.05439, 6.59125)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle49" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.08726, 1.05439, 6.72609)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle50" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.08726, 1.05439, 6.58634)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle51" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.799287, 1.05973, 6.71122)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle52" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.799287, 1.05973, 6.5392)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle53" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.512287, 1.06111, 6.73904)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle58" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 2.08207, 2.39859, 6.65364)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle59" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 2.36732, 2.39721, 6.62582)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle60" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 1.62499, 2.40094, 6.64449)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle64" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 1.49748, 2.40094, 6.64449)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle65" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 1.76744, 2.40094, 6.64449)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle61" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 2.23242, 2.39721, 6.62582)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle62" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 1.94542, 2.39859, 6.65364)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle63" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.073684, 0, 0, 0, 0.1, 1.34905, 2.39859, 6.65364)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle54" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.648938, 1.06111, 6.59848)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle55" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.509747, 1.06111, 6.58086)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle56" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.316565, 1.06346, 6.72989)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle57" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999, 0.00141192, 0, -0.00141192, 0.09999, 0.191857, 1.06284, 6.57882)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999, 0.00141192, 0, -0.00141192, 0.09999, -5.94979, 1.08005, 6.52999)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.63609, 1.80938, 6.68945)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.05485, 1.80266, 6.68141)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle20" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.09317, 1.81173, 6.6803)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle21" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.05485, 1.80266, 6.54166)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle22" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.19777, 1.80266, 6.6765)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle23" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.19777, 1.80266, 6.53675)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle24" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.48574, 1.808, 6.66163)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle25" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.35084, 1.808, 6.48961)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle26" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.48574, 1.808, 6.48961)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle27" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.82609, 1.80938, 6.68945)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle28" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.63609, 1.80938, 6.54889)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle29" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.77528, 1.80938, 6.53127)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle30" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.94979, 1.81173, 6.6803)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle31" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999, 0.00141192, 0, -0.00141192, 0.09999, -6.09317, 1.80957, 6.51969)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle32" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.09999, 0.00141192, 0, -0.00141192, 0.09999, -5.94979, 1.80957, 6.51969)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox49" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -2.24962, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox50" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -2.67632, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox51" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.05988, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox52" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.48658, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox53" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -2.24584, 2.66596, 15.7662)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox54" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -2.67632, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox55" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.05988, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox56" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.48658, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox57" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.89344, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox58" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -4.32014, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox59" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -4.70369, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox60" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -5.13039, 2.66596, 15.5701)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox61" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -3.89344, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox62" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -4.32014, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox63" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -4.70369, 2.66596, 15.7669)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox64" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499977, -0.00032499, 0.000358201, 0.000290223, 0.0497818, 0.00465695, -0.000386908, -0.00465465, 0.0497813, -5.13039, 2.66596, 15.7669)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox65" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.000508866, 0.0499974, 3.52307e-05, -0.00673174, -3.36025e-05, -0.0495447, -0.0495422, -0.000508976, 0.00673173, -1.46812, 1.78831, 15.689)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox66" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.000508866, 0.0499974, 3.52307e-05, -0.00673174, -3.36025e-05, -0.0495447, -0.0495422, -0.000508976, 0.00673173, -1.46842, 1.90644, 15.6514)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox67" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.000508866, 0.0499974, 3.52307e-05, -0.00673174, -3.36025e-05, -0.0495447, -0.0495422, -0.000508976, 0.00673173, -0.875546, 1.78122, 15.6839)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox68" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.000508866, 0.0499974, 3.52307e-05, -0.00673174, -3.36025e-05, -0.0495447, -0.0495422, -0.000508976, 0.00673173, -0.875849, 1.89934, 15.6463)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox69" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.5429, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox70" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.1162, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox71" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.73265, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox72" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.30595, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox73" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.5429, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox74" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.1162, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox75" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.73265, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox76" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.30595, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox77" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.89909, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox78" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.47239, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox79" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.08884, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox80" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 0.662135, 0.18459, 15.6781)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox81" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.89909, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox82" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.47239, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox83" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.08884, 0.14276, 15.8749)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox84" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 0.643432, 0.22216, 15.825)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox85" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.54492, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox86" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.11822, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox87" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.73467, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox88" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.30797, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox89" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.54492, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox90" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 3.11822, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox91" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 2.73467, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox93" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.90111, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox94" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.47441, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox95" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.09086, 0.796204, 15.6225)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox96" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 0.664061, 0.760341, 15.6245)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox97" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.90111, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox98" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.47441, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox99" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 1.09086, 0.754374, 15.8193)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox100" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.0499933, 0.000135055, -0.000804639, -9.17257e-05, 0.049928, 0.00268115, 0.000810722, -0.00267931, 0.0499215, 0.644488, 0.734885, 15.8179)
+skeleton = NodePath("../../../../../..")
+
+[node name="PacketBox9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -5.7277, 0.131204, 21.1558)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBox10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -6.83507, 0.131204, 21.1558)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBox11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -7.39733, 0.131204, 21.1558)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../..")
+
+[node name="PacketBox12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -6.28996, 0.131204, 21.1558)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../..")
+
+[node name="PacketBox13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -3.46896, 0.135643, 21.158)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../../../../..")
+
+[node name="PacketBox14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -4.57633, 0.135643, 21.158)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../../../../..")
+
+[node name="PacketBox15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -5.13858, 0.135643, 21.158)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../..")
+
+[node name="PacketBox16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -4.00058, 0.12364, 21.1607)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox92" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.29184, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox101" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.865138, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox102" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.481588, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox103" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.0548879, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox104" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 1.29184, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox105" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.865138, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox106" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.481588, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox107" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, 0.0548879, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox108" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -0.351972, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox109" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -0.778672, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox110" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -1.16222, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox111" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -1.58892, 2.63715, 10.6338)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox112" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -0.351972, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox113" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -0.778672, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox114" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -1.16222, 2.59532, 10.8306)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox115" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -1.60763, 2.67472, 10.7807)
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox116" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.10453, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox117" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.53123, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox118" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.91478, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox119" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -3.34148, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox120" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.10453, 1.94308, 10.8488)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox121" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.53123, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox122" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -2.91478, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox123" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -3.34148, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox124" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -3.74834, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox133" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 2.827, 1.13139, 6.51768)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox137" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 2.827, 1.12948, 6.71095)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox138" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 3.23183, 1.13139, 6.51768)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox139" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 3.23183, 1.12948, 6.71095)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox142" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 2.99894, 0.362937, 6.63012)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox143" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 3.13695, 0.362941, 6.6297)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox144" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 3.26812, 0.362945, 6.62931)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox145" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 3.43571, 0.36295, 6.6288)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox146" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 3.59483, 0.362955, 6.62832)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox147" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(0.000150973, 5.82077e-11, -0.0499998, -0.000493046, 0.0499975, -1.48866e-06, 0.0499973, 0.000493048, 0.000150966, 3.73246, 0.362959, 6.62791)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox140" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 3.62988, 1.13139, 6.51768)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox141" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.31039e-11, -4.37093e-09, 5.55112e-17, 0.0499975, 0.000493048, 4.37114e-09, 0.000493048, -0.0499975, 3.62988, 1.12948, 6.71095)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="CerealBox125" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.17504, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox126" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.55859, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox127" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.98529, 1.98491, 10.652)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox128" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -3.74834, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox129" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.17504, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox130" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.55859, 1.94308, 10.8488)
+skeleton = NodePath("../../../../../..")
+surface_material_override/0 = ExtResource("19_hj6bd")
+
+[node name="CerealBox131" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("18_rafcq")]
+transform = Transform3D(-0.05, 4.91416e-10, -4.34343e-09, 5.55112e-17, 0.049683, 0.00562114, 4.37114e-09, 0.00562114, -0.049683, -4.98529, 1.94308, 10.8488)
+material_override = ExtResource("19_hj6bd")
+skeleton = NodePath("../../../../../..")
+
+[node name="PacketBox17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.0517153, 0.223665, 0, -0.223665, -0.0517153, -1.00347e-08, -5.19481, 0.381084, 21.1012)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBoxJ8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.20271, 0.107746, -7.57202e-09, -0.107746, -0.20271, -6.58481e-09, 3.53425, 0.602112, 15.2127)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBoxJ9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.20271, 0.107746, -7.57202e-09, -0.107746, -0.20271, -6.58481e-09, 3.53425, 0.602112, 15.1488)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBoxJ10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.20271, 0.107746, -7.57202e-09, -0.107746, -0.20271, -6.58481e-09, 3.53425, 0.602112, 15.0805)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="PacketBoxJ11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(-9.77672e-09, -2.26055e-09, 0.229566, -0.20271, 0.107746, -7.57202e-09, -0.107746, -0.20271, -6.58481e-09, 3.53425, 0.602112, 15.0013)
+material_override = ExtResource("17_evluk")
+skeleton = NodePath("../../../../../../..")
+
+[node name="LiquidJug" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.00996342, 0, 0.0997479, 0, 0.1, 0, -0.140059, 0, -0.00709578, 3.71617, 0.267597, 10.6487)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -6.02132, 0.330813, 6.78538)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -5.8369, 0.330813, 6.78008)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -5.64869, 0.330813, 6.77467)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -5.45955, 0.330813, 6.76924)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -5.28884, 0.330813, 6.76433)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.1, 0, -0.00287242, 0, 0.0999587, -5.11176, 0.330813, 6.75924)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.0361923, 0, 0.218242, 0, 0.221222, 0, -0.218242, 0, -0.0361923, 4.03444, 0.267597, -4.39705)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.0156975, 0, 0.220665, 0, 0.221222, 0, -0.220665, 0, -0.0156975, 3.87844, 0.267597, -3.94784)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.152554, 0, 0.160208, 0, 0.221222, 0, -0.160208, 0, -0.152554, 4.03244, 0.267597, -3.39013)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.4532, 1.76498, 6.61508)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.63762, 1.76498, 6.60978)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.82583, 1.76498, 6.60437)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.01497, 1.76498, 6.59893)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.18568, 1.76498, 6.59403)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.36276, 1.76498, 6.58894)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug20" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.455, 1.00815, 6.67766)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug21" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.63942, 1.00815, 6.67236)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug22" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.82763, 1.00815, 6.66695)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug23" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.01676, 1.00815, 6.66152)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug24" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.18748, 1.00815, 6.65661)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug25" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.36456, 1.00815, 6.65153)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug26" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.44987, 0.270585, 6.49947)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug27" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.6343, 0.270585, 6.49417)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug28" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.82251, 0.270585, 6.48876)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug29" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.01164, 0.270585, 6.48333)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug30" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.18236, 0.270585, 6.47842)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug31" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.35944, 0.270585, 6.47333)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug32" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.4567, 0.270585, 6.73703)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug38" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.26056, 0.270585, 6.50491)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug39" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.26739, 0.270585, 6.74247)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug33" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.64113, 0.270585, 6.73173)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug34" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 1.82934, 0.270585, 6.72633)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug35" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.01847, 0.270585, 6.72089)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug36" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.18918, 0.270585, 6.71599)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug37" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(0.0999587, 0, 0.00287242, 0, 0.0766632, 0, -0.00287242, 0, 0.0999587, 2.36627, 0.270585, 6.7109)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.0361923, 0, 0.218242, 0, 0.169596, 0, -0.218242, 0, -0.0361923, 3.60814, 4.70409, -6.96764)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.0156975, 0, 0.220665, 0, 0.169596, 0, -0.220665, 0, -0.0156975, 3.69355, 4.70409, -6.54697)
+skeleton = NodePath("../../../../../..")
+
+[node name="LiquidJug19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_t87cb")]
+transform = Transform3D(-0.152554, 0, 0.160208, 0, 0.169596, 0, -0.160208, 0, -0.152554, 2.23556, 4.70409, -5.27717)
+skeleton = NodePath("../../../../../..")
+
+[node name="Apple" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_qjhas")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.79593, 1.79021, 10.8542)
+skeleton = NodePath("../../../Building Blocks")
+
+[node name="Banana" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_5o8ie")]
+transform = Transform3D(-0.003476, -0.0489239, 0.0871457, 0.0999396, -0.00170162, 0.00303101, 0, 0.0871984, 0.0489535, 1.16835, 1.77866, 10.6922)
+skeleton = NodePath("../../../Building Blocks")
+
+[node name="CleaningSpray" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.68456, 0.69246, 10.8106)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.68253, 0.699224, 10.6775)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.6808, 0.704956, 10.5647)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.44267, 0.688732, 10.8162)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.44064, 0.695497, 10.6831)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.43892, 0.701229, 10.5703)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.20051, 0.685219, 10.8176)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.19847, 0.691983, 10.6845)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 3.19675, 0.697715, 10.5717)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 2.95862, 0.681491, 10.8233)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 2.95659, 0.688256, 10.6902)
+skeleton = NodePath("../../../../../..")
+
+[node name="CleaningSpray12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_htcrk")]
+transform = Transform3D(-0.00137229, -0.00127787, 0.0899805, 0.00456781, 0.0898739, 0.00134602, -0.0898735, 0.00458734, -0.00130552, 2.95487, 0.693988, 10.5774)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -4.71342, 1.07784, 6.72999)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -3.52922, 1.0426, 6.65084)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches33" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -3.75893, 1.04198, 6.65121)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_ys1th")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, -4.72817, 1.30171, 10.8055)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sweets2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("50_qoa30")]
+transform = Transform3D(-0.00373015, 0.000924493, 0.0498521, 0.0119792, 0.0485438, -3.89792e-06, -0.0484003, 0.0119434, -0.00384301, -4.40024, 1.28877, 10.8301)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.48772, 2.36305, 6.72592)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.35374, 2.36305, 6.72618)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.21643, 2.36305, 6.62004)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.42951, 2.36305, 6.61963)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.10302, 2.36305, 6.60749)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -5.08262, 2.36305, 6.71623)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.06768, 2.37745, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.92722, 2.37745, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.79533, 2.37745, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.65488, 2.37745, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.00554, 2.37745, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.86508, 2.37745, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.73319, 2.37745, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -5.59274, 2.37745, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.01943, 1.70812, 6.73701)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.885443, 1.70812, 6.73727)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.748135, 1.70812, 6.63113)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.961213, 1.70812, 6.63072)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan20" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.634731, 1.70812, 6.61857)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan21" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.614331, 1.70812, 6.72732)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan30" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.464889, 1.70812, 6.73557)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan31" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.330902, 1.70812, 6.73582)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan32" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.193593, 1.70812, 6.62969)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan33" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.406672, 1.70812, 6.62928)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan34" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.0801897, 1.70812, 6.61713)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan35" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -0.0597896, 1.70812, 6.72588)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan51" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -2.22111, 2.36616, 6.7347)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan52" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -2.08713, 2.36616, 6.73496)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan53" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.94982, 2.36616, 6.62882)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan54" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.81601, 2.36616, 6.72501)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan55" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.66657, 2.36616, 6.73326)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan56" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.53259, 2.36616, 6.73352)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan57" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("48_rch2g")]
+transform = Transform3D(0.0599999, 0, -0.000115192, 0, 0.06, 0, 0.000115192, 0, 0.0599999, -1.26147, 2.36616, 6.72357)
+layers = 3
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan22" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.26588, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan23" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.12542, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan24" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.99353, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan25" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.85307, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan26" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.20374, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan27" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.06328, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan28" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.93139, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan29" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.79093, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan36" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.70344, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan38" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.37789, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan39" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.23744, 1.72252, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan40" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.57493, 1.72252, 6.6789)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan37" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.63114, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan44" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.49068, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan45" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.35879, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan46" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.21834, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan47" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.0687, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan48" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.74316, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan49" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.6027, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan50" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.94019, 2.37162, 6.6789)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan58" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.87212, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan59" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.73166, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan60" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.59977, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan61" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.45931, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan62" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.30968, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan63" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.98413, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan64" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -3.84368, 2.37162, 6.67958)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan65" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.18117, 2.37162, 6.6789)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan41" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.44765, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan42" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.31575, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkCan43" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("51_wp2va")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -1.1753, 1.72252, 6.57256)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0477055, 0.00910893, 0.0118834, 0.00937764, 0.0491127, 0, -0.0116726, 0.00222877, -0.0485673, -4.44231, 1.08296, 6.70641)
+
+[node name="Sandwhiches4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -4.22629, 1.07784, 6.72618)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -3.98931, 1.07784, 6.72433)
+
+[node name="Sandwhiches6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -4.72522, 1.76933, 6.59901)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -4.48824, 1.76933, 6.59716)
+
+[node name="Sandwhiches8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0482643, 0, -0.0130598, 0, 0.05, 0, 0.0130598, 0, -0.0482643, -4.23808, 1.76933, 6.5952)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -4.0011, 1.76933, 6.59335)
+
+[node name="Sandwhiches31" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -3.79906, 1.76933, 6.59177)
+
+[node name="Sandwhiches10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -3.25308, 1.04335, 6.6504)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0496349, -0.000135766, 0.00602979, -0.000143073, 0.0499998, -5.19317e-05, -0.00602963, -6.88068e-05, -0.0496351, -2.96775, 1.04412, 6.64505)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -2.65818, 1.04496, 6.64945)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -3.53148, 1.76536, 6.64261)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -3.25534, 1.76611, 6.64217)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches15" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -2.97, 1.76689, 6.64171)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches16" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -2.66044, 1.76773, 6.64121)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle33" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.3956, 0.27235, 6.78443)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle34" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.08032, 0.27097, 6.75661)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle35" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.81436, 0.26563, 6.77639)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle36" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.85268, 0.2747, 6.77528)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle37" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.81436, 0.26563, 6.63664)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle38" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.95728, 0.26563, 6.7366)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle39" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.95728, 0.26563, 6.63173)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle40" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.24525, 0.27097, 6.75661)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle41" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.11035, 0.27097, 6.58459)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle42" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("44_ifutv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.24525, 0.27097, 6.58459)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle44" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.46051, 0.27235, 6.64387)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle45" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("43_1iq0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.61983, 0.27235, 6.77203)
+skeleton = NodePath("../../../../../..")
+
+[node name="DrinkBottle46" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("46_0r0ng")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.7093, 0.2747, 6.62795)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches17" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -2.15466, 0.249753, 6.70998)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.97135, 0.230424, 6.64796)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches19" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.9181, 0.270719, 6.65513)
+
+[node name="Sandwhiches20" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.66753, 0.270719, 6.70617)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches21" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.43055, 0.270719, 6.70432)
+
+[node name="Sandwhiches34" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.19566, 0.270719, 6.70248)
+
+[node name="Sandwhiches22" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -2.16646, 1.02858, 6.579)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches23" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.92948, 1.02858, 6.57715)
+
+[node name="Sandwhiches24" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, -1.67932, 1.02858, 6.57519)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches25" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0462651, 0, -0.0189615, 0, 0.05, 0, 0.0189615, 0, -0.0462651, -1.40437, 1.02858, 6.59366)
+
+[node name="Sandwhiches26" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.692063, 0.243172, 6.64741)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches27" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.406723, 0.243947, 6.64696)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches28" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.0971588, 0.244787, 6.64646)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches29" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.970643, 1.03156, 6.63953)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches35" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -1.18065, 1.03099, 6.63987)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches30" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.694503, 1.03231, 6.63909)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches37" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0499985, 0, -0.000390957, 0, 0.05, 0, 0.000390957, 0, -0.0499985, 2.76726, 1.7747, 6.55587)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches38" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("47_4co2p")]
+transform = Transform3D(-0.0462651, 0, -0.0189615, 0, 0.05, 0, 0.0189615, 0, -0.0462651, 2.95204, 1.7747, 6.59382)
+
+[node name="Sandwhiches39" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, 3.47809, 1.77733, 6.62051)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches40" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, 3.26808, 1.77676, 6.62084)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches41" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, 3.67638, 1.77787, 6.62018)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches32" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.0499998, -0.000135766, -7.98356e-05, -0.000135656, 0.0499998, -6.90234e-05, 8.00224e-05, -6.88068e-05, -0.0499999, -0.0995992, 1.03392, 6.63814)
+skeleton = NodePath("../../../../../..")
+
+[node name="Sandwhiches36" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("52_eyxa5")]
+transform = Transform3D(-0.00313205, -0.0498112, -0.00300615, -0.0499018, 0.00313082, 0.000114779, 7.38886e-05, 0.00300744, -0.0499094, -0.385299, 0.992104, 6.62619)
+skeleton = NodePath("../../../../../..")
+
+[node name="TinVariation18" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.908089, 1.7392, 6.29264)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation46" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.683988, 1.7392, 6.26703)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation47" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.188787, 1.7392, 6.26834)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation48" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.451134, 1.7392, 6.25494)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation49" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 1.16607, 1.7392, 6.27657)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation50" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.916368, 1.7392, 6.45472)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation51" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.692267, 1.7392, 6.42911)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation52" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.197066, 1.7392, 6.43042)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation53" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.459413, 1.7392, 6.41702)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation54" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 1.17435, 1.7392, 6.43866)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation55" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 1.03907, 1.96989, 6.36275)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation56" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.814973, 1.96989, 6.33714)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation57" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.319771, 1.96989, 6.33845)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation58" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.582118, 1.96989, 6.32505)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation64" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -2.91364, 0.21588, 6.35272)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation65" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.13774, 0.21588, 6.32711)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation66" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.63294, 0.21588, 6.32842)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation67" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.37059, 0.21588, 6.31502)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation68" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -2.65566, 0.21588, 6.33666)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation69" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -2.90536, 0.21588, 6.51481)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation70" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.12946, 0.21588, 6.48919)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation71" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.62466, 0.21588, 6.4905)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation72" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.36231, 0.21588, 6.4771)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation73" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -2.64738, 0.21588, 6.49874)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation74" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -2.78265, 0.446567, 6.42283)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation75" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.00675, 0.446567, 6.39722)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation76" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.50196, 0.446567, 6.39853)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation77" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -3.23961, 0.446567, 6.38513)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation59" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.934803, 2.38194, 6.4753)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation60" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.711246, 2.38131, 6.44938)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation61" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.2155, 2.38194, 6.451)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation62" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 0.478392, 2.38131, 6.43729)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation63" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 1.19278, 2.38194, 6.45923)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation83" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 3.50533, 2.38194, 6.33423)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation88" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 3.32014, 2.38194, 6.34369)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation84" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 3.09648, 2.38131, 6.31778)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation85" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 2.70393, 2.38194, 6.31412)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation86" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 2.90047, 2.38131, 6.3038)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation87" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, 3.71241, 2.38194, 6.32077)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation78" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -0.355398, 2.38131, 6.54092)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation79" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -0.579499, 2.38131, 6.51531)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation80" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -1.0747, 2.38131, 6.51662)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation81" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -0.812354, 2.38131, 6.50322)
+skeleton = NodePath("../../../../../../../..")
+
+[node name="TinVariation82" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/ShelfItems" instance=ExtResource("7_bnkt5")]
+transform = Transform3D(0.0040809, 0, -0.0798958, 0, 0.08, 0, 0.0798958, 0, 0.0040809, -0.0974172, 2.38131, 6.52485)
+skeleton = NodePath("../../../../../../../..")
+
 [node name="StripLightsV2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("4_3vqmk")]
 transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, 1.72637, 4.14643, 8.09475)
 skeleton = NodePath("../../../../..")
@@ -1154,11 +2952,13 @@ skeleton = NodePath("../..")
 
 [node name="Windows" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop"]
 transform = Transform3D(0.556054, 0, 0, 0, 0.264331, 0, 0, 0, 0.472374, -8.11649, 1.44277, 17.4279)
+material_override = ExtResource("2_1m811")
 mesh = ExtResource("22_hvurs")
 skeleton = NodePath("../..")
 
 [node name="OutsideDoor" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("23_pkc4q")]
 transform = Transform3D(0.219752, 0, 0.455144, 0, 0.252728, 0, -0.48229, 0, 0.207383, -8.21174, 1.49606, 17.4459)
+material_override = ExtResource("2_1m811")
 skeleton = NodePath("../../../../..")
 
 [node name="FridgeV2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("25_vq3ac")]
@@ -1184,25 +2984,72 @@ mesh = ExtResource("30_oh3cr")
 skeleton = NodePath("../../../../../PuzzleItems")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkvqy")
 
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop"]
-transform = Transform3D(-6.09325e-09, 0.00415704, 9.89988, 0, 2.3818, -0.0172786, -0.139397, -1.8171e-10, -4.32737e-07, -1.17814, 1.33567, 6.819)
+[node name="FridgeGlass" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop"]
+transform = Transform3D(-6.09324e-09, 0.00428991, 9.89988, 0, 2.45793, -0.0172786, -0.139397, -1.87518e-10, -4.32738e-07, -1.17817, 1.31862, 6.819)
 material_override = ExtResource("5_q7rpf")
 mesh = SubResource("BoxMesh_c6gp2")
 skeleton = NodePath("../../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/MeshInstance3D17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/FridgeGlass"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/MeshInstance3D17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/FridgeGlass/StaticBody3D"]
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="GeneralShelves(endLeft)4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("7_cp2nt")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 7.24926, 1.31047, 10.523)
+
+[node name="GeneralShelves(endRight)4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("8_uwmc6")]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 7.24863, 1.30996, 16.5016)
+
+[node name="Till" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("47_youoc")]
+transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.48058, 1.0628, 21.7155)
+skeleton = NodePath("../../../../..")
+
+[node name="DrinkBottle3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, 0.208599, 0.233271, 15.1792)
+
+[node name="DrinkBottle4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, 0.208599, 0.233271, 14.9786)
+
+[node name="DrinkBottle5" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, 0.020377, 0.233271, 15.1792)
+
+[node name="DrinkBottle6" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, 0.020377, 0.233271, 14.9786)
+
+[node name="DrinkBottle7" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.181861, 0.233271, 15.1792)
+
+[node name="DrinkBottle8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.181861, 0.233271, 14.9786)
+
+[node name="DrinkBottle9" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.391707, 0.233271, 15.1792)
+
+[node name="DrinkBottle10" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.391707, 0.233271, 14.9786)
+
+[node name="DrinkBottle11" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.599536, 0.233271, 15.1792)
+
+[node name="DrinkBottle12" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.599536, 0.233271, 14.9786)
+
+[node name="DrinkBottle13" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.799462, 0.233271, 15.1792)
+
+[node name="DrinkBottle14" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("45_c1kl0")]
+transform = Transform3D(0.141058, 0, 0, 0, 0.141058, 0, 0, 0, 0.141058, -0.799462, 0.233271, 14.9786)
 
 [node name="StripLightsV7" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("4_3vqmk")]
 transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -2.11851, 4.14643, 22.2233)
 skeleton = NodePath("../..")
 
 [node name="LongBox" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+skeleton = NodePath("../../../..")
+
+[node name="LongBox7" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0400863, 0, 0.00991996, 0, 0.0428901, 0, -0.015253, 0, 0.0260706, 10.7963, 0.0757614, -2.22057)
 skeleton = NodePath("../../../..")
 
 [node name="StripLightsV6" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("4_3vqmk")]
@@ -1220,36 +3067,122 @@ skeleton = NodePath("../../../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MeshInstance3D8/StaticBody3D"]
 shape = SubResource("BoxShape3D_e2rpp")
 
+[node name="LongBox2" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0399128, 0, -0.0157012, 0, 0.0428901, 0, 0.0157012, 0, 0.0399128, 4.1602, 0.790379, -1.62634)
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.562865, 0, 0, 0, 0.562865, 0, 0, 0, 0.562865, 4.0903, 0.686906, 2.88643)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.413718, 0, -0.381648, 0, 0.562865, 0, 0.381648, 0, 0.413718, 4.02045, 1.30548, -0.481465)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="LongBox3" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0428867, 0, -0.000535963, 0, 0.0428901, 0, 0.000535963, 0, 0.0428867, 4.14697, -0.519225, -0.567905)
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(-0.648874, 0, -0.528435, 0, 0.562866, 0, 1.76892, 0, -0.19384, 7.51457, 1.30548, 1.76879)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(-0.0715736, 0, -0.586655, 0, 0.562866, 0, 0.817104, 0, -0.0513876, 7.51457, 0.641343, 3.27048)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(-0.152602, 0, -0.528479, 0, 0.562866, 0, 1.74214, 0, -0.0462917, 7.62631, 0.664067, 0.0661052)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(-0.0397503, 0, -0.562657, 0, 0.562865, 0, 1.46052, 0, -0.0153135, 10.7386, 1.91552, 2.13996)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(-0.0266314, 0, -0.567711, 0, 0.562865, 0, 0.978504, 0, -0.0154511, 10.7386, 1.91552, -0.669525)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.332719, 0, -0.497207, 0, 0.463604, 0, 0.784369, 0, 0.210909, 10.8346, 2.54814, -1.78275)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.562865, 0, 0, 0, 0.562865, 0, 0, 0, 0.562865, 4.08788, 0.686906, 2.08988)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.562865, 0, 0, 0, 0.562865, 0, 0, 0, 0.562865, 4.0903, 0.686906, 1.35065)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
+transform = Transform3D(0.562865, 0, 0, 0, 0.562865, 0, 0, 0, 0.562865, 4.0903, 0.686906, 3.60336)
+material_override = ExtResource("47_1tidv")
+mesh = SubResource("BoxMesh_flc13")
+
+[node name="LongBox4" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0428901, 0, 0, 0, 0.0428901, 0, 0, 0, 0.0428901, 4.07619, 0.137111, 2.62944)
+skeleton = NodePath("../../../..")
+
+[node name="LongBox5" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0428471, 0, 0.00191945, 0, 0.0428901, 0, -0.00191945, 0, 0.0428471, 7.57201, 0.104439, -1.78991)
+skeleton = NodePath("../../../..")
+
+[node name="LongBox8" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0432842, 0, 0.00148243, 0, 0.0428901, 0, -0.00193903, 0, 0.0330916, 7.57201, 1.38901, -0.514257)
+skeleton = NodePath("../../../..")
+
+[node name="LongBox6" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0423643, 0, -0.00669544, 0, 0.0428901, 0, 0.00669544, 0, 0.0423643, 10.8233, -0.535631, -0.812441)
+skeleton = NodePath("../../../..")
+
+[node name="LongBox9" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("37_8s3tp")]
+transform = Transform3D(0.0423643, 0, -0.00669544, 0, 0.0428901, 0, 0.00669544, 0, 0.0423643, 10.8233, -0.535631, 2.938)
+skeleton = NodePath("../../../..")
+
+[node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("53_k3gdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.96408, 0.861314, 15.4544)
+
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40167, 3.71191)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40271, 3.71176)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40167, 0.575368)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40271, 0.575222)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40167, -3.01743)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2408, 3.40271, -3.01758)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68198, 3.33164, 3.99767)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68201, 3.33268, 3.99752)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68198, 3.33164, 0.861125)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68201, 3.33268, 0.860979)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68198, 3.33164, -2.73168)
-light_color = Color(1, 0.415686, 0.12549, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68201, 3.33268, -2.73183)
+light_color = Color(0.999999, 0.595688, 0.433371, 1)
 light_energy = 0.6
 
 [node name="SpotLight3D" type="OmniLight3D" parent="Lights"]
@@ -1709,9 +3642,11 @@ transform = Transform3D(-0.155208, 0, -1.35687e-08, 0, 0.155208, 0, 1.35687e-08,
 
 [node name="Flashlight" parent="PuzzleItems" instance=ExtResource("35_how5a")]
 transform = Transform3D(-0.0189985, 0.00134916, 0.032235, 0.00265219, 0.0373473, -1.16415e-10, -0.032154, 0.0022834, -0.0190463, -5.36134, 1.00122, 21.7152)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="DirectionalLock" parent="PuzzleItems" instance=ExtResource("36_ghwwm")]
+transform = Transform3D(-5.26456e-09, 1.59283e-10, -0.120495, 0.00364398, 0.120439, 0, 0.120439, -0.00364398, -5.267e-09, 5.86466, 1.22905, 6.11208)
 skeleton = NodePath("../..")
 
 [node name="PuzzleShelfStackBox" parent="PuzzleItems" instance=ExtResource("4_sahlb")]
@@ -1725,22 +3660,25 @@ transform = Transform3D(1, 0, 0, 0, 0.999974, 0, 0, 0, 1, -2.75035, 9.12875, 20.
 shape = SubResource("BoxShape3D_xusx8")
 
 [node name="StackTin" parent="PuzzleItems" instance=ExtResource("7_bnkt5")]
-transform = Transform3D(-3.49657e-09, 4.87635e-11, -0.08, 0.00111557, 0.0799922, 0, 0.0799922, -0.00111557, -3.49691e-09, 0.750048, 0.274259, 20.2878)
+transform = Transform3D(-3.49657e-09, 4.87635e-11, -0.08, 0.00111557, 0.0799922, 0, 0.0799922, -0.00111557, -3.49691e-09, 0.469481, 0.562309, 20.2838)
 skeleton = NodePath("../../../../../../..")
 
 [node name="StackCerealBox" parent="PuzzleItems" instance=ExtResource("18_rafcq")]
-transform = Transform3D(0.0367061, -0.0173368, 0.0291907, 0.00927145, 0.0464742, 0.0159432, -0.0326604, -0.00629148, 0.0373325, 0.497984, 0.368505, 20.3989)
+transform = Transform3D(0.0367061, -0.0173368, 0.0291907, 0.00927145, 0.0464742, 0.0159432, -0.0326604, -0.00629148, 0.0373325, 0.434026, 0.659603, 20.3246)
 skeleton = NodePath("../../../../../../..")
 
 [node name="KeyV2" parent="PuzzleItems" instance=ExtResource("29_5hmbq")]
 transform = Transform3D(-2.31219e-09, -0.03108, -0.0428031, 0.0528968, -1.35855e-09, -1.87098e-09, 0, -0.0428031, 0.03108, -5.74938, 0.987516, 21.6331)
 skeleton = NodePath("../..")
 
-[node name="TillOpen" parent="PuzzleItems" instance=ExtResource("13_3kece")]
-transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.46877, 1.05113, 21.7125)
-visible = false
-skeleton = NodePath("../..")
-
 [node name="TillClosed" parent="PuzzleItems" instance=ExtResource("13_3kece")]
 transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.47257, 1.05693, 21.7113)
 skeleton = NodePath("../../SubViewportContainer/SubViewport/EnvironementObjects/MainShop")
+
+[node name="StackChocolatebar" parent="PuzzleItems" instance=ExtResource("14_txdup")]
+transform = Transform3D(0.145316, -0.157015, 0.0832483, 0.115973, 0.165264, 0.109264, -0.134663, -0.0271085, 0.183934, 0.774548, 0.555642, 20.48)
+material_override = ExtResource("16_5iy3t")
+skeleton = NodePath("../..")
+
+[node name="BackroomDoor" parent="." instance=ExtResource("54_1h0rx")]
+transform = Transform3D(-0.000413102, 0, -0.570881, 0, 0.464292, 0, 0.438324, 0, -0.000538031, 5.37625, 1.5037, 5.97569)

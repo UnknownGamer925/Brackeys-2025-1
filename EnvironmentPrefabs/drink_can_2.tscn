@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tfb4bxg5ctsx"]
+
+[ext_resource type="ArrayMesh" uid="uid://d4lqurge77sjr" path="res://EnvironmentPrefabs/Models/DrinkCan.obj" id="1_twsk2"]
+
+[node name="DrinkCan2" type="MeshInstance3D"]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+mesh = ExtResource("1_twsk2")

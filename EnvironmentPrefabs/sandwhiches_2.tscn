@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgc860q7dhtvb"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6kj67ewr7eml" path="res://EnvironmentPrefabs/Models/Sandwhiches.obj" id="1_jbfkw"]
+[ext_resource type="Texture2D" uid="uid://mkbgd6w1kena" path="res://EnvironmentPrefabs/Materials/Sandwich2/DefaultMaterial_Base_color.png" id="2_3jccf"]
+[ext_resource type="Texture2D" uid="uid://b13lykiq7hx3h" path="res://EnvironmentPrefabs/Materials/Sandwich2/DefaultMaterial_Metallic.png" id="3_xpebw"]
+[ext_resource type="Texture2D" uid="uid://bxvggtaijvavv" path="res://EnvironmentPrefabs/Materials/Sandwich1/DefaultMaterial_Roughness.png" id="4_rnrks"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fusot"]
+albedo_texture = ExtResource("2_3jccf")
+metallic = 1.0
+metallic_texture = ExtResource("3_xpebw")
+roughness_texture = ExtResource("4_rnrks")
+normal_enabled = true
+
+[node name="Sandwhiches2" type="MeshInstance3D"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+mesh = ExtResource("1_jbfkw")
+surface_material_override/0 = SubResource("StandardMaterial3D_fusot")

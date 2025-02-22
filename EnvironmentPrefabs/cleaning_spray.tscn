@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj3reuf5wielu"]
+
+[ext_resource type="ArrayMesh" uid="uid://vjl3rfn34i7p" path="res://EnvironmentPrefabs/Models/CleaningSpray.obj" id="1_s7de4"]
+[ext_resource type="Texture2D" uid="uid://d1dslgmgyw82w" path="res://EnvironmentPrefabs/Materials/CleaningSpray/DefaultMaterial_Base_color.png" id="2_trvs6"]
+[ext_resource type="Texture2D" uid="uid://do0lllehpgpoy" path="res://EnvironmentPrefabs/Materials/CleaningSpray/DefaultMaterial_Metallic.png" id="3_nbny3"]
+[ext_resource type="Texture2D" uid="uid://d044cfhvyvqp8" path="res://EnvironmentPrefabs/Materials/CleaningSpray/DefaultMaterial_Normal.png" id="4_32bqd"]
+[ext_resource type="Texture2D" uid="uid://bbw5vi2eje6m5" path="res://EnvironmentPrefabs/Materials/CleaningSpray/DefaultMaterial_Roughness.png" id="5_qy8wo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjcsi"]
+albedo_texture = ExtResource("2_trvs6")
+metallic = 1.0
+metallic_texture = ExtResource("3_nbny3")
+roughness_texture = ExtResource("5_qy8wo")
+normal_enabled = true
+normal_texture = ExtResource("4_32bqd")
+
+[node name="CleaningSpray" type="MeshInstance3D"]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+mesh = ExtResource("1_s7de4")
+surface_material_override/0 = SubResource("StandardMaterial3D_vjcsi")

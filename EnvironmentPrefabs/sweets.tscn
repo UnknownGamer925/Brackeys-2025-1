@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1an6lolovsec"]
+
+[ext_resource type="ArrayMesh" uid="uid://de0v7kxppss3s" path="res://EnvironmentPrefabs/Models/Sweets.obj" id="1_uladw"]
+[ext_resource type="Texture2D" uid="uid://6a4b8muke7fo" path="res://EnvironmentPrefabs/Materials/Sweets1/DefaultMaterial_Base_color.png" id="2_251fi"]
+[ext_resource type="Texture2D" uid="uid://b2h62uvpd0s5k" path="res://EnvironmentPrefabs/Materials/Sweets1/DefaultMaterial_Metallic.png" id="3_gwtd5"]
+[ext_resource type="Texture2D" uid="uid://b2btfisdav8h2" path="res://EnvironmentPrefabs/Materials/Sweets1/DefaultMaterial_Normal.png" id="4_bt2r2"]
+[ext_resource type="Texture2D" uid="uid://cnon2q15f0mbn" path="res://EnvironmentPrefabs/Materials/Sweets1/DefaultMaterial_Roughness.png" id="5_7vhr4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cs5w"]
+albedo_texture = ExtResource("2_251fi")
+metallic = 1.0
+metallic_texture = ExtResource("3_gwtd5")
+roughness_texture = ExtResource("5_7vhr4")
+normal_enabled = true
+normal_texture = ExtResource("4_bt2r2")
+
+[node name="Sweets" type="MeshInstance3D"]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 0, 0, 0)
+mesh = ExtResource("1_uladw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7cs5w")
