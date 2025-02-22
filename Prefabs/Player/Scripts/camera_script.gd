@@ -10,6 +10,7 @@ var flashlight_position_smoothness = 15.0
 func _ready() -> void:
 	Input.warp_mouse(Vector2(position.x, position.y))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	MainManager.connect("has_torch",Callable( self, "enable_torch"))
 	cam = $Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -21,14 +22,15 @@ func _unhandled_input(event: InputEvent) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_flashlight(delta)
-	
-	if Input.is_action_just_pressed("Flashlight"):
-		flashlight.visible = not flashlight.visible
 	#var mouse_x : float = cam.project_ray_normal()
 	#var mouse_y : float = get_viewport().get_mouse_position().y
 	
 	#transform.basis = Basis(Vector3.RIGHT, mouse_x)
 	#print(mouse_x)
+
+func enable_torch() -> void:
+	if MainManager.hasTorch:
+		flashlight.visible = not flashlight.visible
 	
 func update_flashlight(delta: float) -> void:
 	flashlight.global_transform = Transform3D(

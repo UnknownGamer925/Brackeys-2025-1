@@ -23,19 +23,23 @@ func _process(delta: float) -> void:
 func _on_button_1_pressed() -> void:
 	A = not A
 	B = not B
+	play_audio()
 
 func _on_button_2_pressed() -> void:
 	A = not A
 	C = not C
+	play_audio()
 	
 
 func _on_button_3_pressed() -> void:
 	B = not B
 	C = not C
+	play_audio()
 	
 func _on_button_4_pressed() -> void:
 	C = not C
 	D = not D
+	play_audio()
 
 func changeColours() -> void:
 	if(A):
@@ -56,7 +60,18 @@ func changeColours() -> void:
 		Light4.modulate = Color(0.813, 0.322, 0)
 
 func checkCorrect() -> void:
-	if(A and B and C and D):
+	if(A and B and C and D) and !MainManager.LightsComplete:
+		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
+		MainManager.LightsComplete = true
+		for button in get_children():
+			if button is Button:
+				button.disabled = true
+		Button5.disabled = false
+	elif(MainManager.LightsComplete):
+		Light1.modulate = Color(Color(0.409, 0.735, 0.225))
+		Light2.modulate = Color(Color(0.409, 0.735, 0.225))
+		Light3.modulate = Color(Color(0.409, 0.735, 0.225))
+		Light4.modulate = Color(Color(0.409, 0.735, 0.225))
 		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
 		MainManager.LightsComplete = true
 		Button5.disabled = false
@@ -65,4 +80,10 @@ func checkCorrect() -> void:
 
 func _on_bad_button_pressed() -> void:
 	print("You're in for a bad time >:)")
+	play_audio()
 	MainManager.BadLights = true
+
+func play_audio():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LOCK_CLICK_2)
+
+		

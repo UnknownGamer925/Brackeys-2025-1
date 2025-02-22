@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MainManager="*res://Global/MainManager.gd"
 SceneSwitcher="*res://Global/SceneSwitcher.gd"
 AudioPlayer="*res://Prefabs/Audio_Player/Scripts/audio_player.gd"
+AudioManager="*res://Global/AudioManager/AudioManager.tscn"
 
 [display]
 

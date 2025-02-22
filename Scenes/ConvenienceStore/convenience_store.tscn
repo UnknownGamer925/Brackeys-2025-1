@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
+[ext_resource type="Theme" uid="uid://bug47d73a6l83" path="res://Scenes/MainMenu/Assets/Themes/MainMenu.tres" id="6_6r7xj"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
-[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="8_nkngf"]
+[ext_resource type="Script" path="res://Scenes/Bad_Ending/Scripts/BombInteract.gd" id="10_0lyde"]
 
 [sub_resource type="Theme" id="Theme_cknyc"]
 
@@ -20,6 +21,7 @@ default_font = ExtResource("5_cbci7")
 [sub_resource type="Theme" id="Theme_si4nw"]
 CheckBox/font_sizes/font_size = 28
 CheckBox/fonts/font = ExtResource("5_cbci7")
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -56,10 +58,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/Control" node_paths=PackedStringArray("key", "boxFull")]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Control" node_paths=PackedStringArray("key", "boxFull", "Title", "Obj1", "Obj2", "Obj3")]
 script = ExtResource("1_xsj26")
 key = NodePath("InvKey")
 boxFull = NodePath("InvBox/InvBoxFull")
+Title = NodePath("../VBoxContainer/RichTextLabel")
+Obj1 = NodePath("../VBoxContainer/Objective 1")
+Obj2 = NodePath("../VBoxContainer/Objective 2")
+Obj3 = NodePath("../VBoxContainer/Objective 3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
 position = Vector2(935, 551)
@@ -74,6 +80,7 @@ position = Vector2(2, 1)
 texture = ExtResource("2_wuks6")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+visible = false
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(1515, 855)
 texture = ExtResource("2_hvg0v")
@@ -95,9 +102,24 @@ fit_content = true
 
 [node name="Objective 1" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_si4nw")
+theme = ExtResource("6_6r7xj")
+
 theme_override_fonts/font = ExtResource("5_cbci7")
 text = " Stack Shelves"
+expand_icon = true
+
+[node name="Objective 2" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_6r7xj")
+theme_override_fonts/font = ExtResource("5_cbci7")
+text = "Count Money In Till"
+expand_icon = true
+
+[node name="Objective 3" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_6r7xj")
+theme_override_fonts/font = ExtResource("5_cbci7")
+text = "Turn Off Lights"
 expand_icon = true
 
 [node name="Dialogue" type="Label" parent="CanvasLayer/Control"]
@@ -110,7 +132,6 @@ offset_right = 1083.0
 offset_bottom = 1056.0
 theme_override_fonts/font = ExtResource("5_cbci7")
 theme_override_font_sizes/font_size = 20
-text = "HELLO"
 
 [node name="DialogueReciever" parent="CanvasLayer/Control/Dialogue" node_paths=PackedStringArray("Display") instance=ExtResource("1_qg2rs")]
 Display = NodePath("..")
@@ -240,6 +261,7 @@ skeleton = NodePath("../../../..")
 [node name="Object4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, -0.9234)
 script = ExtResource("1_e1alj")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object4"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -251,7 +273,9 @@ skeleton = NodePath("../../../..")
 
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
-script = ExtResource("8_nkngf")
+script = ExtResource("10_0lyde")
+ID = 0
+dialogue_key = "bad_end"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -264,6 +288,8 @@ skeleton = NodePath("../../../..")
 [node name="Object3" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, 1.2125)
 script = ExtResource("1_e1alj")
+ID = 0
+SceneType = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")
