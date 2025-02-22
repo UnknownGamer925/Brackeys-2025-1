@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://br2rhd0cd1vjh"]
+
+[ext_resource type="ArrayMesh" uid="uid://ctj53hb2jvcr4" path="res://EnvironmentPrefabs/Models/OutsideDoor.obj" id="1_3hprv"]
+[ext_resource type="Material" uid="uid://cytxwhtfccj6w" path="res://EnvironmentPrefabs/Materials/GlassMat.tres" id="2_vy58c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iegwq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdwwm"]
+
+[node name="OutsideDoor" type="MeshInstance3D"]
+transform = Transform3D(0.529995, 0, 0, 0, 0.252728, 0, 0, 0, 0.500164, -8.21174, 1.49606, 17.4192)
+mesh = ExtResource("1_3hprv")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.141358, 0.000702451, -0.0077514, -8.87301e-06, 12.1315, -0.00846931, 0.000298086, 0.0279546, 3.67561, 0.024477, -0.0536995, -2.09123)
+material_override = ExtResource("2_vy58c")
+mesh = SubResource("BoxMesh_iegwq")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D18/StaticBody3D"]
+shape = SubResource("BoxShape3D_mdwwm")

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chqx5my4yeakk"
+path="res://.godot/imported/StripLightsV2.obj-4ab8087bd023b562ab9aafa1883b11fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StripLightsV2.obj-4ab8087bd023b562ab9aafa1883b11fa.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/StripLightsV2.obj"
+dest_files=["res://.godot/imported/StripLightsV2.obj-4ab8087bd023b562ab9aafa1883b11fa.mesh", "res://.godot/imported/StripLightsV2.obj-4ab8087bd023b562ab9aafa1883b11fa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

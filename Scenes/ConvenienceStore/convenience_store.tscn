@@ -18,6 +18,11 @@
 [sub_resource type="Theme" id="Theme_g2fa2"]
 default_font = ExtResource("5_cbci7")
 
+[sub_resource type="Theme" id="Theme_si4nw"]
+CheckBox/font_sizes/font_size = 28
+CheckBox/fonts/font = ExtResource("5_cbci7")
+
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -98,6 +103,7 @@ fit_content = true
 [node name="Objective 1" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_6r7xj")
+
 theme_override_fonts/font = ExtResource("5_cbci7")
 text = " Stack Shelves"
 expand_icon = true
@@ -327,3 +333,29 @@ ID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
+
+[node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
+texture = ExtResource("5_77cbp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster1" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")
+
+[node name="Poster2" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
+texture = ExtResource("6_nm5b7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster2" node_paths=PackedStringArray("parent")]
+script = ExtResource("1_e1alj")
+parent = NodePath("..")
+ID = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
+transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
+shape = SubResource("BoxShape3D_jsxhh")

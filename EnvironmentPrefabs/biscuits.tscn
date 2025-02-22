@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg3jikrbkso4r"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6e7x8tvcd55j" path="res://EnvironmentPrefabs/Models/Biscuits.obj" id="1_acg74"]
+[ext_resource type="Texture2D" uid="uid://c6232tk3scpos" path="res://EnvironmentPrefabs/Materials/Biscuits/DefaultMaterial_Base_color.png" id="2_mgkq0"]
+[ext_resource type="Texture2D" uid="uid://dxh2xyf2dwpg8" path="res://EnvironmentPrefabs/Materials/Biscuits/DefaultMaterial_Metallic.png" id="3_4cjqi"]
+[ext_resource type="Texture2D" uid="uid://bxlbcj8ybcs6h" path="res://EnvironmentPrefabs/Materials/Biscuits/DefaultMaterial_Normal.png" id="4_ep282"]
+[ext_resource type="Texture2D" uid="uid://u2i634y0lldm" path="res://EnvironmentPrefabs/Materials/Biscuits/DefaultMaterial_Roughness.png" id="5_e4pkd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45568"]
+albedo_texture = ExtResource("2_mgkq0")
+metallic = 1.0
+metallic_texture = ExtResource("3_4cjqi")
+roughness_texture = ExtResource("5_e4pkd")
+normal_enabled = true
+normal_texture = ExtResource("4_ep282")
+
+[node name="Biscuits" type="MeshInstance3D"]
+transform = Transform3D(0.0520686, 0, 0, 0, 0.011448, 0.0507945, 0, -0.0507945, 0.011448, -2.69546, 0.10018, 16.0505)
+mesh = ExtResource("1_acg74")
+surface_material_override/0 = SubResource("StandardMaterial3D_45568")

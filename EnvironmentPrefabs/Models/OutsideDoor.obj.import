@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctj53hb2jvcr4"
+path="res://.godot/imported/OutsideDoor.obj-cc4e80c1675e25c0b60a831a597777ec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/OutsideDoor.obj-cc4e80c1675e25c0b60a831a597777ec.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/OutsideDoor.obj"
+dest_files=["res://.godot/imported/OutsideDoor.obj-cc4e80c1675e25c0b60a831a597777ec.mesh", "res://.godot/imported/OutsideDoor.obj-cc4e80c1675e25c0b60a831a597777ec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb5h2niylwrjc"]
+
+[ext_resource type="ArrayMesh" uid="uid://pkywre31r0hq" path="res://EnvironmentPrefabs/Models/Flashlight.obj" id="1_mvj8j"]
+[ext_resource type="Texture2D" uid="uid://cf21mog52yojg" path="res://EnvironmentPrefabs/Materials/Flashlight/DefaultMaterial_Base_color.png" id="2_u4c0b"]
+[ext_resource type="Texture2D" uid="uid://bfrgc2pqnfy1m" path="res://EnvironmentPrefabs/Materials/Flashlight/DefaultMaterial_Metallic.png" id="3_iljo6"]
+[ext_resource type="Texture2D" uid="uid://bkcbbptxpmcr1" path="res://EnvironmentPrefabs/Materials/Flashlight/DefaultMaterial_Normal.png" id="4_g10mi"]
+[ext_resource type="Texture2D" uid="uid://ctwr21rkmn7r2" path="res://EnvironmentPrefabs/Materials/Flashlight/DefaultMaterial_Roughness.png" id="5_1sqhn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdap4"]
+albedo_texture = ExtResource("2_u4c0b")
+metallic = 1.0
+metallic_texture = ExtResource("3_iljo6")
+roughness_texture = ExtResource("5_1sqhn")
+normal_enabled = true
+normal_texture = ExtResource("4_g10mi")
+
+[node name="Flashlight" type="MeshInstance3D"]
+transform = Transform3D(-0.0190463, 0, 0.032235, 0, 0.0374414, 0, -0.032235, 0, -0.0190463, -5.36069, 0.989801, 21.7163)
+mesh = ExtResource("1_mvj8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_qdap4")

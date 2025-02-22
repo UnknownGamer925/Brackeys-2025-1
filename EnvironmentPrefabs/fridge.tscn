@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd72c3s0df3il"]
+
+[ext_resource type="ArrayMesh" uid="uid://1qe72s7w7ras" path="res://EnvironmentPrefabs/Models/FridgeV2.obj" id="1_86s8n"]
+
+[node name="FridgeV2" type="MeshInstance3D"]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -5.45497, -0.0396278, 7.20708)
+mesh = ExtResource("1_86s8n")
