@@ -243,7 +243,8 @@ shape = SubResource("BoxShape3D_e2rpp")
 [node name="Object1" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, 0.822025)
 script = ExtResource("1_e1alj")
-ID = 0
+ID = 3
+SceneType = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object1"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -328,3 +329,4 @@ ID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
+
