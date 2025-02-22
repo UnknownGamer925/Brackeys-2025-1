@@ -85,6 +85,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3xk37")
 
 [node name="Flashlight" type="SpotLight3D" parent="."]
 transform = Transform3D(0.999829, 0, 0.0185166, 0, 1, 0, -0.0185166, 0, 0.999829, 2.50242e-07, 0.37549, -0.0371288)
+visible = false
 light_energy = 1.5
 light_projector = ExtResource("2_j60eu")
 shadow_enabled = true
@@ -93,7 +94,6 @@ spot_angle = 29.1764
 
 [node name="Pivot" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.743527, 0)
-visible = false
 script = ExtResource("2_ei3r6")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
