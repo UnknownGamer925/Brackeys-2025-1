@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw6haghgfs3na"]
+
+[ext_resource type="ArrayMesh" uid="uid://b08unfhxumh8i" path="res://EnvironmentPrefabs/Models/Apple.obj" id="1_cmglb"]
+[ext_resource type="Texture2D" uid="uid://c6l0upa6ut533" path="res://EnvironmentPrefabs/Materials/Apple/DefaultMaterial_Base_color.png" id="2_ylwmw"]
+[ext_resource type="Texture2D" uid="uid://d1uoqbfaejyqd" path="res://EnvironmentPrefabs/Materials/Apple/DefaultMaterial_Metallic.png" id="3_omawn"]
+[ext_resource type="Texture2D" uid="uid://bq5ku07om2fw5" path="res://EnvironmentPrefabs/Materials/Apple/DefaultMaterial_Normal.png" id="4_5kic2"]
+[ext_resource type="Texture2D" uid="uid://nlft3vpe0u4i" path="res://EnvironmentPrefabs/Materials/Apple/DefaultMaterial_Roughness.png" id="5_pwj31"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iout0"]
+albedo_texture = ExtResource("2_ylwmw")
+metallic = 1.0
+metallic_texture = ExtResource("3_omawn")
+roughness_texture = ExtResource("5_pwj31")
+normal_enabled = true
+normal_texture = ExtResource("4_5kic2")
+
+[node name="Apple" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_cmglb")
+skeleton = NodePath("../SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks")
+surface_material_override/0 = SubResource("StandardMaterial3D_iout0")

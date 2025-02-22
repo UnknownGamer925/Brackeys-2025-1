@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ch5g7jetgle0m" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Normal.png" id="4_3wydf"]
 [ext_resource type="Texture2D" uid="uid://dj216ag5p3blk" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Roughness.png" id="5_etyyp"]
 [ext_resource type="ArrayMesh" uid="uid://bsi8xisols0xh" path="res://EnvironmentPrefabs/Models/TillDrawer.obj" id="6_n4p6j"]
+[ext_resource type="Material" uid="uid://cnmup7c36dmy8" path="res://EnvironmentPrefabs/Materials/till_mat.tres" id="7_yx5rt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfcdp"]
 albedo_texture = ExtResource("2_ddfed")
@@ -15,14 +16,12 @@ roughness_texture = ExtResource("5_etyyp")
 normal_enabled = true
 normal_texture = ExtResource("4_3wydf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rjr2"]
-
 [node name="Till" type="MeshInstance3D"]
 transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -7.2407, 1.05693, 21.7113)
 mesh = ExtResource("1_yyjwl")
 surface_material_override/0 = SubResource("StandardMaterial3D_vfcdp")
 
 [node name="TillDrawer" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.997191, 0, 0, 0, 0.997191, 0, 0, 0, 0.997191, -0.0490608, -0.024703, -0.662338)
+transform = Transform3D(0.997191, 0, 0, 0, 0.997191, 0, 0, 0, 0.997191, -0.0490608, -0.024703, 1.57907)
 mesh = ExtResource("6_n4p6j")
-surface_material_override/0 = SubResource("StandardMaterial3D_7rjr2")
+surface_material_override/0 = ExtResource("7_yx5rt")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckwqghottdcfw"]
+
+[ext_resource type="ArrayMesh" uid="uid://dr7qmh5b0oprm" path="res://EnvironmentPrefabs/Models/Banana.obj" id="1_p4sgu"]
+[ext_resource type="Texture2D" uid="uid://cexdbe1fsxutv" path="res://EnvironmentPrefabs/Materials/Banana/DefaultMaterial_Base_color.png" id="2_26h45"]
+[ext_resource type="Texture2D" uid="uid://blw0o7iyfblkg" path="res://EnvironmentPrefabs/Materials/Banana/DefaultMaterial_Metallic.png" id="3_jy6mf"]
+[ext_resource type="Texture2D" uid="uid://br430rgpnu8kw" path="res://EnvironmentPrefabs/Materials/Banana/DefaultMaterial_Normal.png" id="4_jsmbr"]
+[ext_resource type="Texture2D" uid="uid://bxgi4x47jlycx" path="res://EnvironmentPrefabs/Materials/Banana/DefaultMaterial_Roughness.png" id="5_5teyi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1wk2"]
+albedo_texture = ExtResource("2_26h45")
+metallic = 1.0
+metallic_texture = ExtResource("3_jy6mf")
+roughness_texture = ExtResource("5_5teyi")
+normal_enabled = true
+normal_texture = ExtResource("4_jsmbr")
+
+[node name="Banana" type="MeshInstance3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_p4sgu")
+skeleton = NodePath("../SubViewportContainer/SubViewport/EnvironementObjects/Building Blocks")
+surface_material_override/0 = SubResource("StandardMaterial3D_q1wk2")

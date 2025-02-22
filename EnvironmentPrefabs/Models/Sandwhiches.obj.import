@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6kj67ewr7eml"
+path="res://.godot/imported/Sandwhiches.obj-edda9ee0af0a095b144dccbbe471902a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sandwhiches.obj-edda9ee0af0a095b144dccbbe471902a.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/Sandwhiches.obj"
+dest_files=["res://.godot/imported/Sandwhiches.obj-edda9ee0af0a095b144dccbbe471902a.mesh", "res://.godot/imported/Sandwhiches.obj-edda9ee0af0a095b144dccbbe471902a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
