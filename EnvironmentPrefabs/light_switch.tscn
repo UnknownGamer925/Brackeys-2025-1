@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://csu8i85jdnaxj"]
+
+[ext_resource type="ArrayMesh" uid="uid://bfu5n3yvp20mn" path="res://EnvironmentPrefabs/Models/LightSwitch.obj" id="1_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://csssspejlgew3" path="res://EnvironmentPrefabs/Materials/LightSwitch/DefaultMaterial_Base_color.png" id="2_tphnx"]
+[ext_resource type="Texture2D" uid="uid://cabxhp6gdfycv" path="res://EnvironmentPrefabs/Materials/LightSwitch/DefaultMaterial_Metallic.png" id="3_k4r0r"]
+[ext_resource type="Texture2D" uid="uid://3s5x6mcxnkqp" path="res://EnvironmentPrefabs/Materials/LightSwitch/DefaultMaterial_Normal.png" id="4_pceqc"]
+[ext_resource type="Texture2D" uid="uid://coj03oi2gpqjo" path="res://EnvironmentPrefabs/Materials/LightSwitch/DefaultMaterial_Roughness.png" id="5_tm4u7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ut02"]
+albedo_texture = ExtResource("2_tphnx")
+metallic = 1.0
+metallic_texture = ExtResource("3_k4r0r")
+roughness_texture = ExtResource("5_tm4u7")
+normal_enabled = true
+normal_texture = ExtResource("4_pceqc")
+
+[node name="LightSwitch" type="MeshInstance3D"]
+transform = Transform3D(-0.123632, 0, -1.08083e-08, 0, 0.123632, 0, 1.08083e-08, 0, -0.123632, 7.22503, 1.34424, 13.2427)
+mesh = ExtResource("1_o3h8g")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ut02")

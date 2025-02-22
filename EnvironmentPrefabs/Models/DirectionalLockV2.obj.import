@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqk4h1qthtiry"
+path="res://.godot/imported/DirectionalLockV2.obj-f5cc94d80aea84da8de3ad53e3086fab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DirectionalLockV2.obj-f5cc94d80aea84da8de3ad53e3086fab.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/DirectionalLockV2.obj"
+dest_files=["res://.godot/imported/DirectionalLockV2.obj-f5cc94d80aea84da8de3ad53e3086fab.mesh", "res://.godot/imported/DirectionalLockV2.obj-f5cc94d80aea84da8de3ad53e3086fab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

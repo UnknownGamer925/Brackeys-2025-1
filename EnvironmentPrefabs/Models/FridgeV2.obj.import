@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1qe72s7w7ras"
+path="res://.godot/imported/FridgeV2.obj-2f486e21ac6b52381113b785ba3b9897.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FridgeV2.obj-2f486e21ac6b52381113b785ba3b9897.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/FridgeV2.obj"
+dest_files=["res://.godot/imported/FridgeV2.obj-2f486e21ac6b52381113b785ba3b9897.mesh", "res://.godot/imported/FridgeV2.obj-2f486e21ac6b52381113b785ba3b9897.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

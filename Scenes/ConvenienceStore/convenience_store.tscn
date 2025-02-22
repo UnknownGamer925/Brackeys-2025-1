@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0ej1raa0eym3"]
+[gd_scene load_steps=22 format=3 uid="uid://d0ej1raa0eym3"]
 
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_3l8qs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="1_e1alj"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/HUD_Script.gd" id="1_xsj26"]
 [ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
 [ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
-[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="4_e2tq5"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Texture2D" uid="uid://cpfg88dyddxud" path="res://Scenes/ConvenienceStore/Assets/temp_poster_2.png" id="6_nm5b7"]
@@ -16,11 +15,11 @@
 [sub_resource type="Theme" id="Theme_cknyc"]
 
 [sub_resource type="Theme" id="Theme_g2fa2"]
-default_font = ExtResource("4_e2tq5")
+default_font = ExtResource("5_cbci7")
 
 [sub_resource type="Theme" id="Theme_si4nw"]
 CheckBox/font_sizes/font_size = 28
-CheckBox/fonts/font = ExtResource("4_e2tq5")
+CheckBox/fonts/font = ExtResource("5_cbci7")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -75,7 +74,6 @@ position = Vector2(2, 1)
 texture = ExtResource("2_wuks6")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
-
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(1515, 855)
 texture = ExtResource("2_hvg0v")
@@ -98,7 +96,7 @@ fit_content = true
 [node name="Objective 1" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_si4nw")
-theme_override_fonts/font = ExtResource("4_e2tq5")
+theme_override_fonts/font = ExtResource("5_cbci7")
 text = " Stack Shelves"
 expand_icon = true
 
@@ -335,4 +333,3 @@ ID = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_jsxhh")
-

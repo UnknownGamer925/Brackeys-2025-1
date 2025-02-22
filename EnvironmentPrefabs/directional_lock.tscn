@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://de8wmp1ahrvhk"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqk4h1qthtiry" path="res://EnvironmentPrefabs/Models/DirectionalLockV2.obj" id="1_5qm84"]
+[ext_resource type="Texture2D" uid="uid://bh6i7askxmyu8" path="res://EnvironmentPrefabs/Materials/DirectionalLock/DefaultMaterial_Base_color.png" id="2_hbsqi"]
+[ext_resource type="Texture2D" uid="uid://dyk208x1pibu2" path="res://EnvironmentPrefabs/Materials/DirectionalLock/DefaultMaterial_Metallic.png" id="3_pfbfw"]
+[ext_resource type="Texture2D" uid="uid://7neqoro8f1lu" path="res://EnvironmentPrefabs/Materials/DirectionalLock/DefaultMaterial_Normal.png" id="4_8d52c"]
+[ext_resource type="Texture2D" uid="uid://dlstsalp6trs1" path="res://EnvironmentPrefabs/Materials/DirectionalLock/DefaultMaterial_Roughness.png" id="5_yckgx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqs3w"]
+albedo_texture = ExtResource("2_hbsqi")
+metallic = 1.0
+metallic_texture = ExtResource("3_pfbfw")
+roughness_texture = ExtResource("5_yckgx")
+normal_enabled = true
+normal_texture = ExtResource("4_8d52c")
+
+[node name="DirectionalLock" type="MeshInstance3D"]
+transform = Transform3D(0.00380795, -0.120434, 0, 0.120434, 0.00380795, 0, 0, 0, 0.120495, -4.80698, 1.02743, 21.527)
+mesh = ExtResource("1_5qm84")
+surface_material_override/0 = SubResource("StandardMaterial3D_fqs3w")
