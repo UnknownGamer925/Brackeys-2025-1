@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfievfk4j24g2"
+path="res://.godot/imported/FreezerLid.obj-e258897d2185b8bcfd3cf5dc2e867b5f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FreezerLid.obj-e258897d2185b8bcfd3cf5dc2e867b5f.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/FreezerLid.obj"
+dest_files=["res://.godot/imported/FreezerLid.obj-e258897d2185b8bcfd3cf5dc2e867b5f.mesh", "res://.godot/imported/FreezerLid.obj-e258897d2185b8bcfd3cf5dc2e867b5f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
