@@ -25,13 +25,20 @@ var BoxComplete = false
 signal display_dialogue(dialogue_key)
 signal update_dialogue()
 
+signal till_complete()
+signal shelves_stacked()
+signal lights_off()
+
+signal has_key()
+signal has_torch()
+
+signal lock_complete()
+signal box_complete()
+
 signal bad_ending_enabled()
 
 var beepTimer
 var EerieTimer
-
-var MenuMusic
-var file_path
 
 func _ready() -> void:
 	EerieTimer = rng.randi_range(1, 80)
@@ -42,21 +49,17 @@ func _process(delta: float) -> void:
 	SceneSwitcher.current_scene_type != SceneSwitcher.SceneType.CREDIT_MENU && 
 	SceneSwitcher.current_scene_type != SceneSwitcher.SceneType.OPTIONS_MENU):
 		StoreAudio(delta)
-		if(MenuMusic != null):
-			MenuMusic.queue_free()
-			MenuMusic = null
+		
 		if(!LightsComplete):
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LIGHT_LOOP)
 	else:
-		if(MenuMusic == null):
-			MenuMusic = AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_MUSIC)
-	
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_MUSIC)
 			  
 
 func increase_shelf_int():
 	ItemsPlaced += 1
 	if (ItemsPlaced >= 4):
-		pass
+		self.emit_signal("shelves_stacked")
 
 func play_bg_audio():
 	var randomInt = MainManager.rng.randi_range(1,3)

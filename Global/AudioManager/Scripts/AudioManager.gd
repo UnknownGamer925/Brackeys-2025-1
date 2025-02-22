@@ -11,6 +11,7 @@ var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on r
 
 @export var sound_effects: Array[SoundEffect] ## Stores all possible SoundEffects that can be played.
 
+var isMuted = false
 
 func _ready() -> void:
 	for sound_effect: SoundEffect in sound_effects:
@@ -19,23 +20,30 @@ func _ready() -> void:
 
 
 ## Creates a sound effect if the limit has not been reached. Pass [param type] for the SoundEffect to be queued.
-func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> AudioStreamPlayer:
-	var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
-	if sound_effect_dict.has(type):
-		var sound_effect: SoundEffect = sound_effect_dict[type]
-		if sound_effect.has_open_limit():
-			sound_effect.change_audio_count(1)
-			add_child(new_audio)
-			new_audio.stream = sound_effect.sound_effect
-			new_audio.volume_db = sound_effect.volume
-			if(sound_effect.pitch_scale <= 0):
-				new_audio.pitch_scale = 1
-			else:	
-				new_audio.pitch_scale = sound_effect.pitch_scale
-			new_audio.pitch_scale += clamp(MainManager.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness ), -0.2, 0.2)
-			new_audio.finished.connect(sound_effect.on_audio_finished)
-			new_audio.finished.connect(new_audio.queue_free)
-			new_audio.play()
-	else:
-		push_error("Audio Manager failed to find setting for type ", type)
-	return new_audio
+func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
+	
+	if(!isMuted):
+		if sound_effect_dict.has(type):
+			var sound_effect: SoundEffect = sound_effect_dict[type]
+			if sound_effect.has_open_limit():
+				sound_effect.change_audio_count(1)
+				var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
+				add_child(new_audio)
+				new_audio.stream = sound_effect.sound_effect
+				new_audio.volume_db = sound_effect.volume
+				if(sound_effect.pitch_scale <= 0):
+					new_audio.pitch_scale = 1
+				else:	
+					new_audio.pitch_scale = sound_effect.pitch_scale
+				new_audio.pitch_scale += clamp(MainManager.rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness ), -0.2, 0.2)
+				new_audio.finished.connect(sound_effect.on_audio_finished)
+				new_audio.finished.connect(new_audio.queue_free)
+				new_audio.play()
+		else:
+			push_error("Audio Manager failed to find setting for type ", type)
+
+func resetSound():
+	for audio in AudioManager.sound_effects:
+			audio.audio_count = 0 
+	for child in AudioManager.get_children():
+			child.queue_free()

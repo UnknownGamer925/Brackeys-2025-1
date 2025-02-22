@@ -1,11 +1,16 @@
 extends Control
 @export var tick:CheckBox
+@export var muteBox:CheckBox
 func _ready():
 	#AudioPlayer.play_music_menu()
 	if(DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN):
 		tick.button_pressed = true
 	else:
 		tick.button_pressed = false
+	if(AudioManager.isMuted):
+		muteBox.button_pressed = true
+	else:
+		muteBox.button_pressed = false
 	
 
 func _on_back_pressed():
@@ -45,3 +50,8 @@ func _on_check_box_toggled(toggled_on):
 
 func play_audio():
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_CLICK_3)
+
+
+func _on_mute_toggled(toggled_on: bool) -> void:
+	AudioManager.isMuted = toggled_on
+	AudioManager.resetSound()
