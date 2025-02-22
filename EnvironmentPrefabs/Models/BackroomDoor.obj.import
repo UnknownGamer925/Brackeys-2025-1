@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lmg3oivhj2l5"
+path="res://.godot/imported/BackroomDoor.obj-e658be93b8ae43c3e77cf2d488125041.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BackroomDoor.obj-e658be93b8ae43c3e77cf2d488125041.mesh"]
+
+source_file="res://EnvironmentPrefabs/Models/BackroomDoor.obj"
+dest_files=["res://.godot/imported/BackroomDoor.obj-e658be93b8ae43c3e77cf2d488125041.mesh", "res://.godot/imported/BackroomDoor.obj-e658be93b8ae43c3e77cf2d488125041.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
