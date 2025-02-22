@@ -1,5 +1,6 @@
-[gd_scene load_steps=71 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=72 format=3 uid="uid://dekcbwoh2ir0d"]
 
+[ext_resource type="PackedScene" uid="uid://yqikeipqs3dv" path="res://Prefabs/joe_shelf.tscn" id="1_wpqsa"]
 [ext_resource type="Material" uid="uid://bf1lcal3mn6jc" path="res://EnvironmentPrefabs/Materials/WallsTemp_Mat.tres" id="2_1m811"]
 [ext_resource type="Texture2D" uid="uid://i6r6kti5mpvj" path="res://EnvironmentPrefabs/Materials/PetrolPumps/DefaultMaterial_Base_color.png" id="3_0i4ye"]
 [ext_resource type="PackedScene" uid="uid://bj8aeqllxsrgf" path="res://EnvironmentPrefabs/storage_shelves.tscn" id="3_316cr"]
@@ -123,6 +124,8 @@ size = Vector2i(480, 270)
 render_target_update_mode = 4
 
 [node name="EnvironementObjects" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="JOE SHELF" parent="SubViewportContainer/SubViewport/EnvironementObjects" instance=ExtResource("1_wpqsa")]
 
 [node name="OutsideObjects" type="Node3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.919455)
@@ -606,12 +609,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -3.40438, -0.990918)
 
 [node name="GeneralShelves(double)2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.72679, 1.21915, 10.966)
-
-[node name="GeneralShelves(double)3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.72679, 1.21915, 15.3983)
-
-[node name="GeneralShelves(double)4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("6_t3akk")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.35188, 1.21915, 15.3983)
 
 [node name="GeneralShelves(endLeft)2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("7_cp2nt")]
 transform = Transform3D(0.000254807, 5.05333e-05, 0.3, -0.000243502, 0.3, -5.03232e-05, -0.3, -0.000243459, 0.000254848, 2.10035, 1.31328, 17.0009)
@@ -5284,7 +5281,7 @@ skeleton = NodePath("../../../../..")
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("53_k3gdf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33975, 0.861314, 4.42648)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217228, 0.861314, 13.5469)
 
 [node name="Lights" type="Node3D" parent="."]
 
