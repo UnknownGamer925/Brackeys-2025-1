@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://d0wbip7das54e" path="res://Scenes/ConvenienceStore/Assets/Page 1.svg" id="1_mmtop"]
 [ext_resource type="PackedScene" uid="uid://c06tdomveeeu2" path="res://Prefabs/DialogueReciever/DialogueReciever.tscn" id="1_qg2rs"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/HUD_Script.gd" id="1_xsj26"]
-[ext_resource type="Texture2D" uid="uid://ukcnhk1au1u7" path="res://Scenes/ConvenienceStore/Assets/Page 4.svg" id="2_hvg0v"]
-[ext_resource type="Texture2D" uid="uid://d1fl07d7gqj4g" path="res://Scenes/ConvenienceStore/Assets/Page 2.svg" id="2_wuks6"]
+[ext_resource type="Texture2D" uid="uid://chouf5os05o7w" path="res://Scenes/ConvenienceStore/Assets/IMG_2875.PNG" id="3_lj81t"]
+[ext_resource type="Texture2D" uid="uid://ymjri7523tvj" path="res://Scenes/ConvenienceStore/Assets/IMG_2890.PNG" id="4_w35wd"]
 [ext_resource type="Texture2D" uid="uid://bc3ax48fjh3oh" path="res://Scenes/ConvenienceStore/Assets/temp_poster.png" id="5_77cbp"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="5_cbci7"]
 [ext_resource type="Theme" uid="uid://bug47d73a6l83" path="res://Scenes/MainMenu/Assets/Themes/MainMenu.tres" id="6_6r7xj"]
@@ -71,14 +71,15 @@ position = Vector2(1739, 914)
 texture = ExtResource("1_mmtop")
 
 [node name="InvBoxFull" type="Sprite2D" parent="CanvasLayer/Control/Node2D/InvBox"]
-position = Vector2(2, 1)
-texture = ExtResource("2_wuks6")
+position = Vector2(0.999996, 2.00001)
+scale = Vector2(0.197685, 0.197685)
+texture = ExtResource("3_lj81t")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
 visible = false
-modulate = Color(1, 1, 1, 0.286275)
-position = Vector2(1515, 855)
-texture = ExtResource("2_hvg0v")
+position = Vector2(1523, 848)
+scale = Vector2(0.108872, 0.108872)
+texture = ExtResource("4_w35wd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -327,29 +328,3 @@ ID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
-
-[node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
-texture = ExtResource("5_77cbp")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster1" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
-
-[node name="Poster2" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
-texture = ExtResource("6_nm5b7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster2" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
