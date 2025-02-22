@@ -61,7 +61,7 @@ func changeColours() -> void:
 
 func checkCorrect() -> void:
 	if(A and B and C and D) and !MainManager.LightsComplete:
-		Light5.modulate = Color(0.681, 0.537, 0.873)
+		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
 		MainManager.LightsComplete = true
 		for button in get_children():
 			if button is Button:
@@ -72,13 +72,14 @@ func checkCorrect() -> void:
 		Light2.modulate = Color(Color(0.409, 0.735, 0.225))
 		Light3.modulate = Color(Color(0.409, 0.735, 0.225))
 		Light4.modulate = Color(Color(0.409, 0.735, 0.225))
-		Light5.modulate = Color(1, 0.02, 0.554)
+		Light5.modulate = Color(Color(0.409, 0.735, 0.225))
 		MainManager.LightsComplete = true
 		Button5.disabled = false
 		
 
 
 func _on_bad_button_pressed() -> void:
+	print("You're in for a bad time >:)")
 	play_audio()
 	MainManager.BadLights = true
 

@@ -1,22 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://iw5sothup3cd"]
+[gd_scene load_steps=2 format=3 uid="uid://iw5sothup3cd"]
 
 [ext_resource type="Script" path="res://Prefabs/Grid/grid.gd" id="1_loyuf"]
-[ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="2_jfjtl"]
 
-[node name="Grid" type="Node2D" node_paths=PackedStringArray("label")]
+[node name="Grid" type="Node2D"]
 script = ExtResource("1_loyuf")
-label = NodePath("RichTextLabel")
-cell_size = 100
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("2_jfjtl")
-theme_override_font_sizes/bold_italics_font_size = 20
-theme_override_font_sizes/italics_font_size = 20
-theme_override_font_sizes/mono_font_size = 20
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
-text = "You
-"

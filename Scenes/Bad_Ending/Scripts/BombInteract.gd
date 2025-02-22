@@ -21,7 +21,6 @@ func _on_timer_timeout() -> void:
 		start = false
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LAYERED_EXPLOSION)
 		waitTimer.stop()
-		SceneSwitcher.switch_scene(SceneSwitcher.SceneType.BAD_END)
 	else:
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHOVEL_HIT)
 		beenHit = true

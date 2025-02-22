@@ -6,7 +6,6 @@ var offset
 var goRight = true
 var goLeft = true
 var ID = 0
-var cell_size = 50
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -18,10 +17,9 @@ func _process(delta: float) -> void:
 		
 		
 func setUp(multipler, target) -> void:
-	
-	scale *= Vector2(cell_size / 50, cell_size / 50)
-	scale.x *= multipler
-	
+	scale.x = multipler / scale.x
+	if(target == 1):
+		modulate = Color(0.813, 0.322, 0)
 	
 		
 
@@ -30,13 +28,13 @@ func move(delta):
 	var target_position = get_global_mouse_position().x - offset.x
 	var movement = target_position - global_position.x 
 	
-	if direction == 1 and goLeft and position.x >= cell_size: 
+	if direction == 1 and goLeft and global_position.x >= 50: 
 		velocity.x = movement
-	elif direction == -1 and goRight and position.x <= (cell_size*5) + 15 :
+	elif direction == -1 and goRight and global_position.x <= 265:
 		velocity.x = movement
 	else:
 		velocity.x = 0
-
+	# Move and check for collisions
 	move_and_slide()
 
 func _on_area_2d_mouse_entered() -> void:
