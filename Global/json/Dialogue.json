@@ -21,11 +21,11 @@
 
 	"bad_end":[
 		"What on earth?",
-		"You weren't suppose to be here..."
+		"???: You weren't suppose to be here..."
 	],
 
 	"good_end":[
-		"Yippee!"
+		"Time to clock out..."
 	]
 
 }
