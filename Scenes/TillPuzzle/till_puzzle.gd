@@ -2,6 +2,10 @@ extends Node2D
 @export var Combination:Array[int]
 @export var TillTotal:Array[int]
 @export var TillDisplay:Label
+@export var bg: Sprite2D
+@export var till_close: Texture2D
+@export var till_open: Texture2D
+
 var acceptInput: bool
 var UserInput: Array
 
@@ -9,7 +13,7 @@ var UserInput: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	bg.texture = till_close
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +37,7 @@ func _on_enter_button_pressed() -> void:
 		if(Combination != TillTotal):
 			Combination = TillTotal
 			call_deferred("create_cash_jingle")
+			bg.texture = till_open
 		else:
 			MainManager.TillComplete = true
 			call_deferred("create_cash_jingle")

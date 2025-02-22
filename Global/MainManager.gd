@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.LIGHT_LOOP)
 	else:
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.MENU_MUSIC)
-			  
+		  
 
 func increase_shelf_int():
 	ItemsPlaced += 1

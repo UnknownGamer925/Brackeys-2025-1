@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		if(player.position.x >=cell_size * 5):
 			MainManager.BoxComplete = true
 			SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
-		label.global_position = player.global_position + Vector2(0, -cell_size / 5 )
+		label.global_position = player.global_position + Vector2(0, -cell_size / 4 )
 
 func setUp() -> void:
 	#Ys
@@ -47,6 +47,7 @@ func place_objects_in_grid(xPos, yPos, box,length ,target):
 	if(target):
 		player = object_instance
 		label.visible = true
+		player.get_node("NinePatchRect").texture = load("res://Prefabs/WoodenSlideX/Assets/redFinalBox-removebg-preview.png")
 	
 
 

@@ -329,4 +329,3 @@ ID = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
-
