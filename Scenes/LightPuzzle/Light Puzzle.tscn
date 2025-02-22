@@ -1,123 +1,9 @@
-[gd_scene load_steps=64 format=3 uid="uid://duxpg6kw444xt"]
+[gd_scene load_steps=5 format=3 uid="uid://duxpg6kw444xt"]
 
 [ext_resource type="Script" path="res://Scenes/LightPuzzle/light_puzzle.gd" id="1_q38ri"]
-[ext_resource type="Texture2D" uid="uid://bn20s28a6ewue" path="res://Scenes/LightPuzzle/Assets/Lights_BG.PNG" id="2_df55y"]
-[ext_resource type="Texture2D" uid="uid://deuulxrm2hwws" path="res://Scenes/LightPuzzle/Assets/1.PNG" id="3_phku3"]
-[ext_resource type="Texture2D" uid="uid://bh4ls1eaibbfr" path="res://Scenes/LightPuzzle/Assets/2.PNG" id="4_2grfn"]
+[ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="2_ac8a1"]
+[ext_resource type="Texture2D" uid="uid://maaledw5q4lh" path="res://Scenes/SlidingPuzzle/Assets/TempAsset.png" id="3_237st"]
 [ext_resource type="PackedScene" uid="uid://bm1lsocmpgpqh" path="res://Prefabs/ReturnButton/ReturnButton.tscn" id="4_afq6p"]
-[ext_resource type="Texture2D" uid="uid://ffl8twipfy7b" path="res://Scenes/LightPuzzle/Assets/3.PNG" id="5_8lgm5"]
-[ext_resource type="Texture2D" uid="uid://bcshawnte5cua" path="res://Scenes/LightPuzzle/Assets/4.PNG" id="6_f7y5s"]
-[ext_resource type="Texture2D" uid="uid://by3obm1mgvrsa" path="res://Scenes/LightPuzzle/Assets/5.PNG" id="7_4k8s6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50vgs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vcfsn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s13yy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cd0rb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xeqdr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shoth"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uri08"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0658"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6he2d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhucn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hrym"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uj7fw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyodp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_laraj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2krmm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r48cf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4al0u"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alcv0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xn83r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfydq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mvm2k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6erly"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjrdn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1c108"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qx580"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swrp8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufve7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6006"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fk32"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6et5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfx0t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yn4e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qttml"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ol5ek"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ty2si"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8ysx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n3bjp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrcqk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cs1t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpd66"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlfqu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2rso"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfskd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es1nt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5g3hu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kv87r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy6ry"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4133"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf4i5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jr8e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glbmr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nxat"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3hrs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ochfa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hf2o6"]
 
 [node name="LightPuzzle" type="Node2D" node_paths=PackedStringArray("Light1", "Light2", "Light3", "Light4", "Light5", "Button5")]
 script = ExtResource("1_q38ri")
@@ -129,123 +15,67 @@ Light5 = NodePath("BadLight")
 Button5 = NodePath("BadButton")
 
 [node name="SpareBackground" type="Sprite2D" parent="."]
-position = Vector2(958, 539)
-texture = ExtResource("2_df55y")
+position = Vector2(950, 500)
+texture = ExtResource("2_ac8a1")
 
 [node name="Light 1" type="Sprite2D" parent="."]
 modulate = Color(0.409276, 0.734685, 0.224808, 1)
-position = Vector2(957, 539)
-texture = ExtResource("3_phku3")
+position = Vector2(143, 108)
+texture = ExtResource("3_237st")
 
 [node name="Light 2" type="Sprite2D" parent="."]
 modulate = Color(0.81289, 0.321742, 7.70092e-07, 1)
-position = Vector2(959, 539)
-texture = ExtResource("4_2grfn")
+position = Vector2(143, 227)
+texture = ExtResource("3_237st")
 
 [node name="Light 3" type="Sprite2D" parent="."]
 modulate = Color(0.81289, 0.321742, 7.70092e-07, 1)
-position = Vector2(957, 539)
-texture = ExtResource("5_8lgm5")
+position = Vector2(143, 347)
+texture = ExtResource("3_237st")
 
 [node name="Button1" type="Button" parent="."]
-offset_left = 224.0
-offset_top = 461.0
-offset_right = 334.0
-offset_bottom = 645.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_50vgs")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vcfsn")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_s13yy")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cd0rb")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xeqdr")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_shoth")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_uri08")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_c0658")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_6he2d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_fhucn")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7hrym")
+offset_left = 219.0
+offset_top = 79.0
+offset_right = 377.0
+offset_bottom = 144.0
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 520.0
-offset_top = 461.0
-offset_right = 638.0
-offset_bottom = 654.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_uj7fw")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tyodp")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_laraj")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2krmm")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_r48cf")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4al0u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_alcv0")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xn83r")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kfydq")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mvm2k")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6erly")
+offset_left = 218.0
+offset_top = 195.0
+offset_right = 376.0
+offset_bottom = 260.0
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 808.0
-offset_top = 477.0
-offset_right = 934.0
-offset_bottom = 630.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tjrdn")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_1c108")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qx580")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_swrp8")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ufve7")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x6006")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_4fk32")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e6et5")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_dfx0t")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4yn4e")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qttml")
+offset_left = 213.0
+offset_top = 317.0
+offset_right = 371.0
+offset_bottom = 382.0
 
 [node name="Light 4" type="Sprite2D" parent="."]
 modulate = Color(0.811765, 0.321569, 0, 1)
-position = Vector2(958, 538)
-texture = ExtResource("6_f7y5s")
+position = Vector2(143.5, 463)
+texture = ExtResource("3_237st")
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 1112.0
-offset_top = 469.0
-offset_right = 1232.0
-offset_bottom = 638.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ol5ek")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ty2si")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_h8ysx")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_n3bjp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yrcqk")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1cs1t")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_wpd66")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wlfqu")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_l2rso")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hfskd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_es1nt")
+offset_left = 207.0
+offset_top = 430.0
+offset_right = 365.0
+offset_bottom = 495.0
 
 [node name="BadLight" type="Sprite2D" parent="."]
-modulate = Color(0.784866, 0.211421, 0, 1)
-position = Vector2(960, 539)
-texture = ExtResource("7_4k8s6")
+modulate = Color(0.589569, 0.224801, 0, 1)
+position = Vector2(778.5, 292)
+texture = ExtResource("3_237st")
 
 [node name="BadButton" type="Button" parent="."]
-self_modulate = Color(0.680792, 0.53746, 0.873024, 1)
-offset_left = 1608.0
-offset_top = 461.0
-offset_right = 1726.0
-offset_bottom = 661.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5g3hu")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kv87r")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_fy6ry")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_p4133")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mf4i5")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5jr8e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_glbmr")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5nxat")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_e3hrs")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ochfa")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hf2o6")
+offset_left = 842.0
+offset_top = 259.0
+offset_right = 1000.0
+offset_bottom = 324.0
 disabled = true
 
 [node name="ReturnButton" parent="." instance=ExtResource("4_afq6p")]
-position = Vector2(32, 48)
+position = Vector2(103, 578)
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

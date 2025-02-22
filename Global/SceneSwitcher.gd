@@ -65,7 +65,6 @@ func _input(event):
 	if event.is_action_pressed("Return") and current_scene_type != SceneType.STORE:
 		switch_scene(SceneType.STORE)
 		current_scene_type = SceneType.STORE
-		
 
 func signalEmitter():
 	if(MainManager.TillComplete):
