@@ -18,11 +18,6 @@
 [sub_resource type="Theme" id="Theme_g2fa2"]
 default_font = ExtResource("5_cbci7")
 
-[sub_resource type="Theme" id="Theme_si4nw"]
-CheckBox/font_sizes/font_size = 28
-CheckBox/fonts/font = ExtResource("5_cbci7")
-
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhdhu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -103,7 +98,6 @@ fit_content = true
 [node name="Objective 1" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_6r7xj")
-
 theme_override_fonts/font = ExtResource("5_cbci7")
 text = " Stack Shelves"
 expand_icon = true
@@ -248,7 +242,8 @@ shape = SubResource("BoxShape3D_e2rpp")
 [node name="Object1" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, 0.822025)
 script = ExtResource("1_e1alj")
-ID = 0
+ID = 3
+SceneType = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object1"]
 shape = SubResource("BoxShape3D_e2rpp")
