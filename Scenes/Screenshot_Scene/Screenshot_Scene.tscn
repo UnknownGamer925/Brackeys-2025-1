@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cye7wdbc2tl1w"]
+[gd_scene load_steps=8 format=3 uid="uid://cye7wdbc2tl1w"]
 
-[ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="1_k0gr8"]
+[ext_resource type="Material" uid="uid://ceifwdjjvpe7t" path="res://EnvironmentPrefabs/Materials/FloorMat.tres" id="2_d54oh"]
+[ext_resource type="PackedScene" uid="uid://ckmstkm116p75" path="res://Scenes/Screenshot_Scene/Screenshot_Pivot.tscn" id="3_venvn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r2yiq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -47,10 +48,14 @@ handle_input_locally = false
 size = Vector2i(482, 272)
 render_target_update_mode = 4
 
+[node name="CameraPivot" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_venvn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5.73614, -7.05262)
+
 [node name="Temp_floor" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(21.6048, 0, 0, 0, 0.327609, 0, 0, 0, 15.1648, 0, 0, 0)
+transform = Transform3D(21.115, 0, 0, 0, 0.346, 0, 0, 0, 21.115, 0, 0, 0)
 mesh = SubResource("BoxMesh_mlue1")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_d54oh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Temp_floor"]
 
@@ -58,7 +63,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("BoxShape3D_dyy27")
 
 [node name="Wall" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(13.8006, 0, 0, 0, 9.39361, 0, 0, 0, 0.872223, 1.03628, 1.10922, 0.822025)
+transform = Transform3D(13.8006, 0, 0, 0, 17.738, 0, 0, 0, 0.872223, 1.03628, 1.10922, 0.822025)
 mesh = SubResource("BoxMesh_mlue1")
 skeleton = NodePath("../../..")
 
@@ -66,6 +71,3 @@ skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Wall/StaticBody3D"]
 shape = SubResource("BoxShape3D_dyy27")
-
-[node name="PlayerCharacter" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_k0gr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400133, 1.20444, -3.58363)
