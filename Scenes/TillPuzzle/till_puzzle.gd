@@ -31,14 +31,12 @@ func UpdateDisplay() -> void:
 func _on_enter_button_pressed() -> void:
 	if Combination == UserInput:
 		if(Combination != TillTotal):
-			print("Till Open count money!!")
 			Combination = TillTotal
 			call_deferred("create_cash_jingle")
 		else:
 			MainManager.TillComplete = true
 			call_deferred("create_cash_jingle")
 			SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
-			print("Yay!")
 		TillDisplay.text = "00.00"
 	else:
 		TillDisplay.text = "4O4"

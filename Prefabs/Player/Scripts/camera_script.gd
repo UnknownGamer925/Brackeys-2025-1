@@ -10,6 +10,7 @@ var flashlight_position_smoothness = 15.0
 func _ready() -> void:
 	Input.warp_mouse(Vector2(position.x, position.y))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	MainManager.connect("has_torch",Callable( self, "enable_torch"))
 	cam = $Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -26,9 +27,9 @@ func _process(delta: float) -> void:
 	
 	#transform.basis = Basis(Vector3.RIGHT, mouse_x)
 	#print(mouse_x)
-	
-func _input(event) -> void:
-	if event.is_action_pressed("Flashlight") and MainManager.hasTorch:
+
+func enable_torch() -> void:
+	if MainManager.hasTorch:
 		flashlight.visible = not flashlight.visible
 	
 func update_flashlight(delta: float) -> void:

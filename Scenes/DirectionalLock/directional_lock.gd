@@ -57,6 +57,7 @@ func checkPos() ->void:
 func confirm(delta) -> void:
 	if (Combination == UserInput):
 		MainManager.LockComplete = true
+
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.DIR_LOCK_RIGHT)
 		SceneSwitcher.switch_scene(SceneSwitcher.SceneType.STORE)
 	else:

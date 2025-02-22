@@ -53,10 +53,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/Control" node_paths=PackedStringArray("key", "boxFull")]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Control" node_paths=PackedStringArray("key", "boxFull", "Title", "Obj1", "Obj2", "Obj3")]
 script = ExtResource("1_xsj26")
 key = NodePath("InvKey")
 boxFull = NodePath("InvBox/InvBoxFull")
+Title = NodePath("../VBoxContainer/RichTextLabel")
+Obj1 = NodePath("../VBoxContainer/Objective 1")
+Obj2 = NodePath("../VBoxContainer/Objective 2")
+Obj3 = NodePath("../VBoxContainer/Objective 3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
 position = Vector2(935, 551)
@@ -71,6 +75,7 @@ position = Vector2(2, 1)
 texture = ExtResource("2_wuks6")
 
 [node name="InvKey" type="Sprite2D" parent="CanvasLayer/Control/Node2D"]
+visible = false
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(1515, 855)
 texture = ExtResource("2_hvg0v")
@@ -95,6 +100,20 @@ layout_mode = 2
 theme = ExtResource("6_6r7xj")
 theme_override_fonts/font = ExtResource("5_cbci7")
 text = " Stack Shelves"
+expand_icon = true
+
+[node name="Objective 2" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_6r7xj")
+theme_override_fonts/font = ExtResource("5_cbci7")
+text = "Count Money In Till"
+expand_icon = true
+
+[node name="Objective 3" type="CheckBox" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_6r7xj")
+theme_override_fonts/font = ExtResource("5_cbci7")
+text = "Turn Off Lights"
 expand_icon = true
 
 [node name="Dialogue" type="Label" parent="CanvasLayer/Control"]
@@ -236,7 +255,7 @@ skeleton = NodePath("../../../..")
 [node name="Object4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.963607, 0.267322, 0, -0.267322, 0.963607, 0, 0, 0, 1, -2.25612, 1.10922, -0.9234)
 script = ExtResource("1_e1alj")
-dialogue_key = "bad_door"
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object4"]
 shape = SubResource("BoxShape3D_e2rpp")
@@ -249,7 +268,7 @@ skeleton = NodePath("../../../..")
 [node name="Object2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, -0.569536)
 script = ExtResource("10_0lyde")
-ID = 2
+ID = 0
 dialogue_key = "bad_end"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object2"]
@@ -264,6 +283,7 @@ skeleton = NodePath("../../../..")
 transform = Transform3D(0.83849, -0.544917, 0, 0.544917, 0.83849, 0, 0, 0, 1, -4.69538, 0.965872, 1.2125)
 script = ExtResource("1_e1alj")
 ID = 0
+SceneType = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Object3"]
 shape = SubResource("BoxShape3D_e2rpp")

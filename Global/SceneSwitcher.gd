@@ -51,8 +51,13 @@ func _deferred_switch_scene(new_scene):
 	get_tree().current_scene = new_scene
 	if(current_scene_type != SceneType.STORE):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	elif(current_scene_type != SceneType.MAIN_MENU || 
+	current_scene_type != SceneType.OPTIONS_MENU || 
+	current_scene_type != SceneType.CREDIT_MENU):
+		AudioManager.resetSound()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		signalEmitter()
 	current_scene = new_scene
 	
 	
@@ -63,3 +68,20 @@ func _input(event):
 	if event.is_action_pressed("Return") and current_scene_type != SceneType.STORE:
 		switch_scene(SceneType.STORE)
 		current_scene_type = SceneType.STORE
+
+func signalEmitter():
+	if(MainManager.TillComplete):
+		MainManager.emit_signal("till_complete")
+	if(MainManager.LightsComplete):
+		MainManager.emit_signal("lights_off")
+	if(MainManager.BadLights):
+		MainManager.emit_signal("bad_ending_enabled")
+	if(MainManager.BoxComplete):
+		MainManager.emit_signal("box_complete")
+	if(MainManager.LockComplete):
+		MainManager.emit_signal("lock_complete")
+	
+	if(MainManager.hasKey):
+		MainManager.emit_signal("has_key")
+	if(MainManager.hasTorch):
+		MainManager.emit_signal("has_torch")
