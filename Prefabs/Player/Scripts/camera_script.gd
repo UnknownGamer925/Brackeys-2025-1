@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func enable_torch() -> void:
 	if MainManager.hasTorch:
-		flashlight.visible = not flashlight.visible
+		flashlight.visible = true
 	
 func update_flashlight(delta: float) -> void:
 	flashlight.global_transform = Transform3D(
