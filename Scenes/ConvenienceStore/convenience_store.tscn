@@ -33,14 +33,14 @@ sky = SubResource("Sky_qxbuv")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jsxhh"]
-size = Vector3(0.907776, 1.4231, 0.70459)
-
 [sub_resource type="BoxMesh" id="BoxMesh_c6gp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2rpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_al7e0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsxhh"]
+size = Vector3(0.907776, 1.4231, 0.70459)
 
 [node name="ConvenienceStore" type="Node3D"]
 
@@ -131,32 +131,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 4
-
-[node name="Poster1" type="Sprite3D" parent="SubViewportContainer"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
-texture = ExtResource("5_77cbp")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster1" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster1/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
-
-[node name="Poster2" type="Sprite3D" parent="SubViewportContainer"]
-transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
-texture = ExtResource("6_nm5b7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster2" node_paths=PackedStringArray("parent")]
-script = ExtResource("1_e1alj")
-parent = NodePath("..")
-ID = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster2/StaticBody3D"]
-transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
-shape = SubResource("BoxShape3D_jsxhh")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
@@ -310,28 +284,28 @@ ID = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Shelf_Container4"]
 shape = SubResource("BoxShape3D_al7e0")
 
-[node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+[node name="Poster1" type="Sprite3D" parent="SubViewportContainer"]
 transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, -1.20653)
 texture = ExtResource("5_77cbp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster1" node_paths=PackedStringArray("parent")]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster1" node_paths=PackedStringArray("parent")]
 script = ExtResource("1_e1alj")
 parent = NodePath("..")
 ID = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster1/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_jsxhh")
 
-[node name="Poster2" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+[node name="Poster2" type="Sprite3D" parent="SubViewportContainer"]
 transform = Transform3D(0.00636183, 0, -0.0812152, 0, 0.081464, 0, 0.0812152, 0, 0.00636183, 0.733741, 1.80289, 0.723222)
 texture = ExtResource("6_nm5b7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Poster2" node_paths=PackedStringArray("parent")]
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/Poster2" node_paths=PackedStringArray("parent")]
 script = ExtResource("1_e1alj")
 parent = NodePath("..")
 ID = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Poster2/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_jsxhh")

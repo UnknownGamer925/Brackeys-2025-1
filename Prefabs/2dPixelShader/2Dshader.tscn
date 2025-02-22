@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://chc5o45b6oeya"]
+
+[ext_resource type="Shader" path="res://Prefabs/2dPixelShader/pixel_filter_2d.gdshader" id="1_q50u7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m15di"]
+shader = ExtResource("1_q50u7")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m15di")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

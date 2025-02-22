@@ -15,7 +15,8 @@ Light5 = NodePath("BadLight")
 Button5 = NodePath("BadButton")
 
 [node name="SpareBackground" type="Sprite2D" parent="."]
-position = Vector2(950, 500)
+position = Vector2(953.5, 539)
+scale = Vector2(1.00365, 1.078)
 texture = ExtResource("2_ac8a1")
 
 [node name="Light 1" type="Sprite2D" parent="."]
@@ -76,6 +77,9 @@ disabled = true
 
 [node name="ReturnButton" parent="." instance=ExtResource("4_afq6p")]
 position = Vector2(103, 578)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
