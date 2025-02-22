@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cnmup7c36dmy8"]
+
+[ext_resource type="Texture2D" uid="uid://bplujq78hiaw1" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Base_color.png" id="1_mhxdv"]
+[ext_resource type="Texture2D" uid="uid://bl8oj5jh7e6rw" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Metallic.png" id="2_wqlcp"]
+[ext_resource type="Texture2D" uid="uid://uw6iywcdhmcq" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Normal.png" id="3_py76d"]
+[ext_resource type="Texture2D" uid="uid://do2bp2agk6bpd" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Roughness.png" id="4_r8gg7"]
+
+[resource]
+albedo_texture = ExtResource("1_mhxdv")
+metallic = 1.0
+metallic_texture = ExtResource("2_wqlcp")
+roughness_texture = ExtResource("4_r8gg7")
+normal_enabled = true
+normal_texture = ExtResource("3_py76d")

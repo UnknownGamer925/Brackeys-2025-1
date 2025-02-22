@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dils631u8tixp"]
+
+[ext_resource type="ArrayMesh" uid="uid://c7agscd0ueqrq" path="res://EnvironmentPrefabs/Models/Fridge(Longboi).obj" id="1_ydb2a"]
+
+[node name="Fridge(longboi)" type="MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.27219, 0.306708, 8.20339)
+mesh = ExtResource("1_ydb2a")

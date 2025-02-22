@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcbuog6fq0trd"]
+
+[ext_resource type="ArrayMesh" uid="uid://bd2x1gyucxqp5" path="res://EnvironmentPrefabs/Models/Till.obj" id="1_yyjwl"]
+[ext_resource type="Texture2D" uid="uid://7cte6dfy5e4u" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Base_color.png" id="2_ddfed"]
+[ext_resource type="Texture2D" uid="uid://sqatqly6jvye" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Metallic.png" id="3_myrrp"]
+[ext_resource type="Texture2D" uid="uid://ch5g7jetgle0m" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Normal.png" id="4_3wydf"]
+[ext_resource type="Texture2D" uid="uid://dj216ag5p3blk" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Roughness.png" id="5_etyyp"]
+[ext_resource type="ArrayMesh" uid="uid://bsi8xisols0xh" path="res://EnvironmentPrefabs/Models/TillDrawer.obj" id="6_n4p6j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfcdp"]
+albedo_texture = ExtResource("2_ddfed")
+metallic = 1.0
+metallic_texture = ExtResource("3_myrrp")
+roughness_texture = ExtResource("5_etyyp")
+normal_enabled = true
+normal_texture = ExtResource("4_3wydf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rjr2"]
+
+[node name="Till" type="MeshInstance3D"]
+transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -7.2407, 1.05693, 21.7113)
+mesh = ExtResource("1_yyjwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfcdp")
+
+[node name="TillDrawer" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997191, 0, 0, 0, 0.997191, 0, 0, 0, 0.997191, -0.0490608, -0.024703, -0.662338)
+mesh = ExtResource("6_n4p6j")
+surface_material_override/0 = SubResource("StandardMaterial3D_7rjr2")

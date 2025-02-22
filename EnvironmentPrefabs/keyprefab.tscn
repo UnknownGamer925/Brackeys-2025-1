@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://swtf2oomav76"]
+
+[ext_resource type="ArrayMesh" uid="uid://r57mpss7ecs6" path="res://EnvironmentPrefabs/Models/KeyV2.obj" id="1_sr5fy"]
+[ext_resource type="Texture2D" uid="uid://bgjsrmm6or5tv" path="res://EnvironmentPrefabs/Materials/Key/DefaultMaterial_Base_color.png" id="2_rib86"]
+[ext_resource type="Texture2D" uid="uid://druph2cafriwt" path="res://EnvironmentPrefabs/Materials/Key/DefaultMaterial_Metallic.png" id="3_c4aph"]
+[ext_resource type="Texture2D" uid="uid://c5sjyu8exsnqc" path="res://EnvironmentPrefabs/Materials/Key/DefaultMaterial_Normal.png" id="4_gethl"]
+[ext_resource type="Texture2D" uid="uid://b5sfkyytw2i2i" path="res://EnvironmentPrefabs/Materials/Key/DefaultMaterial_Roughness.png" id="5_euqev"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbja6"]
+albedo_texture = ExtResource("2_rib86")
+metallic = 1.0
+metallic_texture = ExtResource("3_c4aph")
+roughness_texture = ExtResource("5_euqev")
+normal_enabled = true
+normal_texture = ExtResource("4_gethl")
+
+[node name="KeyV2" type="MeshInstance3D"]
+transform = Transform3D(-1.97233e-09, -0.0451217, -0.0276062, 0.0528968, -2.31219e-09, 0, -1.20671e-09, -0.0276062, 0.0451217, -5.55102, 1.08131, 21.8183)
+mesh = ExtResource("1_sr5fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbja6")

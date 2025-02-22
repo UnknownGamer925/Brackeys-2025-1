@@ -1,0 +1,38 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0bkppvojiq22"]
+
+[ext_resource type="ArrayMesh" uid="uid://bd2x1gyucxqp5" path="res://EnvironmentPrefabs/Models/Till.obj" id="1_fndg3"]
+[ext_resource type="Texture2D" uid="uid://7cte6dfy5e4u" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Base_color.png" id="2_boics"]
+[ext_resource type="Texture2D" uid="uid://sqatqly6jvye" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Metallic.png" id="3_t5t8c"]
+[ext_resource type="Texture2D" uid="uid://ch5g7jetgle0m" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Normal.png" id="4_qomsl"]
+[ext_resource type="Texture2D" uid="uid://dj216ag5p3blk" path="res://EnvironmentPrefabs/Materials/TillMain/DefaultMaterial_Roughness.png" id="5_2foxf"]
+[ext_resource type="ArrayMesh" uid="uid://bsi8xisols0xh" path="res://EnvironmentPrefabs/Models/TillDrawer.obj" id="6_47a51"]
+[ext_resource type="Texture2D" uid="uid://bplujq78hiaw1" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Base_color.png" id="7_nwy7k"]
+[ext_resource type="Texture2D" uid="uid://bl8oj5jh7e6rw" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Metallic.png" id="8_gxnsw"]
+[ext_resource type="Texture2D" uid="uid://uw6iywcdhmcq" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Normal.png" id="9_w67jx"]
+[ext_resource type="Texture2D" uid="uid://do2bp2agk6bpd" path="res://EnvironmentPrefabs/Materials/TillDrawer/DefaultMaterial_Roughness.png" id="10_xj3c5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfcdp"]
+albedo_texture = ExtResource("2_boics")
+metallic = 1.0
+metallic_texture = ExtResource("3_t5t8c")
+roughness_texture = ExtResource("5_2foxf")
+normal_enabled = true
+normal_texture = ExtResource("4_qomsl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rjr2"]
+albedo_texture = ExtResource("7_nwy7k")
+metallic = 1.0
+metallic_texture = ExtResource("8_gxnsw")
+roughness_texture = ExtResource("10_xj3c5")
+normal_enabled = true
+normal_texture = ExtResource("9_w67jx")
+
+[node name="Till" type="MeshInstance3D"]
+transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -7.2407, 1.05693, 21.7113)
+mesh = ExtResource("1_fndg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfcdp")
+
+[node name="TillDrawer" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997191, 0, 0, 0, 0.997191, 0, 0, 0, 0.997191, -0.0490608, -0.024703, 1.14623)
+mesh = ExtResource("6_47a51")
+surface_material_override/0 = SubResource("StandardMaterial3D_7rjr2")

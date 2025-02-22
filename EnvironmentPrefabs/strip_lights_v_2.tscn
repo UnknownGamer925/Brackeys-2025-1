@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhu4qgm4qoqsy"]
 
-[ext_resource type="ArrayMesh" uid="uid://chqx5my4yeakk" path="res://EnvironmentPrefabs/StripLightsV2.obj" id="1_sw8cd"]
+[ext_resource type="ArrayMesh" uid="uid://chqx5my4yeakk" path="res://EnvironmentPrefabs/Models/StripLightsV2.obj" id="1_sw8cd"]
 
 [node name="StripLightsV2" type="MeshInstance3D"]
 transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, 0, 0, 0)
