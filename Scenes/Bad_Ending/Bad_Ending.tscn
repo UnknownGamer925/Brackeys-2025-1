@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://dnett57re1kn6"]
+[gd_scene load_steps=3 format=3 uid="uid://dnett57re1kn6"]
+
+[ext_resource type="Script" path="res://Scenes/Bad_Ending/bad_ending.gd" id="1_2u8l6"]
+[ext_resource type="Texture2D" uid="uid://d26wxcs1s4bj3" path="res://Scenes/SlidingPuzzle/Assets/SpareBackground.jpg" id="2_nnfef"]
 
 [node name="BadEnding" type="Node2D"]
+script = ExtResource("1_2u8l6")
+
+[node name="SpareBackground" type="Sprite2D" parent="."]
+position = Vector2(800, 552)
+texture = ExtResource("2_nnfef")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
