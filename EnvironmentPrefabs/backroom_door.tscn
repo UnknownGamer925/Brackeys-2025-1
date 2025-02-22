@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://dntaebd52dky4"]
+
+[ext_resource type="ArrayMesh" uid="uid://lmg3oivhj2l5" path="res://EnvironmentPrefabs/Models/BackroomDoor.obj" id="1_va7fy"]
+[ext_resource type="Texture2D" uid="uid://lxhwva267on4" path="res://EnvironmentPrefabs/Materials/BackroomDoor/DefaultMaterial_Base_color.png" id="2_v2jeo"]
+[ext_resource type="Texture2D" uid="uid://e6h7envayvrf" path="res://EnvironmentPrefabs/Materials/BackroomDoor/DefaultMaterial_Metallic.png" id="3_uy5hn"]
+[ext_resource type="Texture2D" uid="uid://kkccwbanes4i" path="res://EnvironmentPrefabs/Materials/BackroomDoor/DefaultMaterial_Normal.png" id="4_j4xll"]
+[ext_resource type="Texture2D" uid="uid://dvq3vnr1au4o8" path="res://EnvironmentPrefabs/Materials/BackroomDoor/DefaultMaterial_Roughness.png" id="5_mystl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lotvs"]
+albedo_texture = ExtResource("2_v2jeo")
+metallic = 1.0
+metallic_texture = ExtResource("3_uy5hn")
+roughness_texture = ExtResource("5_mystl")
+normal_enabled = true
+normal_texture = ExtResource("4_j4xll")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2yecr"]
+size = Vector3(0.463257, 6.64294, 3.2677)
+
+[node name="BackroomDoor" type="MeshInstance3D"]
+transform = Transform3D(-0.000538031, 0, -0.570881, 0, 0.494663, 0, 0.570881, 0, -0.000538031, 0, 0, 0)
+mesh = ExtResource("1_va7fy")
+surface_material_override/0 = SubResource("StandardMaterial3D_lotvs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.999948, 0, -2.81143e-08, 0, 0.999938, 0, 2.81143e-08, 0, 0.999948, -0.0110466, 0.0280018, 0.0211579)
+shape = SubResource("BoxShape3D_2yecr")

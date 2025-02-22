@@ -1,13 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm1lsocmpgpqh"]
+[gd_scene load_steps=6 format=3 uid="uid://bm1lsocmpgpqh"]
 
 [ext_resource type="Script" path="res://Prefabs/ReturnButton/return_button.gd" id="1_aph3d"]
+[ext_resource type="Texture2D" uid="uid://dl7boi876r6gh" path="res://Scenes/MainMenu/Assets/Back_Button2.png" id="2_7hx2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cvpx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aa1l1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hg58"]
 
 [node name="ReturnButton" type="Node2D"]
 script = ExtResource("1_aph3d")
 
 [node name="Button" type="Button" parent="."]
-offset_right = 51.0
-offset_bottom = 26.0
-text = "<--"
+offset_right = 57.0
+offset_bottom = 33.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8cvpx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aa1l1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4hg58")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+texture = ExtResource("2_7hx2e")
+centered = false
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
