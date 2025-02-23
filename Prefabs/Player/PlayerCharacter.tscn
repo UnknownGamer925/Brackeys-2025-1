@@ -33,7 +33,7 @@ size = Vector2(2, 2)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_au0s6"]
 height = 2.50092
-radius = 0.106698
+radius = 0.0219511
 
 [sub_resource type="Animation" id="Animation_fxys5"]
 length = 0.001
@@ -100,6 +100,7 @@ script = ExtResource("2_ei3r6")
 current = true
 
 [node name="PostProcessor" type="MeshInstance3D" parent="Pivot/Camera3D"]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_5ihpt")
 skeleton = NodePath("../..")
