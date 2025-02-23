@@ -5430,7 +5430,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0870361, -0.0847168, -0.20
 shape = SubResource("BoxShape3D_l30vs")
 
 [node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport/ShelfSlot3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103296, -0.0897245, -0.181357)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.103296, -0.0897245, -0.181357)
 
 [node name="ShelfSlot4" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67897, 1.182, 10.7614)

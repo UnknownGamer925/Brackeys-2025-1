@@ -53,7 +53,7 @@ func drop() -> void:
 	if(MainManager.HeldItem != null):
 		play_audio()
 		MainManager.HeldItem.visible = true
-		MainManager.HeldItem.global_position = MainManager.Player.global_position
+		MainManager.HeldItem.global_position = MainManager.playerPos
 		MainManager.HeldItem = null
 	
 func release() -> void:
