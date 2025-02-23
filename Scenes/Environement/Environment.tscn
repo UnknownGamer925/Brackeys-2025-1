@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=112 format=3 uid="uid://dekcbwoh2ir0d"]
 
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/LightManager.gd" id="1_ps0n8"]
 [ext_resource type="PackedScene" uid="uid://yqikeipqs3dv" path="res://Prefabs/joe_shelf.tscn" id="1_wpqsa"]
@@ -54,7 +54,6 @@
 [ext_resource type="Material" uid="uid://yso53p34yglx" path="res://EnvironmentPrefabs/Materials/box.tres" id="47_1tidv"]
 [ext_resource type="PackedScene" uid="uid://0nvm1kf0sdgh" path="res://EnvironmentPrefabs/sandwhiches.tscn" id="47_4co2p"]
 [ext_resource type="PackedScene" uid="uid://ckwqghottdcfw" path="res://EnvironmentPrefabs/banana.tscn" id="47_5o8ie"]
-[ext_resource type="PackedScene" uid="uid://dcbuog6fq0trd" path="res://EnvironmentPrefabs/tillOpen.tscn" id="47_youoc"]
 [ext_resource type="PackedScene" uid="uid://bj3reuf5wielu" path="res://EnvironmentPrefabs/cleaning_spray.tscn" id="48_htcrk"]
 [ext_resource type="PackedScene" uid="uid://b8ishx01alf5b" path="res://EnvironmentPrefabs/drink_can.tscn" id="48_rch2g"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="50_lu0i8"]
@@ -167,7 +166,7 @@ size = Vector3(7.28003, 10.983, 2.56885)
 size = Vector3(3.42957, 7.79834, 6.68701)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xffql"]
-size = Vector3(7.55943, 5.59003, 7.19064)
+size = Vector3(7.55943, 4.09006, 7.19064)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_apphr"]
 size = Vector3(0.557129, 0.0630951, 0.241043)
@@ -5273,6 +5272,7 @@ skeleton = NodePath("../../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/OutsideDoor"]
 script = ExtResource("50_lu0i8")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/OutsideDoor/StaticBody3D"]
 transform = Transform3D(1, 0, -1.35973e-07, 0, 0.999943, 0, 5.58794e-09, 0, 0.999942, 0.0134239, 0.164688, -1.84208)
@@ -5321,11 +5321,6 @@ transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 
 [node name="GeneralShelves(endRight)4" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("8_uwmc6")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 7.24863, 1.30996, 16.5016)
 
-[node name="Till" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("47_youoc")]
-transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.48058, 1.0628, 21.7155)
-visible = false
-skeleton = NodePath("../../../../..")
-
 [node name="StripLightsV8" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("4_3vqmk")]
 transform = Transform3D(-1.67823e-08, 0, 0.383934, 0, 0.383934, 0, -0.383934, 0, -1.67823e-08, -2.11851, 4.14643, 22.2233)
 skeleton = NodePath("../../..")
@@ -5353,7 +5348,7 @@ skeleton = NodePath("../../../../..")
 shape = SubResource("BoxShape3D_e2rpp")
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("53_k3gdf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42157, 0.861314, 12.9956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0457, 0.861314, 16.9974)
 
 [node name="Boxes" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8843, 0, 7.52318)
@@ -5571,6 +5566,11 @@ light_energy = 0.1
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155296, 3.96453, 20.0013)
+light_color = Color(0, 0.768243, 0.281827, 1)
+light_energy = 0.1
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65804, 1.55286, 21.3454)
 light_color = Color(0, 0.768243, 0.281827, 1)
 light_energy = 0.1
 
@@ -6077,6 +6077,7 @@ shape = SubResource("BoxShape3D_kyddh")
 [node name="PuzzleShelfStackBox" parent="PuzzleItems" instance=ExtResource("4_sahlb")]
 transform = Transform3D(0.0465058, 0, 0.0272368, 0, 0.0838588, 0, -0.0272368, 0, 0.0465058, 0.162076, -0.50353, 19.4442)
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("47_1tidv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/PuzzleShelfStackBox"]
 
@@ -6110,17 +6111,18 @@ shape = SubResource("BoxShape3D_3o0rk")
 transform = Transform3D(1, -2.23517e-08, 0, -5.21541e-08, 1, -3.72529e-08, 2.98023e-08, 0, 1, 0, 0, 0)
 skeleton = NodePath("../../../../../../../..")
 
-[node name="KeyV2" parent="PuzzleItems" instance=ExtResource("29_5hmbq")]
+[node name="StaticBody3D5" type="StaticBody3D" parent="PuzzleItems"]
 transform = Transform3D(-2.31219e-09, -0.03108, -0.0428031, 0.0528968, -1.35855e-09, -1.87098e-09, 0, -0.0428031, 0.03108, -5.75227, 0.989214, 21.6317)
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/KeyV2"]
 script = ExtResource("65_bjesv")
 ID = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/KeyV2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/StaticBody3D5"]
 transform = Transform3D(1, -2.44061e-08, 8.32378e-09, 1.54684e-08, 0.826, 0.56367, -2.06312e-08, -0.56367, 0.826, 1.21479, 0.435272, -0.399048)
 shape = SubResource("BoxShape3D_nfuy0")
+
+[node name="KeyV2" parent="PuzzleItems/StaticBody3D5" instance=ExtResource("29_5hmbq")]
+transform = Transform3D(1, 4.44772e-16, 1.64572e-15, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0)
+skeleton = NodePath("../../..")
 
 [node name="TillClosed" parent="PuzzleItems" instance=ExtResource("13_3kece")]
 transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.47257, 1.05693, 21.7113)
@@ -6133,7 +6135,7 @@ ID = 3
 SceneType = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/TillClosed/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00266266, 2.29501, -0.0480652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00267029, 1.54502, -0.0480652)
 shape = SubResource("BoxShape3D_xffql")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems"]
@@ -6170,6 +6172,7 @@ texture = ExtResource("63_pvdkv")
 script = ExtResource("56_8yorr")
 parent = NodePath("..")
 ID = 2
+dialogue_key = "post-it"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/Post-itNote/StaticBody3D"]
 transform = Transform3D(0.643411, 0, 2.79397e-09, -1.49012e-08, 0.9526, -1.16415e-09, -9.31323e-10, -6.13509e-08, 0.994884, -0.136169, 0.391287, -2.09652)

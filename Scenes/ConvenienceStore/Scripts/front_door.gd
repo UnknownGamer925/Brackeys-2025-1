@@ -10,6 +10,10 @@ func _ready() -> void:
 	timer.wait_time = 5
 	timer.autostart = false
 	
+	
+func object():
+	if(MainManager.LightsComplete and MainManager.TillComplete and MainManager.ShelvesStacked and MainManager.hasKey):
+		timer.start()
 
 func updateDialogue():
 	if(MainManager.BadLights):
@@ -18,7 +22,6 @@ func updateDialogue():
 		if(MainManager.LightsComplete and MainManager.TillComplete and MainManager.ShelvesStacked):
 			if(MainManager.hasKey):	
 				dialogue_key = "good_end"
-				timer.start()
 			else:
 				dialogue_key = "no_key"
 				
