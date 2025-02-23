@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=81 format=3 uid="uid://dekcbwoh2ir0d"]
 
 [ext_resource type="PackedScene" uid="uid://yqikeipqs3dv" path="res://Prefabs/joe_shelf.tscn" id="1_wpqsa"]
 [ext_resource type="Material" uid="uid://bf1lcal3mn6jc" path="res://EnvironmentPrefabs/Materials/WallsTemp_Mat.tres" id="2_1m811"]
@@ -112,13 +112,16 @@ albedo_color = Color(0.804978, 0.597688, 0.419284, 1)
 size = Vector3(0.483704, 2.14453, 0.466171)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bavr"]
-size = Vector3(0.921997, 0.602722, 0.698364)
+size = Vector3(0.921997, 0.416718, 0.563538)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6klr"]
 size = Vector3(0.907776, 1.4231, 0.70459)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xusx8"]
 size = Vector3(10.9224, 14.4819, 14.9716)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ttbj"]
+size = Vector3(9.56995, 4.74451, 4.3876)
 
 [node name="Environment" type="Node3D"]
 
@@ -5347,12 +5350,13 @@ transform = Transform3D(4.3408, 0, 0, 0, 1, 0, 0, 0, 2.05995, 5.34921, 1.03608, 
 shape = SubResource("BoxShape3D_gbcnf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.158616, 0, 0, 0, 0.561863, 0, 0, 0, 0.263246, 4.07452, -0.272382, 6.49976)
 script = ExtResource("56_8yorr")
 ID = 3
 SceneType = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85767, 1.31276, 6.31617)
+transform = Transform3D(2.50965, 0, 0, 0, 2.50965, 0, 0, 0, 3.76217, 14.2863, 2.15834, 0.0495777)
 shape = SubResource("BoxShape3D_2bavr")
 
 [node name="Poster1" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
@@ -5367,6 +5371,10 @@ ID = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Poster1/StaticBody3D"]
 transform = Transform3D(7.03153, 0, -5.96046e-08, 0, 7.03153, 0, 5.96046e-08, 0, 7.03153, -0.0731726, 0.788809, -1.03859)
 shape = SubResource("BoxShape3D_m6klr")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D2"]
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -5916,5 +5924,11 @@ skeleton = NodePath("../..")
 
 [node name="Freezer" parent="." instance=ExtResource("57_0ruc3")]
 transform = Transform3D(-1.22354e-08, 0, -0.279913, 0, 0.279913, 0, 0.279913, 0, -1.22354e-08, 6.63458, 0.464621, 22.2315)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Freezer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Freezer/StaticBody3D"]
+transform = Transform3D(1, 0, 1.07292e-12, 0, 1, 0, -1.07292e-12, 0, 1, -0.143211, 1.05853, 0.342299)
+shape = SubResource("BoxShape3D_1ttbj")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("64_jsqcq")]
