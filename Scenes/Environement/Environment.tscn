@@ -6279,15 +6279,18 @@ text = "Turn Off Lights"
 expand_icon = true
 
 [node name="Dialogue" type="Label" parent="CanvasLayer/Control"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 687.0
 offset_top = 976.0
 offset_right = 1083.0
 offset_bottom = 1056.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("68_2yjvm")
 theme_override_font_sizes/font_size = 20
+text = "Hello"
+autowrap_mode = 2
 
 [node name="DialogueReciever" parent="CanvasLayer/Control/Dialogue" node_paths=PackedStringArray("Display") instance=ExtResource("70_lbsfm")]
 Display = NodePath("..")

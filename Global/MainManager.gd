@@ -9,6 +9,7 @@ var MovementLocked = false
 var HeldItem: Node3D
 var ItemsPlaced : int
 var Player: CharacterBody3D
+var playerPos: Vector3
 
 #Objectives Complete
 var TillComplete = false
@@ -21,6 +22,10 @@ var hasTorch = false
 var BadLights = false
 var LockComplete = false
 var BoxComplete = false
+
+var firstload = true
+
+var endReached = false
 
 signal display_dialogue(dialogue_key)
 signal update_dialogue()

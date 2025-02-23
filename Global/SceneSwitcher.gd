@@ -54,7 +54,8 @@ func _deferred_switch_scene(new_scene):
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		signalEmitter()
-	AudioManager.resetSound()
+	if(current_scene_type == SceneType.MAIN_MENU || current_scene_type == SceneType.CREDIT_MENU || get_scene_enum_from_path(current_scene.scene_file_path) == SceneType.MAIN_MENU):
+		AudioManager.resetSound()
 	current_scene = new_scene
 	
 	
