@@ -60,6 +60,7 @@ func increase_shelf_int():
 	ItemsPlaced += 1
 	if (ItemsPlaced >= 4):
 		self.emit_signal("shelves_stacked")
+		ShelvesStacked = true
 
 func play_bg_audio():
 	var randomInt = MainManager.rng.randi_range(1,3)

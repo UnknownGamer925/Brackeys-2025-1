@@ -26,6 +26,11 @@
 
 	"good_end":[
 		"Time to clock out..."
-	]
+	],
+	
+	"post-it":
+	["Ah yes! My password - can't forget that!"],
 
+	"box":
+	["I'm not moving these boxes without a reason"]
 }

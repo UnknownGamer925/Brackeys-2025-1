@@ -1,5 +1,6 @@
-[gd_scene load_steps=105 format=3 uid="uid://dekcbwoh2ir0d"]
+[gd_scene load_steps=113 format=3 uid="uid://dekcbwoh2ir0d"]
 
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/LightManager.gd" id="1_ps0n8"]
 [ext_resource type="PackedScene" uid="uid://yqikeipqs3dv" path="res://Prefabs/joe_shelf.tscn" id="1_wpqsa"]
 [ext_resource type="Material" uid="uid://bf1lcal3mn6jc" path="res://EnvironmentPrefabs/Materials/WallsTemp_Mat.tres" id="2_1m811"]
 [ext_resource type="Texture2D" uid="uid://i6r6kti5mpvj" path="res://EnvironmentPrefabs/Materials/PetrolPumps/DefaultMaterial_Base_color.png" id="3_0i4ye"]
@@ -19,11 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://c0m0m0s7axklk" path="res://EnvironmentPrefabs/counter_shelf.tscn" id="12_t5qdj"]
 [ext_resource type="PackedScene" uid="uid://ogw5rxcspkh3" path="res://EnvironmentPrefabs/SECONDTIN.tscn" id="12_y7iit"]
 [ext_resource type="PackedScene" uid="uid://d0bkppvojiq22" path="res://EnvironmentPrefabs/tillClosed.tscn" id="13_3kece"]
+[ext_resource type="Script" path="res://Scenes/Bad_Ending/Scripts/BombInteract.gd" id="13_58oq6"]
 [ext_resource type="PackedScene" uid="uid://cqde67n5yqnjr" path="res://EnvironmentPrefabs/packet_box.tscn" id="14_txdup"]
 [ext_resource type="Material" uid="uid://cxux5dbdj5nk2" path="res://EnvironmentPrefabs/Materials/PacketBox1/packet_box.tres" id="16_5iy3t"]
 [ext_resource type="Material" uid="uid://dxsabv5jsxwb2" path="res://EnvironmentPrefabs/Materials/PacketBox1/packet_box2.tres" id="17_evluk"]
 [ext_resource type="PackedScene" uid="uid://bcdoqj2pd13q6" path="res://EnvironmentPrefabs/cereal_box.tscn" id="18_rafcq"]
 [ext_resource type="Material" uid="uid://dvlihr4xgocjq" path="res://EnvironmentPrefabs/Materials/cereal_box2.tres" id="19_hj6bd"]
+[ext_resource type="Script" path="res://EnvironmentPrefabs/backroom_door.gd" id="19_tgqyw"]
 [ext_resource type="ArrayMesh" uid="uid://buqwxkvvbsvwo" path="res://EnvironmentPrefabs/Models/Windows.obj" id="22_hvurs"]
 [ext_resource type="PackedScene" uid="uid://br2rhd0cd1vjh" path="res://EnvironmentPrefabs/outside_doorPrefab.tscn" id="23_pkc4q"]
 [ext_resource type="ArrayMesh" uid="uid://c577gkp2dyuco" path="res://EnvironmentPrefabs/Models/PetrolStationV4.obj" id="24_omwhk"]
@@ -54,19 +57,24 @@
 [ext_resource type="PackedScene" uid="uid://dcbuog6fq0trd" path="res://EnvironmentPrefabs/tillOpen.tscn" id="47_youoc"]
 [ext_resource type="PackedScene" uid="uid://bj3reuf5wielu" path="res://EnvironmentPrefabs/cleaning_spray.tscn" id="48_htcrk"]
 [ext_resource type="PackedScene" uid="uid://b8ishx01alf5b" path="res://EnvironmentPrefabs/drink_can.tscn" id="48_rch2g"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/front_door.gd" id="50_lu0i8"]
 [ext_resource type="PackedScene" uid="uid://xtjf17gebhob" path="res://EnvironmentPrefabs/sweets_2.tscn" id="50_qoa30"]
 [ext_resource type="PackedScene" uid="uid://b88h075gyji1q" path="res://EnvironmentPrefabs/drink_can_3.tscn" id="51_wp2va"]
 [ext_resource type="PackedScene" uid="uid://b1an6lolovsec" path="res://EnvironmentPrefabs/sweets.tscn" id="51_ys1th"]
 [ext_resource type="PackedScene" uid="uid://bgc860q7dhtvb" path="res://EnvironmentPrefabs/sandwhiches_2.tscn" id="52_eyxa5"]
 [ext_resource type="PackedScene" uid="uid://cdhbe21kmh2w6" path="res://Prefabs/Player/PlayerCharacter.tscn" id="53_k3gdf"]
+[ext_resource type="PackedScene" uid="uid://co6a55jh7cqxx" path="res://Prefabs/FridgeArea/FridgeArea.tscn" id="53_lmg7p"]
 [ext_resource type="PackedScene" uid="uid://dntaebd52dky4" path="res://EnvironmentPrefabs/backroom_door.tscn" id="54_1h0rx"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/interactable_script.gd" id="56_8yorr"]
 [ext_resource type="PackedScene" uid="uid://cl1e1qh1lm3dy" path="res://EnvironmentPrefabs/Models/freezer.tscn" id="57_0ruc3"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/TorchScript.gd" id="59_pjjix"]
+[ext_resource type="Script" path="res://Scenes/Environement/boxes.gd" id="60_1fjqf"]
 [ext_resource type="PackedScene" uid="uid://ca8btebgfxb8c" path="res://EnvironmentPrefabs/packet_box_pickup.tscn" id="63_243cd"]
 [ext_resource type="Texture2D" uid="uid://miwi25kdy6y0" path="res://8427.png" id="63_pvdkv"]
 [ext_resource type="Texture2D" uid="uid://dvljrdhg0fxe2" path="res://Instructional Poster resized.png" id="64_871v2"]
 [ext_resource type="Script" path="res://Scenes/ConvenienceStore/HUD_Script.gd" id="64_w0a1q"]
 [ext_resource type="Texture2D" uid="uid://d0wbip7das54e" path="res://Scenes/ConvenienceStore/Assets/Page 1.svg" id="65_1or4v"]
+[ext_resource type="Script" path="res://Scenes/ConvenienceStore/Scripts/KeyScript.gd" id="65_bjesv"]
 [ext_resource type="Texture2D" uid="uid://chouf5os05o7w" path="res://Scenes/ConvenienceStore/Assets/IMG_2875.PNG" id="66_qwdsa"]
 [ext_resource type="Texture2D" uid="uid://ymjri7523tvj" path="res://Scenes/ConvenienceStore/Assets/IMG_2890.PNG" id="67_qlf4q"]
 [ext_resource type="FontFile" uid="uid://caegfgiquyuqy" path="res://Scenes/MainMenu/Assets/Fonts/DotGothic16-Regular.ttf" id="68_2yjvm"]
@@ -179,6 +187,7 @@ size = Vector3(8.79373, 4.12924, 4.00874)
 default_font = ExtResource("68_2yjvm")
 
 [node name="Environment" type="Node3D"]
+script = ExtResource("1_ps0n8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2w04y")
@@ -507,7 +516,9 @@ transform = Transform3D(2.29963e-16, 5.26093e-09, 0.120356, 0.120356, -5.26093e-
 skeleton = NodePath("../../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom/BomBbox"]
-script = ExtResource("56_8yorr")
+script = ExtResource("13_58oq6")
+ID = 2
+dialogue_key = "bad_end"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom/BomBbox/StaticBody3D"]
 transform = Transform3D(0.999972, 1.12266e-12, 2.43522e-20, -1.12266e-12, 0.999972, 1.12266e-12, -7.81388e-20, -1.12266e-12, 0.999972, -0.0469856, 1.16941, 0.135719)
@@ -672,8 +683,9 @@ transform = Transform3D(0.0423643, 0, -0.00669544, 0, 0.0428901, 0, 0.00669544, 
 skeleton = NodePath("../../../../..")
 
 [node name="BackroomDoor" parent="SubViewportContainer/SubViewport/EnvironementObjects/Backroom" instance=ExtResource("54_1h0rx")]
-transform = Transform3D(-0.000413102, 0, -0.570881, 0, 0.464292, 0, 0.438324, 0, -0.000538031, 5.37625, 1.5037, 5.97569)
+transform = Transform3D(-0.000413126, 0, -0.570881, 0, 0.464292, 0, 0.438324, 0, -0.000538063, 5.37625, 1.5037, 5.97569)
 skeleton = NodePath("../../../../..")
+script = ExtResource("19_tgqyw")
 
 [node name="MainShop" type="Node3D" parent="SubViewportContainer/SubViewport/EnvironementObjects"]
 
@@ -5260,7 +5272,7 @@ material_override = ExtResource("2_1m811")
 skeleton = NodePath("../../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/OutsideDoor"]
-script = ExtResource("56_8yorr")
+script = ExtResource("50_lu0i8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/OutsideDoor/StaticBody3D"]
 transform = Transform3D(1, 0, -1.35973e-07, 0, 0.999943, 0, 5.58794e-09, 0, 0.999942, 0.0134239, 0.164688, -1.84208)
@@ -5269,6 +5281,9 @@ shape = SubResource("BoxShape3D_f5n4m")
 [node name="FridgeV2" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("25_vq3ac")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -5.57071, 1.3346, 6.57361)
 skeleton = NodePath("../../../../..")
+
+[node name="FridgeArea" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop/FridgeV2" instance=ExtResource("53_lmg7p")]
+transform = Transform3D(8.25754, 0, 1.02318e-12, 0, 5, 0, -3.41061e-13, 0, 33.8249, 2.24334, -2.88721, -13.8667)
 
 [node name="FridgeV3" parent="SubViewportContainer/SubViewport/EnvironementObjects/MainShop" instance=ExtResource("25_vq3ac")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 3.1982, 1.3346, 6.57361)
@@ -5342,6 +5357,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42157, 0.861314, 12.9956)
 
 [node name="Boxes" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8843, 0, 7.52318)
+script = ExtResource("60_1fjqf")
+dialogue_key = "box"
+SceneType = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609314, 0.792053, -0.401596)
@@ -6011,6 +6029,8 @@ transform = Transform3D(-0.155208, 0, -1.35687e-08, 0, 0.155208, 0, 1.35687e-08,
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/LightSwitch"]
 script = ExtResource("56_8yorr")
+ID = 3
+SceneType = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/LightSwitch/StaticBody3D"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0.111084, 0.0687256, -5.49098)
@@ -6030,10 +6050,12 @@ transform = Transform3D(-0.155208, 0, -1.35687e-08, 0, 0.155208, 0, 1.35687e-08,
 
 [node name="Flashlight" parent="PuzzleItems" instance=ExtResource("35_how5a")]
 transform = Transform3D(-0.0189985, 0.00134916, 0.032235, 0.00265219, 0.0373473, -1.16415e-10, -0.032154, 0.0022834, -0.0190463, -5.06808, 1.00122, 21.7152)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/Flashlight"]
-script = ExtResource("56_8yorr")
+script = ExtResource("59_pjjix")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/Flashlight/StaticBody3D"]
 transform = Transform3D(1, 3.57628e-07, 5.96046e-08, -3.72529e-09, 1, -7.45058e-09, -5.96046e-08, -2.6077e-08, 1, 0.117065, 1.97273, 0.449951)
@@ -6045,6 +6067,8 @@ skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/DirectionalLock"]
 script = ExtResource("56_8yorr")
+ID = 3
+SceneType = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/DirectionalLock/StaticBody3D"]
 transform = Transform3D(0.999999, -1.11759e-08, -3.55271e-15, 1.11759e-08, 0.999999, -6.4504e-14, 2.65388e-12, -9.18154e-14, 1, 0.505333, 0.74235, -0.83086)
@@ -6091,7 +6115,8 @@ transform = Transform3D(-2.31219e-09, -0.03108, -0.0428031, 0.0528968, -1.35855e
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/KeyV2"]
-script = ExtResource("56_8yorr")
+script = ExtResource("65_bjesv")
+ID = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/KeyV2/StaticBody3D"]
 transform = Transform3D(1, -2.44061e-08, 8.32378e-09, 1.54684e-08, 0.826, 0.56367, -2.06312e-08, -0.56367, 0.826, 1.21479, 0.435272, -0.399048)
@@ -6102,7 +6127,10 @@ transform = Transform3D(0.138246, 0, 0, 0, 0.138246, 0, 0, 0, 0.138246, -6.47257
 skeleton = NodePath("../../SubViewportContainer/SubViewport/EnvironementObjects/MainShop")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PuzzleItems/TillClosed"]
+transform = Transform3D(1.00074, 0, 0, 0, 1.00074, 0, 0, 0, 1.00074, 0, 0, 0)
 script = ExtResource("56_8yorr")
+ID = 3
+SceneType = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleItems/TillClosed/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00266266, 2.29501, -0.0480652)
@@ -6168,6 +6196,9 @@ transform = Transform3D(-1.22354e-08, 0, -0.279913, 0, 0.279913, 0, 0.279913, 0,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Freezer/StaticBody3D"]
 transform = Transform3D(1, 0, 1.62714e-12, 0, 1, 0, -1.62714e-12, 0, 1, -0.0139313, 0.750896, 0.152868)
 shape = SubResource("BoxShape3D_1ttbj")
+
+[node name="FridgeArea" parent="Freezer" instance=ExtResource("53_lmg7p")]
+transform = Transform3D(9.99191, 0, 0, 0, 7.39873, 0, 0, 0, 14.2773, -0.466988, -1.62613, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

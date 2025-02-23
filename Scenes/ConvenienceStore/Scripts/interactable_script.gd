@@ -33,6 +33,7 @@ func area() -> void:
 		MainManager.HeldItem.global_rotation = itempos.global_rotation
 		MainManager.HeldItem = null
 		MainManager.increase_shelf_int()
+		
 		play_audio()
 
 func read() -> void:
